@@ -67,8 +67,8 @@ export default function Header() {
         className="site-max flex items-center justify-between"
         style={{ paddingTop: 'var(--container-pad)', paddingBottom: 'var(--container-pad)' }}
       >
-        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="The Meridian — Home">
-          The Meridian<span className="text-canvas">.</span>
+        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="DUOS Wynwood — Home">
+          DUOS<span className="text-canvas"> </span>Wynwood
         </Link>
 
         <button

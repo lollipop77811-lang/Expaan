@@ -96,8 +96,8 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       aria-hidden={progress >= 100}
     >
       <div ref={monogramRef} className="flex flex-col items-center gap-6">
-        <div className="font-display text-display leading-none text-ink" aria-label="The Meridian">
-          M<span className="text-gold">.</span>
+        <div className="font-display text-display leading-none text-ink" aria-label="DUOS Wynwood">
+          D<span className="text-gold">.</span>
         </div>
         <span ref={counterRef} className="text-micro text-bronze tnum" aria-live="polite">
           {String(progress).padStart(3, '0')}

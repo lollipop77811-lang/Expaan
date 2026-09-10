@@ -4,17 +4,17 @@ import SectionLabel from '../components/ui/SectionLabel'
 import InquiryForm from '../components/forms/InquiryForm'
 
 /**
- * Inquire — split layout.
- * Left column: pitch (display-s line, phone, email, address in micro).
- * Right column: InquiryForm with full RHF+Zod + designed success state.
+ * Inquire — DUOS Wynwood sales gallery.
+ * Left column: pitch + Wynwood sales gallery address + Miami phone.
+ * Right column: InquiryForm with RHF + Zod + designed success state.
  */
 export default function Inquire() {
   return (
     <>
       <Helmet>
-        <title>The Meridian — Inquire</title>
-        <meta name="description" content="Speak with our sales gallery about a Meridian residence. By appointment, seven days a week, in New York, Miami, and Los Angeles." />
-        <link rel="canonical" href="https://meridian.example.com/inquire" />
+        <title>DUOS Wynwood — Inquire</title>
+        <meta name="description" content="Speak with the DUOS Wynwood sales gallery about a furnished residence in Wynwood, Miami. By appointment, seven days a week. Pre-construction, from $495,000." />
+        <link rel="canonical" href="https://duoswynwood.com/inquire" />
       </Helmet>
 
       <section className="site-max site-grid pt-32 section-pad">
@@ -32,14 +32,14 @@ export default function Inquire() {
           />
           <p className="text-body-l text-bronze font-light max-w-md">
             A member of the sales gallery will respond within one working day.
-            By appointment, seven days a week.
+            By appointment, seven days a week, in Wynwood.
           </p>
 
           <div className="flex flex-col gap-6 border-t border-line pt-8">
-            <Contact label="Sales Gallery" lines={['111 West 57th Street, New York', 'By appointment, Mon — Sun']} />
-            <Contact label="Telephone" lines={['+1 212 555 0148']} href="tel:+12125550148" />
-            <Contact label="Email" lines={['sales@meridian.com']} href="mailto:sales@meridian.com" />
-            <Contact label="Press" lines={['press@meridian.com']} href="mailto:press@meridian.com" />
+            <Contact label="Sales Gallery" lines={['335 NW 28th Street, Miami, FL 33127', 'By appointment, Mon — Sun']} />
+            <Contact label="Telephone" lines={['+1 305 555 0148']} href="tel:+13055550148" />
+            <Contact label="Email" lines={['sales@duoswynwood.com']} href="mailto:sales@duoswynwood.com" />
+            <Contact label="Press" lines={['press@duoswynwood.com']} href="mailto:press@duoswynwood.com" />
           </div>
         </div>
 

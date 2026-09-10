@@ -7,8 +7,8 @@ import { gsap, prefersReducedMotion } from '../../lib/gsap'
 
 const NAV = [
   { index: '01', label: 'Home', to: '/' },
-  { index: '02', label: 'Story', to: '/story' },
-  { index: '03', label: 'Projects', to: '/projects' },
+  { index: '02', label: 'About', to: '/story' },
+  { index: '03', label: 'Residences', to: '/projects' },
   { index: '04', label: 'Amenities', to: '/amenities' },
   { index: '05', label: 'Neighbourhood', to: '/neighborhood' },
   { index: '06', label: 'Inquire', to: '/inquire' },
@@ -119,13 +119,13 @@ export default function FullscreenMenu() {
             <div className="grid grid-cols-2 md:grid-cols-12 gap-6 text-micro text-bronze">
               <div className="col-span-2 md:col-span-6">
                 <div className="block mb-2">Sales Gallery</div>
-                <div>111 West 57th Street, New York</div>
+                <div>335 NW 28th Street, Miami, FL 33127</div>
                 <div>By appointment, Mon — Sun</div>
               </div>
               <div className="col-span-1 md:col-span-3">
                 <div className="block mb-2">Enquiries</div>
-                <a href="tel:+12125550148" className="block hover:text-gold transition-colors">+1 212 555 0148</a>
-                <a href="mailto:sales@meridian.com" className="block hover:text-gold transition-colors">sales@meridian.com</a>
+                <a href="tel:+13055550148" className="block hover:text-gold transition-colors">+1 305 555 0148</a>
+                <a href="mailto:sales@duoswynwood.com" className="block hover:text-gold transition-colors">sales@duoswynwood.com</a>
               </div>
               <div className="col-span-1 md:col-span-3 md:text-right">
                 <a href="https://instagram.com" className="hover:text-gold transition-colors" rel="noreferrer" target="_blank">Instagram</a>

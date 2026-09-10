@@ -60,8 +60,9 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
       <div className="py-12" aria-live="polite">
         <h3 className="font-display text-display-s text-ink leading-tight">Thank you for writing.</h3>
         <p className="mt-4 max-w-md text-body-l text-bronze">
-          A member of the sales gallery will be in touch within one working day. We look forward to
-          showing you the residence in person.
+          A member of the DUOS Wynwood sales gallery will be in touch within one
+          working day. We look forward to showing you the residence in person
+          at 335 NW 28th Street, Miami.
         </p>
         <button
           type="button"
@@ -119,6 +120,19 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
               {p.name} — {p.city}
             </option>
           ))}
+        </select>
+      </Field>
+
+      <Field label="Configuration" error={errors.interest?.message}>
+        <select
+          aria-label="Configuration"
+          className="w-full appearance-none border-b border-line bg-transparent py-3 pr-6 text-body-l text-ink focus:outline-none focus:border-gold transition-colors"
+          defaultValue=""
+        >
+          <option value="" disabled style={{ color: '#293A4A' }}>Studio / 1-BR / 2-BR</option>
+          <option value="Studio" style={{ color: '#293A4A' }}>Studio — 478 sq ft</option>
+          <option value="1-Bedroom" style={{ color: '#293A4A' }}>One-bedroom — 612 sq ft</option>
+          <option value="2-Bedroom" style={{ color: '#293A4A' }}>Two-bedroom — 844 sq ft</option>
         </select>
       </Field>
 

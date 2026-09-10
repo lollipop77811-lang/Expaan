@@ -36,9 +36,9 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>The Meridian — Page not found</title>
+        <title>DUOS Wynwood — Page not found</title>
         <meta name="description" content="The page you are looking for could not be found. Return to the home page." />
-        <link rel="canonical" href="https://meridian.example.com/404" />
+        <link rel="canonical" href="https://duoswynwood.com/404" />
       </Helmet>
 
       <section className="relative h-screen w-full overflow-hidden bg-night text-bone flex items-center justify-center" aria-label="404">
@@ -55,7 +55,7 @@ export default function NotFound() {
             The page you are looking for is not here. Return to the home page,
             or visit one of our residences.
           </p>
-          <Link to="/" className="text-label uppercase tracking-[0.12em] text-gold border-b border-gold pb-1 hover:text-bone hover:border-bone transition-colors">
+          <Link to="/" className="text-label uppercase tracking-[0.12em] text-canvas-soft border-b border-canvas-soft pb-1 hover:text-canvas hover:border-canvas transition-colors">
             Return home
           </Link>
         </div>

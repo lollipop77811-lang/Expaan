@@ -6,67 +6,88 @@ import Button from '../components/ui/Button'
 import ParallaxImage from '../components/motion/ParallaxImage'
 import { portrait } from '../lib/image'
 
-const CHAPTERS = [
+interface Chapter {
+  label: string
+  headline: string
+  body: string
+  image: string
+  seed: string
+  alt: string
+  cta: string
+  dark?: boolean
+  soft?: boolean
+}
+
+const CHAPTERS: Chapter[] = [
   {
-    label: 'Concierge',
-    headline: 'Twenty-four-hour, white-glove.',
-    body: `A full-service concierge operates around the clock. Parcel room, cold storage for deliveries, and a private doorman for every arrival. Bookings for spa, dining, and travel are made in person, by the front-of-house team.`,
+    label: 'Arrival',
+    headline: 'A landscaped paseo.',
+    body: `A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Wynwood streetscape and establishes a quiet transition into the gallery lobby — a hospitality-driven lobby with digital access control.`,
     image: portrait('amen-1', 900, 1200),
     seed: 'amen-1',
-    alt: 'Attended lobby and concierge desk',
-    cta: 'Speak with the concierge',
+    alt: 'Landscaped paseo arrival and gallery lobby',
+    cta: 'Speak with the gallery',
   },
   {
-    label: 'Wellness',
-    headline: 'A private wellness floor.',
-    body: `An 82-foot lap pool, paired steam and sauna rooms, two treatment suites, and a private gym. Operated by an in-house wellness director. Bookable through the concierge, six days a week.`,
+    label: 'Lobby',
+    headline: 'A gallery lounge with a coffee bar.',
+    body: `A gallery lobby lounge with a dedicated coffee bar, curated by AvroKO as the social heart of the building. Residents and guests check in, settle in, and work from the lounge. Building-wide high-speed Wi-Fi and dedicated printing facilities available.`,
     image: portrait('amen-2', 900, 1200),
     seed: 'amen-2',
-    alt: 'Resident spa, lap pool',
-    cta: 'Tour the spa',
+    alt: 'Gallery lobby lounge and coffee bar',
+    cta: 'Tour the lobby',
+    soft: true,
+  },
+  {
+    label: 'The Grotto',
+    headline: 'A private wellness club.',
+    body: `A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and hotel guests — the design move that sets DUOS Wynwood apart from other Wynwood buildings.`,
+    image: portrait('amen-3', 900, 1200),
+    seed: 'amen-3',
+    alt: 'The Grotto — mineral pool, cold plunge, steam, sauna',
+    cta: 'Tour the grotto',
     dark: true,
   },
   {
-    label: 'Dining',
-    headline: 'A 24-seat dining room.',
-    body: `A private dining room and chef's kitchen for residents and their guests. Bookable through the concierge, with menus prepared by the in-house chef or a guest of the resident's choosing.`,
-    image: portrait('amen-3', 900, 1200),
-    seed: 'amen-3',
-    alt: `Private dining room and chef's kitchen`,
-    cta: 'Reserve the dining room',
-    soft: true,
-  },
-  {
-    label: 'Cellar',
-    headline: 'A 600-bottle cellar.',
-    body: `A climate-controlled wine cellar with private lockers assigned to each residence. Stocked by the in-house sommelier, with quarterly tasting events in the dining room.`,
+    label: 'Work',
+    headline: 'A gallery for work.',
+    body: `A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities. Designed for short-term-stay professionals and remote work — no need to leave the building for a call or a meeting.`,
     image: portrait('amen-4', 900, 1200),
     seed: 'amen-4',
-    alt: 'Wine cellar, climate-controlled',
-    cta: 'Speak with the sommelier',
+    alt: 'Meeting gallery and private Zoom rooms',
+    cta: 'See the work spaces',
   },
   {
-    label: 'Outdoor',
-    headline: 'A 4,200 sq ft terrace.',
-    body: `A planted roof terrace with kitchen, lounge, and Hudson River views. Available for resident bookings, including private events.`,
+    label: 'Fitness',
+    headline: 'A windowed fitness center.',
+    body: `A natural-light fitness center with cardio and strength-training equipment, operated as a residents-only facility with extended hours. Open to natural light and views across the Wynwood streetscape.`,
     image: portrait('amen-5', 900, 1200),
     seed: 'amen-5',
-    alt: 'Roof terrace, planted',
-    cta: 'Tour the terrace',
+    alt: 'Windowed fitness center with cardio and strength equipment',
+    cta: 'Tour the fitness center',
     soft: true,
+  },
+  {
+    label: 'Rooftop',
+    headline: 'A rooftop amenities terrace.',
+    body: `A rooftop terrace with planted surfaces, lounge seating, and views across Wynwood and the Miami skyline. Bookable for resident events and operated as an extension of the gallery lobby and The Grotto.`,
+    image: portrait('amen-6', 900, 1200),
+    seed: 'amen-6',
+    alt: 'Rooftop amenities terrace with planted surfaces',
+    cta: 'See the rooftop',
   },
 ]
 
 /**
- * Amenities — chapter per amenity, alternating image/text, one dark interlude.
+ * Amenities — chapter per amenity, alternating image/text, one dark interlude (The Grotto).
  */
 export default function Amenities() {
   return (
     <>
       <Helmet>
-        <title>The Meridian — Amenities</title>
-        <meta name="description" content="Concierge, spa, private dining, wine cellar, and a 4,200 sq ft roof terrace. Each amenity operates as a private club for residents." />
-        <link rel="canonical" href="https://meridian.example.com/amenities" />
+        <title>DUOS Wynwood — Amenities: The Grotto, gallery lobby, fitness, rooftop</title>
+        <meta name="description" content="Landscaped paseo arrival, gallery lobby with coffee bar, meeting gallery and Zoom rooms, windowed fitness center, The Grotto wellness club (mineral pool, cold plunge, steam, sauna), and a rooftop amenities terrace." />
+        <link rel="canonical" href="https://duoswynwood.com/amenities" />
       </Helmet>
 
       <section className="site-max site-grid pt-32 section-pad">

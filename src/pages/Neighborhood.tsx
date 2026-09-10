@@ -6,74 +6,70 @@ import Button from '../components/ui/Button'
 import Marquee from '../components/ui/Marquee'
 import { landscape } from '../lib/image'
 
-const DISTRICTS = [
+const NEIGHBORHOODS = [
   {
-    label: 'Midtown West',
-    city: 'New York',
-    body: `Central Park to the north, the cultural corridor to the south, and Times Square to the west. The Meridian sits on the seam between the city's two great public spaces.`,
+    label: 'Wynwood',
+    body: `DUOS Wynwood is in the heart of Wynwood — within walking distance of Wynwood Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
+    image: landscape('district-wynwood', 1920, 1080),
+  },
+  {
+    label: 'Design District',
+    body: `An eight-minute walk north. The Miami Design District is a neighbourhood of luxury retail, design showrooms, and galleries — the city's most concentrated district for furniture, fashion, and contemporary art.`,
+    image: landscape('district-design', 1920, 1080),
+  },
+  {
+    label: 'Midtown Miami',
+    body: `Five minutes east. Midtown Miami is a 56-block mixed-use district with retail, restaurants, and the Wynwood-adjacent mid-rise residential community. A short walk or a 4-minute drive.`,
     image: landscape('district-midtown', 1920, 1080),
   },
   {
-    label: 'Tribeca',
-    city: 'New York',
-    body: `Cast-iron blocks and the Hudson to the west. Ashford House occupies one of the few remaining 1908 warehouses on a quiet block.`,
-    image: landscape('district-tribeca', 1920, 1080),
-  },
-  {
     label: 'Brickell',
-    city: 'Miami',
-    body: `A narrow avenue between the bay and the financial district. Marlowe is set back from Brickell Avenue, with a private motor court and direct access to the bay.`,
+    body: `Brickell is 10 minutes south by car. Miami's financial district and densest residential neighbourhood — home to Brickell City Centre, the corporate offices of Amazon, Citadel, Spotify, PwC, and Live Nation, and the future site of Miami's tallest towers.`,
     image: landscape('district-brickell', 1920, 1080),
   },
   {
-    label: 'Coconut Grove',
-    city: 'Miami',
-    body: `Miami's oldest neighbourhood, on the bay. Verdant sits among canopy trees and 1920s estates, two blocks from Peacock Park.`,
-    image: landscape('district-grove', 1920, 1080),
+    label: 'Downtown Miami',
+    body: `Ten minutes south. Downtown Miami is the civic and commercial core — FTX Arena, Bayfront Park, the Perez Art Museum, and the Brightline MiamiCentral station with hourly service to West Palm Beach, Fort Lauderdale, Aventura, and Orlando.`,
+    image: landscape('district-downtown', 1920, 1080),
   },
   {
-    label: 'Pacific Palisades',
-    city: 'Los Angeles',
-    body: `A coastal neighbourhood west of Santa Monica. Pacific Hollow faces the ocean with a 12-mile view along the coast.`,
-    image: landscape('district-palisades', 1920, 1080),
-  },
-  {
-    label: 'Silver Lake',
-    city: 'Los Angeles',
-    body: `East of Hollywood, around the reservoir. Fairbanks occupies a 1962 concrete-frame office building, two blocks from the Silver Lake Reservoir loop.`,
-    image: landscape('district-silverlake', 1920, 1080),
+    label: 'Miami Beach',
+    body: `Twenty minutes east across the MacArthur Causeway. South Beach, Mid-Beach, and the Bass Museum — Miami Beach is the city's primary visitor destination and a short ride from DUOS Wynwood.`,
+    image: landscape('district-beach', 1920, 1080),
   },
 ]
 
 const POI = [
-  { name: 'Central Park', distance: '0.2 mi', category: 'Park' },
-  { name: 'Carnegie Hall', distance: '0.4 mi', category: 'Concert hall' },
-  { name: 'MoMA', distance: '0.5 mi', category: 'Museum' },
-  { name: 'Hudson River Park', distance: '0.3 mi', category: 'Park' },
-  { name: 'Pérez Art Museum', distance: '0.8 mi', category: 'Museum' },
-  { name: 'Brookfield Place', distance: '0.4 mi', category: 'Retail' },
-  { name: 'Silver Lake Reservoir', distance: '0.2 mi', category: 'Park' },
-  { name: 'Will Rogers Beach', distance: '0.7 mi', category: 'Beach' },
+  { name: 'Wynwood Walls', distance: '0.2 mi', category: 'Street art' },
+  { name: 'Wynwood 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
+  { name: 'Design District', distance: '0.8 mi', category: 'Retail' },
+  { name: 'Midtown Miami', distance: '0.5 mi', category: 'Retail' },
+  { name: 'Brickell City Centre', distance: '2.4 mi', category: 'Retail' },
+  { name: 'Brightline MiamiCentral', distance: '2.2 mi', category: 'Transit' },
+  { name: 'Perez Art Museum Miami', distance: '2.6 mi', category: 'Museum' },
+  { name: 'Miami International Airport (MIA)', distance: '5.4 mi', category: 'Airport' },
+  { name: 'South Beach', distance: '4.8 mi', category: 'Beach' },
 ]
 
+const CORPORATE = ['Amazon', 'Citadel', 'Spotify', 'PwC', 'Live Nation']
+
 /**
- * Neighborhood — cinematic full-bleed opener, map/skyline interlude,
- * POI distance table, city districts as chapters.
+ * Neighborhood — Wynwood and its surrounding districts.
  */
 export default function Neighborhood() {
   return (
     <>
       <Helmet>
-        <title>The Meridian — Neighbourhood</title>
-        <meta name="description" content="Six neighbourhoods across three American cities. The Meridian is positioned at the centre of each — close to parks, cultural institutions, and the water." />
-        <link rel="canonical" href="https://meridian.example.com/neighborhood" />
+        <title>DUOS Wynwood — Neighbourhood: Wynwood, the Design District, and beyond</title>
+        <meta name="description" content="DUOS Wynwood is in the heart of Wynwood, Miami — within walking distance of Wynwood Walls, the Design District, Midtown Miami, and Brightline MiamiCentral. Walk score 94." />
+        <link rel="canonical" href="https://duoswynwood.com/neighborhood" />
       </Helmet>
 
       {/* OPENING */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: '90vh', aspectRatio: '16 / 9' }}>
         <img
-          src={landscape('neighborhood-hero', 1920, 1080)}
-          alt="Aerial of Midtown Manhattan at dusk"
+          src={landscape('wynwood-hero', 1920, 1080)}
+          alt="Aerial of Wynwood, Miami at dusk"
           // @ts-ignore
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover img-treat"
@@ -85,7 +81,7 @@ export default function Neighborhood() {
             <RevealText
               as="h1"
               className="font-display text-display-xl text-bone leading-[1.02]"
-              text={'Addressed to\nthe city it\nbelongs to.'}
+              text={'In the heart\nof Wynwood.'}
             />
           </div>
         </div>
@@ -97,13 +93,14 @@ export default function Neighborhood() {
           <RevealText
             as="p"
             className="font-display text-display text-ink leading-[1.05]"
-            text={'Six towers across\nthree American cities.\nEach one close to the water,\nthe park, or the cultural corridor.'}
+            text={'Six neighbourhoods\nwithin fifteen minutes\nof the front door.'}
           />
         </div>
         <div className="col-span-12 md:col-span-3 md:col-start-10 mt-12 md:mt-0 flex flex-col justify-end">
           <p className="text-body text-bronze">
             Distances are measured by foot, not by car. We build where the
-            city works.
+            city works — Wynwood, the Design District, Midtown, Brickell,
+            Downtown, and the Beach.
           </p>
         </div>
       </section>
@@ -124,18 +121,32 @@ export default function Neighborhood() {
         </div>
       </section>
 
+      {/* CORPORATE NEIGHBOURS */}
+      <section className="site-max section-pad-tight" aria-label="Corporate neighbours">
+        <div className="mb-8">
+          <SectionLabel>Nearby offices</SectionLabel>
+        </div>
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
+          {CORPORATE.map((c) => (
+            <div key={c} className="text-label text-ink uppercase tracking-[0.12em] border-t border-line pt-4">
+              {c}
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* MARQUEE */}
       <section className="site-max section-pad-tight" aria-label="Districts marquee">
-        <Marquee items={DISTRICTS.map((d) => `${d.label} · ${d.city}`)} />
+        <Marquee items={NEIGHBORHOODS.map((d) => d.label)} />
       </section>
 
       {/* DISTRICT CHAPTERS */}
-      {DISTRICTS.map((d, i) => (
+      {NEIGHBORHOODS.map((d, i) => (
         <div key={d.label}>
           <ChapterDivider index={`0${i + 1}`} label={d.label} className={i % 2 ? 'bg-canvas-soft' : ''} />
           <section className={`site-max site-grid section-pad ${i % 2 ? 'bg-canvas-soft' : ''}`} aria-label={`${d.label} chapter`}>
             <div className="col-span-12 mb-10">
-              <SectionLabel>{d.city}</SectionLabel>
+              <SectionLabel>Miami</SectionLabel>
             </div>
             <div className="col-span-12 mb-8">
               <RevealText
@@ -148,7 +159,7 @@ export default function Neighborhood() {
               <div className="relative overflow-hidden" style={{ aspectRatio: '16 / 9' }}>
                 <img
                   src={d.image}
-                  alt={`${d.label}, ${d.city}`}
+                  alt={`${d.label}, Miami`}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover img-treat"
                 />
@@ -156,7 +167,7 @@ export default function Neighborhood() {
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0 flex flex-col justify-center gap-6">
               <p className="text-body-l text-bronze font-light">{d.body}</p>
-              <Button variant="ghost" to="/projects">View residences</Button>
+              <Button variant="ghost" to="/projects/duos-wynwood">View residences</Button>
             </div>
           </section>
         </div>

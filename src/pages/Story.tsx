@@ -13,106 +13,64 @@ interface Leader {
 }
 
 const LEADERSHIP: Leader[] = [
-  { name: 'Hugo Lindqvist', role: 'Founder & Creative Director', seed: 'leader-1', image: portrait('leader-1', 900, 1200) },
-  { name: 'Marisol Reyes', role: 'Principal Architect', seed: 'leader-2', image: portrait('leader-2', 900, 1200) },
-  { name: 'Daichi Mori', role: 'Head of Interiors', seed: 'leader-3', image: portrait('leader-3', 900, 1200) },
-  { name: 'Ada Whitfield', role: 'Director of Sales', seed: 'leader-4', image: portrait('leader-4', 900, 1200) },
+  { name: 'Wave Group Development', role: 'Developer', seed: 'leader-1', image: portrait('leader-1', 900, 1200) },
+  { name: 'Vitrium Capital', role: 'Capital partner', seed: 'leader-2', image: portrait('leader-2', 900, 1200) },
+  { name: 'Zambala Luxury Apartments', role: 'Operator', seed: 'leader-3', image: portrait('leader-3', 900, 1200) },
+  { name: 'MKDA', role: 'Architect', seed: 'leader-4', image: portrait('leader-4', 900, 1200) },
+]
+
+const DESIGN_TEAM = [
+  { firm: 'MKDA', role: 'Architecture', note: 'Internationally recognized architecture firm leading the building design and floor plans.' },
+  { firm: 'AvroKO', role: 'Interiors & curated amenities', note: 'The interior design team behind 1 Hotel Central Park in New York — responsible for the gallery lobby, The Grotto, and resident lounges.' },
 ]
 
 const AWARDS = [
-  { year: '2025', title: 'Architectural Record, Record Houses', body: 'The Meridian, New York' },
-  { year: '2024', title: 'Urban Land Institute, Award for Excellence', body: 'Marlowe, Miami' },
-  { year: '2024', title: 'AIA NY Chapter, Honor Award', body: 'Ashford House restoration' },
-  { year: '2023', title: 'Wallpaper Design Awards, Best New Tower', body: 'The Meridian concept' },
-  { year: '2022', title: 'MIPIM, Best Residential Development', body: 'Verdant, Coconut Grove' },
-  { year: '2021', title: 'AD100, Studio inclusion', body: 'Hugo Lindqvist Studio' },
+  { year: '2026', title: 'Pre-construction launch', body: 'DUOS Wynwood — Miami' },
+  { year: '2026', title: 'AvroKO appointed for interiors', body: 'Gallery lobby + The Grotto wellness club' },
+  { year: '2026', title: 'MKDA appointed as architect', body: '8-story boutique condominium' },
+  { year: '2025', title: 'Site assembled at 335 NW 28th Street', body: 'Wynwood, Miami' },
+  { year: '2025', title: 'Wave Group + Vitrium + Zambala partnership', body: 'Joint development agreement' },
 ]
 
 const TIMELINE = [
-  { year: '1998', body: 'Hugo Lindqvist opens a small studio in Stockholm, focused on residential restoration.' },
-  { year: '2007', body: 'First commission in New York — the renovation of a 1928 Beaux-Arts townhouse on the Upper East Side.' },
-  { year: '2014', body: 'The studio incorporates as The Meridian, with offices in New York and Miami.' },
-  { year: '2018', body: 'First ground-up tower announced: The Meridian at 111 West 57th Street.' },
-  { year: '2026', body: 'Six residences across three American cities under the Meridian name.' },
+  { year: '2025', body: 'Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments assemble the site at 335 NW 28th Street in the heart of Wynwood.' },
+  { year: '2026', body: 'MKDA engaged as architect. AvroKO — the team behind 1 Hotel Central Park — appointed to lead interiors and curated amenities.' },
+  { year: '2026', body: 'Pre-construction sales open. Studio, one-bedroom, and two-bedroom residences from $495,000.' },
+  { year: '2027', body: 'DUOS Wynwood opens — 49 fully furnished short-term-rental residences, The Grotto wellness club, and a rooftop amenities terrace.' },
 ]
 
 /**
- * Story — the founder narrative and trust layer.
+ * About — the developer team, designers, philosophy, and milestones.
  */
 export default function Story() {
   return (
     <>
       <Helmet>
-        <title>The Meridian — Story</title>
-        <meta name="description" content="A measured response to the cities we admire — built once, for a small number of owners. The Meridian story, leadership, and honours." />
-        <link rel="canonical" href="https://meridian.example.com/story" />
+        <title>DUOS Wynwood — About the developers, architect, and interiors team</title>
+        <meta name="description" content="DUOS Wynwood is developed by Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments. Architecture by MKDA. Interiors and curated amenities by AvroKO, the team behind 1 Hotel Central Park." />
+        <link rel="canonical" href="https://duoswynwood.com/story" />
       </Helmet>
 
       {/* HERO */}
       <section className="site-max site-grid section-pad pt-32">
         <div className="col-span-12 mb-12">
-          <SectionLabel>Story</SectionLabel>
+          <SectionLabel>About</SectionLabel>
         </div>
         <div className="col-span-12 md:col-span-10">
           <RevealText
             as="h1"
             className="font-display text-display-xl text-ink leading-[1.02]"
-            text={'A measured\nresponse to\ncities we admire.'}
+            text={'A measured\nresponse to a\nwalkable city.'}
           />
         </div>
       </section>
 
-      <ChapterDivider index="I" label="Founder" />
+      <ChapterDivider index="I" label="Team" />
 
-      {/* FOUNDER */}
-      <section className="site-max site-grid section-pad" aria-label="Founder narrative">
-        <div className="col-span-12 md:col-span-5">
-          <ParallaxImage
-            src={portrait('founder', 900, 1200)}
-            alt="Hugo Lindqvist, founder"
-            seed="founder"
-            speed={0.9}
-          />
-        </div>
-        <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col justify-center gap-6">
-          <p className="text-body-l text-bronze font-light">
-            Hugo Lindqvist began as a restorer of older buildings — townhouses,
-            warehouses, the patient kind of architecture that asks the same
-            questions decade after decade.
-          </p>
-          <p className="text-body text-bronze">
-            The Meridian carries that patience forward. Each residence is drawn
-            once, built once, and addressed to a small number of owners. There
-            are six, today, across three American cities.
-          </p>
-          <p className="text-body text-bronze">
-            “We design for the people who will live in these buildings in
-            fifty years,” says Hugo. “Not for the press release in three
-            months.”
-          </p>
-        </div>
-      </section>
-
-      <ChapterDivider index="II" label="Philosophy" className="bg-canvas-soft" />
-
-      {/* PHILOSOPHY */}
-      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Philosophy">
-        <div className="col-span-12 md:col-span-10 md:col-start-2">
-          <RevealText
-            as="p"
-            className="font-display text-display text-ink leading-[1.1]"
-            text={'We believe in full-floor residences,\nprivate elevator entry, three exposures,\nand ceilings that clear eleven feet.\nWe believe in materials drawn from\nthe city they sit in. We believe in\nfinishes that age well, not finishes\nthat photograph well.'}
-            stagger={0.09}
-          />
-        </div>
-      </section>
-
-      <ChapterDivider index="III" label="Leadership" />
-
-      {/* LEADERSHIP */}
-      <section className="site-max site-grid section-pad" aria-label="Leadership">
+      {/* DEVELOPER TEAM */}
+      <section className="site-max site-grid section-pad" aria-label="Developer team">
         <div className="col-span-12 mb-12">
-          <SectionLabel>Leadership</SectionLabel>
+          <SectionLabel>Developer team</SectionLabel>
         </div>
         <div className="col-span-12 grid grid-cols-1 gap-10 md:grid-cols-4">
           {LEADERSHIP.map((m, i) => (
@@ -132,12 +90,48 @@ export default function Story() {
         </div>
       </section>
 
+      <ChapterDivider index="II" label="Philosophy" className="bg-canvas-soft" />
+
+      {/* PHILOSOPHY */}
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Philosophy">
+        <div className="col-span-12 md:col-span-10 md:col-start-2">
+          <RevealText
+            as="p"
+            className="font-display text-display text-ink leading-[1.1]"
+            text={'We believe in 400 to 844 square feet,\ndrawn once and built once.\nWe believe in 9-foot ceilings,\nfurnished residences, and a building\nthat operates as a hotel.\nWe believe in materials drawn from\nthe city they sit in. We believe in\nfinishes that age well, not finishes\nthat photograph well.'}
+            stagger={0.09}
+          />
+        </div>
+      </section>
+
+      <ChapterDivider index="III" label="Designers" />
+
+      {/* DESIGN TEAM */}
+      <section className="site-max site-grid section-pad" aria-label="Design team">
+        <div className="col-span-12 mb-12">
+          <SectionLabel>Designers</SectionLabel>
+        </div>
+        <div className="col-span-12">
+          {DESIGN_TEAM.map((d, i) => (
+            <div
+              key={d.firm}
+              className="grid grid-cols-12 gap-4 border-b border-line py-6"
+            >
+              <span className="col-span-2 text-micro text-bronze tnum">{String(i + 1).padStart(2, '0')}</span>
+              <span className="col-span-3 font-display text-display-s text-ink leading-tight">{d.firm}</span>
+              <span className="col-span-2 text-body text-bronze uppercase tracking-[0.12em] text-micro self-end">{d.role}</span>
+              <span className="col-span-5 text-body text-bronze self-end">{d.note}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <ChapterDivider index="IV" label="Honours" className="bg-canvas-soft" />
 
-      {/* AWARDS */}
+      {/* AWARDS / MILESTONES */}
       <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Awards & honours">
         <div className="col-span-12 mb-12">
-          <SectionLabel>Awards & honours</SectionLabel>
+          <SectionLabel>Milestones</SectionLabel>
         </div>
         <div className="col-span-12">
           {AWARDS.map((a, i) => (

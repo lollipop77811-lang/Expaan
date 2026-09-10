@@ -14,13 +14,13 @@ import { projects } from '../data/projects'
 import { portrait, landscape, og } from '../lib/image'
 
 /**
- * Home — the cinematic narrative.
- * 11-section arc per PROJECT_BRIEF.md §3 HOME.
+ * Home — DUOS Wynwood cinematic narrative.
+ * Single-property microsite, structured after the original 11-section arc.
  */
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null)
   const designRef = useRef<HTMLElement | null>(null)
-  const featured = projects[0]
+  const duos = projects[0]
 
   // Hero settle: scale 1.15 → 1 (2.4s power2.out)
   useEffect(() => {
@@ -33,7 +33,6 @@ export default function Home() {
         { scale: 1.15 },
         { scale: 1, duration: 2.4, ease: 'power2.out', delay: 0.6 },
       )
-      // Night → canvas tint on scroll
       const overlay = heroRef.current?.querySelector('[data-hero-tint]')
       if (overlay) {
         gsap.to(overlay, {
@@ -74,20 +73,28 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>The Meridian — A new landmark rises</title>
-        <meta name="description" content="A rarefied collection of full-floor residences across New York, Miami, and Los Angeles. The Meridian — a new landmark rises." />
-        <link rel="canonical" href="https://meridian.example.com/" />
-        <meta property="og:title" content="The Meridian — A new landmark rises" />
-        <meta property="og:description" content="A rarefied collection of full-floor residences across New York, Miami, and Los Angeles." />
-        <meta property="og:image" content={og('meridian-hero')} />
+        <title>DUOS Wynwood — 49 furnished residences in the heart of Wynwood</title>
+        <meta name="description" content="DUOS Wynwood is an 8-story boutique condominium at 335 NW 28th Street, Miami. 49 fully furnished short-term-rental residences — studio, one-bedroom, and two-bedroom — designed by MKDA with interiors by AvroKO. Pre-construction. From $495,000." />
+        <link rel="canonical" href="https://duoswynwood.com/" />
+        <meta property="og:title" content="DUOS Wynwood — Residences in the heart of Wynwood" />
+        <meta property="og:description" content="49 fully furnished residences in Wynwood, Miami. Designed by MKDA. Interiors by AvroKO. Pre-construction. From $495,000." />
+        <meta property="og:image" content={og('duos-hero')} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'The Meridian',
-          url: 'https://meridian.example.com',
-          logo: 'https://meridian.example.com/favicon.svg',
-          sameAs: ['https://instagram.com', 'https://linkedin.com'],
+          '@type': 'Residence',
+          name: 'DUOS Wynwood',
+          description: '49 fully furnished short-term-rental residences in Wynwood, Miami. Designed by MKDA. Interiors by AvroKO.',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '335 NW 28th Street',
+            addressLocality: 'Miami',
+            addressRegion: 'FL',
+            postalCode: '33127',
+            addressCountry: 'US',
+          },
+          url: 'https://duoswynwood.com',
+          sameAs: ['https://instagram.com'],
         })}</script>
       </Helmet>
 
@@ -95,7 +102,7 @@ export default function Home() {
       <section
         ref={heroRef}
         className="relative h-screen w-full overflow-hidden bg-night"
-        aria-label="The Meridian — hero"
+        aria-label="DUOS Wynwood — hero"
       >
         <div
           className="absolute inset-0"
@@ -103,8 +110,8 @@ export default function Home() {
           style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.85) 0%, rgba(41,58,74,0.55) 60%, rgba(41,58,74,0.30) 100%)' }}
         />
         <img
-          src={featured.heroImage}
-          alt={`${featured.name}, ${featured.city}`}
+          src={duos.heroImage}
+          alt={`${duos.name}, ${duos.district}, ${duos.city}`}
           data-hero-image
           // @ts-ignore — fetchpriority is valid HTML
           fetchpriority="high"
@@ -115,14 +122,14 @@ export default function Home() {
             <RevealText
               as="h1"
               className="font-display text-display-xl text-bone leading-[1.02]"
-              text={'A new\nlandmark\nrises.'}
+              text={'A new\nlandmark in\nWynwood.'}
               stagger={0.09}
               duration={1.2}
               delay={0.6}
-              aria-label="A new landmark rises."
+              aria-label="A new landmark in Wynwood."
             />
             <div className="flex items-end justify-between border-t border-bone/20 pt-4">
-              <span className="text-micro text-bone/80">111 West 57th Street, New York</span>
+              <span className="text-micro text-bone/80">335 NW 28th Street, Miami, FL</span>
               <button
                 type="button"
                 className="flex items-center gap-3 text-micro text-bone hover:text-canvas transition-colors duration-300"
@@ -139,24 +146,25 @@ export default function Home() {
       {/* 2. THESIS */}
       <section className="site-max site-grid section-pad" aria-label="Thesis">
         <div className="col-span-12 md:col-span-8">
-          <SectionLabel>The Meridian</SectionLabel>
+          <SectionLabel>DUOS Wynwood</SectionLabel>
           <RevealText
             as="p"
             className="mt-10 font-display text-display text-ink leading-[1.05]"
-            text={'A rarefied collection\nof full-floor residences\nfor considered buyers.'}
+            text={'Forty-nine furnished\nresidences in the\nheart of Wynwood.'}
             stagger={0.09}
           />
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-16">
           <p className="text-body-l text-bronze font-light">
-            Six towers across three American cities, each addressed to a single
-            residence per floor. A measured response to the cities we admire,
-            built once, for a small number of owners.
+            An 8-story boutique condominium designed by MKDA with interiors and
+            curated amenities by AvroKO — the team behind 1 Hotel Central Park.
+            Studio, one-bedroom, and two-bedroom residences, 400 to 844 square
+            feet, offered as a hotel-condominium program for short-term rental.
           </p>
         </div>
       </section>
 
-      <ChapterDivider index="I" label="Press" className="bg-canvas-soft" />
+      <ChapterDivider index="I" label="Press" />
 
       {/* 3. PRESS PULL-QUOTE */}
       <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Press">
@@ -164,11 +172,11 @@ export default function Home() {
           <hr className="hairline mb-10" />
           <blockquote className="font-display text-quote text-ink leading-tight">
             <RevealText
-              text={'“Restrained, considered, and almost stubbornly quiet —\nThe Meridian argues for an architecture\nthat values permanence over novelty.”'}
+              text={'“A boutique condo built around short-term stays —\nDUOS Wynwood brings hotel-grade design\nand a private wellness club to one of\nMiami’s most walkable neighbourhoods.”'}
             />
           </blockquote>
           <div className="mt-10 text-label text-bronze uppercase tracking-[0.12em]">
-            Architectural Record, 2026
+            Florida YIMBY, April 2026
           </div>
         </div>
       </section>
@@ -182,9 +190,9 @@ export default function Home() {
         </div>
         <div className="col-span-12 md:col-span-5">
           <ParallaxImage
-            src={portrait('meridian-3', 900, 1200)}
-            alt="Full-floor residence, level 32"
-            seed="meridian-3"
+            src={portrait('duos-studio', 900, 1200)}
+            alt="Studio residence, 478 sq ft"
+            seed="duos-3"
             speed={0.9}
             ratio="3 / 4"
           />
@@ -193,20 +201,22 @@ export default function Home() {
           <RevealText
             as="h2"
             className="font-display text-display-s text-ink leading-tight"
-            text={'Full-floor\nresidences.'}
+            text={'Furnished\nresidences.'}
           />
           <p className="mt-6 text-body text-bronze">
-            Each floor is occupied by a single residence. Three exposures, private elevator entry, and an 11-foot ceiling throughout the principal rooms.
+            Three configurations — studio, one-bedroom, and two-bedroom — each
+            with 9-foot ceilings, fully furnished, and operated as a
+            hotel-condominium for short-term rental.
           </p>
           <div className="mt-8">
-            <Button variant="ghost" to="/projects">See the portfolio</Button>
+            <Button variant="ghost" to="/projects/duos-wynwood">See the residences</Button>
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-10 mt-12 md:mt-0 md:translate-y-24">
           <ParallaxImage
-            src={portrait('meridian-5', 900, 1200)}
-            alt="Primary suite, southwest corner"
-            seed="meridian-5"
+            src={portrait('duos-2br', 900, 1200)}
+            alt="Two-bedroom residence, 844 sq ft"
+            seed="duos-5"
             speed={1.1}
             ratio="3 / 4"
           />
@@ -221,8 +231,8 @@ export default function Home() {
         style={{ aspectRatio: '16 / 9', minHeight: '70vh' }}
       >
         <img
-          src={landscape('meridian-wide', 1920, 1080)}
-          alt="The Meridian design — full-bleed interlude"
+          src={landscape('duos-wide', 1920, 1080)}
+          alt="DUOS Wynwood design — full-bleed interlude"
           loading="lazy"
           data-design-image
           className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
@@ -234,7 +244,7 @@ export default function Home() {
               <RevealText
                 as="h2"
                 className="font-display text-display-s text-bone leading-tight text-right"
-                text={'Drawn\nonce. Built once.'}
+                text={'MKDA + AvroKO.'}
               />
             </div>
           </div>
@@ -249,18 +259,20 @@ export default function Home() {
           <SectionLabel>Featured</SectionLabel>
         </div>
         <div className="col-span-12 md:col-span-7">
-          <ProjectCard project={featured} index={0} />
+          <ProjectCard project={duos} index={0} />
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-32 flex flex-col gap-8">
           <h2 className="font-display text-display text-ink leading-tight">
-            The first of six.
+            One property. Forty-nine residences.
           </h2>
           <p className="text-body-l text-bronze">
-            The Meridian, on Billionaires' Row, opens with two full-floor residences per floor and a four-bedroom penthouse. Possession Q3 2026.
+            DUOS Wynwood opens in Q1 2027 with studio, one-bedroom, and
+            two-bedroom residences from $495,000. Pre-construction sales by
+            appointment through the sales gallery in Wynwood.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button variant="gold" to={`/projects/${featured.slug}`}>Discover the residences</Button>
-            <Button variant="ghost" to="/projects">View availability</Button>
+            <Button variant="gold" to="/projects/duos-wynwood">Discover the residences</Button>
+            <Button variant="ghost" to="/projects/duos-wynwood">View availability</Button>
           </div>
         </div>
       </section>
@@ -314,16 +326,16 @@ export default function Home() {
         </div>
         <div className="col-span-12 grid grid-cols-2 md:grid-cols-4 divide-x divide-line border-y border-line">
           <div className="px-6 py-12">
-            <CounterStat value={84} label="Storeys" />
+            <CounterStat value={8} label="Storeys" />
           </div>
           <div className="px-6 py-12">
-            <CounterStat value={6} label="Residences" />
+            <CounterStat value={49} label="Residences" />
           </div>
           <div className="px-6 py-12">
-            <CounterStat value={3} label="Cities" />
+            <CounterStat value={3} label="Configurations" />
           </div>
           <div className="px-6 py-12">
-            <CounterStat value={82} suffix="ft" label="Lap pool" />
+            <CounterStat value={94} suffix="" label="Walk score" />
           </div>
         </div>
       </section>
@@ -339,19 +351,19 @@ export default function Home() {
           <RevealText
             as="h2"
             className="font-display text-display text-ink leading-tight"
-            text={'Addressed to the city\nit belongs to.'}
+            text={'In the heart\nof Wynwood.'}
           />
         </div>
         <div className="col-span-12 mt-16">
-          <Marquee items={['Midtown West', 'Tribeca', 'Brickell', 'Coconut Grove', 'Pacific Palisades', 'Silver Lake']} />
+          <Marquee items={['Wynwood Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Wynwood 2nd Ave', 'Miami International']} />
         </div>
       </section>
 
       {/* 11. FINAL CTA */}
       <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '70vh' }}>
         <img
-          src={landscape('meridian-wide', 1920, 1080)}
-          alt="A full-floor residence at dusk"
+          src={landscape('duos-wide', 1920, 1080)}
+          alt="DUOS Wynwood at dusk"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
@@ -374,30 +386,30 @@ export default function Home() {
 
 const AMENITY_CHAPTERS = [
   {
-    label: 'Concierge',
-    headline: 'World-class services.',
-    body: 'Twenty-four-hour concierge, attended lobby, white-glove arrivals, and a private doorman. The Meridian operates as a full-service building with attention to every request.',
+    label: 'Arrival',
+    headline: 'A landscaped paseo.',
+    body: 'A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Wynwood streetscape and establishes a quiet transition into the gallery lobby.',
+    cta: 'See the residences',
+    image: portrait('duos-1', 900, 1200),
+    seed: 'duos-1',
+    alt: 'Landscaped paseo arrival',
+  },
+  {
+    label: 'The Grotto',
+    headline: 'A private wellness club.',
+    body: 'A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and hotel guests.',
+    cta: 'Tour the grotto',
+    image: portrait('duos-6', 900, 1200),
+    seed: 'duos-6',
+    alt: 'The Grotto wellness club',
+  },
+  {
+    label: 'Work',
+    headline: 'A gallery for work.',
+    body: 'A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities, plus building-wide high-speed Wi-Fi and dedicated printing facilities.',
     cta: 'See the amenities',
-    image: portrait('meridian-1', 900, 1200),
-    seed: 'meridian-1',
-    alt: 'Concierge and arrival lobby',
-  },
-  {
-    label: 'Wellness',
-    headline: 'Redefining wellness.',
-    body: 'An 82-foot lap pool, paired steam and sauna rooms, and two treatment suites operated by an in-house wellness director. Private spa bookings through the concierge.',
-    cta: 'Tour the spa',
-    image: portrait('meridian-6', 900, 1200),
-    seed: 'meridian-6',
-    alt: 'Resident spa and pool',
-  },
-  {
-    label: 'Location',
-    headline: 'Heart of the city.',
-    body: `Steps from Central Park, Carnegie Hall, and MoMA. The Meridian is positioned at the centre of Manhattan's cultural and commercial life.`,
-    cta: 'Explore the area',
-    image: portrait('meridian-2', 900, 1200),
-    seed: 'meridian-2',
-    alt: 'Midtown West neighbourhood',
+    image: portrait('duos-2', 900, 1200),
+    seed: 'duos-2',
+    alt: 'Gallery lobby and meeting gallery',
   },
 ]

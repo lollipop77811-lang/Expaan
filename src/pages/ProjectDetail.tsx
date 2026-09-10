@@ -13,8 +13,15 @@ import NotFound from './NotFound'
 import { landscape } from '../lib/image'
 
 /**
- * ProjectDetail — where deals close.
- * 8 blocks per the brief.
+ * ProjectDetail — DUOS Wynwood detail page. 8 blocks per the brief:
+ * 1. Hero — full-bleed render + name + breadcrumb.
+ * 2. Overview — text column + spec table + meta grid.
+ * 3. HorizontalGallery — pinned, 7 portrait renders (signature moment).
+ * 4. Amenities accordion.
+ * 5. Floor plans — tabbed by configuration.
+ * 6. Location — Wynwood map + POI hairline table with distances.
+ * 7. Availability table.
+ * 8. Sticky inquiry rail (desktop).
  */
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -27,9 +34,9 @@ export default function ProjectDetail() {
   return (
     <>
       <Helmet>
-        <title>{`The Meridian — ${project.name}, ${project.city}`}</title>
-        <meta name="description" content={`${project.name} in ${project.district}, ${project.city}. ${project.config.join(', ')}. Possession ${project.possession}.`} />
-        <link rel="canonical" href={`https://meridian.example.com/projects/${project.slug}`} />
+        <title>{`DUOS Wynwood — ${project.config.join(', ')} residences`}</title>
+        <meta name="description" content={`${project.name} at ${project.district}, ${project.city}. ${project.config.join(', ')}. Possession ${project.possession}. From $495,000.`} />
+        <link rel="canonical" href={`https://duoswynwood.com/projects/${project.slug}`} />
         <meta property="og:title" content={`${project.name} — ${project.city}`} />
         <meta property="og:description" content={project.overview} />
         <meta property="og:image" content={project.heroImage} />
@@ -41,12 +48,15 @@ export default function ProjectDetail() {
           description: project.overview,
           address: {
             '@type': 'PostalAddress',
+            streetAddress: '335 NW 28th Street',
             addressLocality: project.city,
-            addressRegion: project.district,
+            addressRegion: 'FL',
+            postalCode: '33127',
+            addressCountry: 'US',
           },
           offers: {
             '@type': 'Offer',
-            price: project.priceFrom.replace(/[^0-9]/g, ''),
+            price: '495000',
             priceCurrency: 'USD',
             availability: project.status,
           },
@@ -57,7 +67,7 @@ export default function ProjectDetail() {
       <section className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 9', minHeight: '90vh' }}>
         <img
           src={project.heroImageLandscape}
-          alt={`${project.name}, ${project.city}`}
+          alt={`${project.name}, ${project.district}, ${project.city}`}
           // @ts-ignore
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
@@ -143,8 +153,8 @@ export default function ProjectDetail() {
             {project.district}, {project.city}
           </h3>
           <p className="text-body text-bronze">
-            The neighbourhood, by foot. Distances are door-to-door from the
-            residence.
+            The neighbourhood, by foot. Distances are door-to-door from
+            335 NW 28th Street.
           </p>
           <div className="border-t border-line pt-4">
             {project.nearby.map((n, i) => (
@@ -178,28 +188,28 @@ export default function ProjectDetail() {
         <p className="text-micro text-bronze mb-3">Residence enquiry</p>
         <StickyInquire projectSlug={project.slug} />
         <div className="mt-4 flex flex-col gap-1 text-micro text-bronze">
-          <a href="tel:+12125550148" className="hover:text-ink transition-colors">+1 212 555 0148</a>
-          <a href="mailto:sales@meridian.com" className="hover:text-ink transition-colors">sales@meridian.com</a>
+          <a href="tel:+13055550148" className="hover:text-ink transition-colors">+1 305 555 0148</a>
+          <a href="mailto:sales@duoswynwood.com" className="hover:text-ink transition-colors">sales@duoswynwood.com</a>
         </div>
       </div>
 
-      {/* NEXT PROJECT FOOTER LINK */}
-      <section className="relative w-full overflow-hidden" aria-label="Next project" style={{ aspectRatio: '16 / 9', minHeight: '60vh' }}>
+      {/* NEXT PROJECT FOOTER LINK (single-property wraps to itself) */}
+      <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '60vh' }}>
         <img
           src={next.heroImageLandscape}
-          alt={`Next residence — ${next.name}, ${next.city}`}
+          alt={`DUOS Wynwood, Wynwood, Miami`}
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.45) 0%, rgba(41,58,74,0.80) 100%)' }} />
-        <Link to={`/projects/${next.slug}`} className="absolute inset-0 flex items-end p-[var(--container-pad)] group">
+        <Link to="/inquire" className="absolute inset-0 flex items-end p-[var(--container-pad)] group">
           <div className="flex w-full items-end justify-between">
             <div>
-              <span className="text-micro text-bone/70 block mb-4">Next residence</span>
+              <span className="text-micro text-bone/70 block mb-4">Begin the conversation</span>
               <h2 className="font-display text-display text-bone leading-[1.05] group-hover:translate-x-3 transition-transform duration-500">
-                {next.name}
+                Inquire
               </h2>
-              <span className="text-micro text-bone/70 block mt-3">{next.city}</span>
+              <span className="text-micro text-bone/70 block mt-3">335 NW 28th Street, Miami, FL</span>
             </div>
             <span className="text-display text-bone">→</span>
           </div>
