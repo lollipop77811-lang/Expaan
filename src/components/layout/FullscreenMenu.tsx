@@ -76,7 +76,7 @@ export default function FullscreenMenu() {
       {open && (
         <motion.div
           ref={containerRef}
-          className="fixed inset-0 z-[150] bg-canvas"
+          className="fixed inset-0 z-[150] bg-canvas flex flex-col"
           initial={{ clipPath: 'circle(0% at calc(100% - var(--container-pad)) 32px)' }}
           animate={{ clipPath: 'circle(150% at calc(100% - var(--container-pad)) 32px)' }}
           exit={{ clipPath: 'circle(0% at calc(100% - var(--container-pad)) 32px)' }}
@@ -85,20 +85,28 @@ export default function FullscreenMenu() {
           aria-modal="true"
           aria-label="Main navigation"
         >
-          <div className="site-max site-grid h-full" style={{ paddingTop: 'calc(var(--container-pad) * 2)' }}>
-            <nav ref={itemsRef} className="col-span-12 md:col-span-10 flex flex-col justify-center gap-2" aria-label="Primary">
+          {/* Top spacer — clears the fixed header (mix-blend-difference wordmark + close) */}
+          <div style={{ height: 'calc(var(--container-pad) * 2.5)' }} />
+
+          {/* Nav zone — flex-1 fills available space, items vertically centered */}
+          <div className="flex-1 min-h-0 flex items-center site-max w-full">
+            <nav
+              ref={itemsRef}
+              className="col-span-12 w-full flex flex-col gap-1 sm:gap-2"
+              aria-label="Primary"
+            >
               {NAV.map((item) => (
                 <Link
                   key={item.to}
                   to={item.to}
                   data-menu-item
-                  className="group relative flex items-baseline gap-6 overflow-hidden"
+                  className="group relative flex items-baseline gap-4 sm:gap-6 overflow-hidden"
                   onClick={() => setOpen(false)}
                 >
                   <span className="text-micro text-bronze transition-colors duration-300 group-hover:text-gold tnum">
                     {item.index}
                   </span>
-                  <span className="font-display text-display text-ink leading-none transition-transform duration-500 group-hover:translate-x-3">
+                  <span className="font-display text-display-s text-ink leading-none transition-transform duration-500 group-hover:translate-x-3">
                     {item.label}
                   </span>
                 </Link>
@@ -106,19 +114,20 @@ export default function FullscreenMenu() {
             </nav>
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 site-max border-t border-line pt-6 pb-[var(--container-pad)]">
-            <div className="grid grid-cols-12 gap-6 text-micro text-bronze">
-              <div className="col-span-6">
+          {/* Footer — natural sibling at bottom of the flex column (NOT absolute) */}
+          <div className="site-max w-full border-t border-line pt-6 pb-[var(--container-pad)]">
+            <div className="grid grid-cols-2 md:grid-cols-12 gap-6 text-micro text-bronze">
+              <div className="col-span-2 md:col-span-6">
                 <div className="block mb-2">Sales Gallery</div>
                 <div>111 West 57th Street, New York</div>
                 <div>By appointment, Mon — Sun</div>
               </div>
-              <div className="col-span-3">
+              <div className="col-span-1 md:col-span-3">
                 <div className="block mb-2">Enquiries</div>
                 <a href="tel:+12125550148" className="block hover:text-gold transition-colors">+1 212 555 0148</a>
                 <a href="mailto:sales@meridian.com" className="block hover:text-gold transition-colors">sales@meridian.com</a>
               </div>
-              <div className="col-span-3 text-right">
+              <div className="col-span-1 md:col-span-3 md:text-right">
                 <a href="https://instagram.com" className="hover:text-gold transition-colors" rel="noreferrer" target="_blank">Instagram</a>
               </div>
             </div>
