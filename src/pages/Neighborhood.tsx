@@ -78,7 +78,7 @@ export default function Neighborhood() {
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(26,25,24,0.3) 0%, rgba(26,25,24,0.65) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.35) 0%, rgba(41,58,74,0.75) 100%)' }} />
         <div className="site-max site-grid relative z-10 h-full items-end pb-[calc(var(--container-pad)*3)]">
           <div className="col-span-12 flex flex-col gap-6">
             <SectionLabel className="text-bone/80">Neighbourhood</SectionLabel>
@@ -109,7 +109,7 @@ export default function Neighborhood() {
       </section>
 
       {/* POI TABLE */}
-      <section className="site-max site-grid section-pad" aria-label="Points of interest">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Points of interest">
         <div className="col-span-12 mb-12">
           <SectionLabel>Points of interest</SectionLabel>
         </div>
@@ -132,8 +132,8 @@ export default function Neighborhood() {
       {/* DISTRICT CHAPTERS */}
       {DISTRICTS.map((d, i) => (
         <div key={d.label}>
-          <ChapterDivider index={`0${i + 1}`} label={d.label} />
-          <section className="site-max site-grid section-pad" aria-label={`${d.label} chapter`}>
+          <ChapterDivider index={`0${i + 1}`} label={d.label} className={i % 2 ? 'bg-canvas-soft' : ''} />
+          <section className={`site-max site-grid section-pad ${i % 2 ? 'bg-canvas-soft' : ''}`} aria-label={`${d.label} chapter`}>
             <div className="col-span-12 mb-10">
               <SectionLabel>{d.city}</SectionLabel>
             </div>

@@ -79,10 +79,10 @@ export default function CustomCursor() {
     const label = labelRef.current
     if (!ring) return
     if (hovering) {
-      gsap.to(ring, { scale: 2.5, duration: 0.4, ease: 'expo.out', borderColor: 'rgba(174,151,81,1)' })
+      gsap.to(ring, { scale: 2.5, duration: 0.4, ease: 'expo.out', borderColor: 'rgba(255,255,255,1)' })
       if (label) gsap.to(label, { autoAlpha: 1, duration: 0.3 })
     } else {
-      gsap.to(ring, { scale: 1, duration: 0.4, ease: 'expo.out', borderColor: 'rgba(124,114,98,0.6)' })
+      gsap.to(ring, { scale: 1, duration: 0.4, ease: 'expo.out', borderColor: 'rgba(255,255,255,0.6)' })
       if (label) gsap.to(label, { autoAlpha: 0, duration: 0.2 })
     }
   }, [hovering])
@@ -103,7 +103,7 @@ export default function CustomCursor() {
           marginLeft: '-6px',
           marginTop: '-6px',
           borderRadius: '50%',
-          background: 'var(--color-gold)',
+          background: 'var(--color-canvas)',
           pointerEvents: 'none',
           zIndex: 999,
           mixBlendMode: 'difference',
@@ -122,7 +122,7 @@ export default function CustomCursor() {
           marginLeft: '-18px',
           marginTop: '-18px',
           borderRadius: '50%',
-          border: '1px solid rgba(124,114,98,0.6)',
+          border: '1px solid rgba(255,255,255,0.6)',
           pointerEvents: 'none',
           zIndex: 999,
           mixBlendMode: 'difference',
@@ -135,7 +135,7 @@ export default function CustomCursor() {
         <div
           ref={labelRef}
           className="text-micro"
-          style={{ opacity: 0, color: 'var(--color-bone)', letterSpacing: '0.16em' }}
+          style={{ opacity: 0, color: 'var(--color-canvas)', letterSpacing: '0.16em' }}
         >
           VIEW
         </div>

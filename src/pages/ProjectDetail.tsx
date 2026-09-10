@@ -62,13 +62,13 @@ export default function ProjectDetail() {
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(26,25,24,0.3) 0%, rgba(26,25,24,0.6) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.35) 0%, rgba(41,58,74,0.70) 100%)' }} />
         <div className="site-max site-grid relative z-10 h-full items-end pb-[calc(var(--container-pad)*3)]">
           <div className="col-span-12 flex flex-col gap-8">
             <nav aria-label="Breadcrumb" className="text-micro text-bone/80">
-              <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+              <Link to="/" className="hover:text-canvas transition-colors">Home</Link>
               <span className="px-2">/</span>
-              <Link to="/projects" className="hover:text-gold transition-colors">Residences</Link>
+              <Link to="/projects" className="hover:text-canvas transition-colors">Residences</Link>
               <span className="px-2">/</span>
               <span>{project.name}</span>
             </nav>
@@ -104,7 +104,7 @@ export default function ProjectDetail() {
       <HorizontalGallery items={project.gallery} id={`${project.slug}-gallery`} />
 
       {/* 4. AMENITIES ACCORDION */}
-      <section className="site-max site-grid section-pad" aria-label="Amenities">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Amenities">
         <div className="col-span-12 mb-12">
           <SectionLabel>Amenities</SectionLabel>
         </div>
@@ -124,7 +124,7 @@ export default function ProjectDetail() {
       </section>
 
       {/* 6. LOCATION */}
-      <section className="site-max site-grid section-pad" aria-label="Location">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Location">
         <div className="col-span-12 mb-12">
           <SectionLabel>Location</SectionLabel>
         </div>
@@ -178,8 +178,8 @@ export default function ProjectDetail() {
         <p className="text-micro text-bronze mb-3">Residence enquiry</p>
         <StickyInquire projectSlug={project.slug} />
         <div className="mt-4 flex flex-col gap-1 text-micro text-bronze">
-          <a href="tel:+12125550148" className="hover:text-gold transition-colors">+1 212 555 0148</a>
-          <a href="mailto:sales@meridian.com" className="hover:text-gold transition-colors">sales@meridian.com</a>
+          <a href="tel:+12125550148" className="hover:text-ink transition-colors">+1 212 555 0148</a>
+          <a href="mailto:sales@meridian.com" className="hover:text-ink transition-colors">sales@meridian.com</a>
         </div>
       </div>
 
@@ -191,7 +191,7 @@ export default function ProjectDetail() {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(26,25,24,0.4) 0%, rgba(26,25,24,0.7) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.45) 0%, rgba(41,58,74,0.80) 100%)' }} />
         <Link to={`/projects/${next.slug}`} className="absolute inset-0 flex items-end p-[var(--container-pad)] group">
           <div className="flex w-full items-end justify-between">
             <div>
@@ -225,7 +225,7 @@ function StickyInquire({ projectSlug }: { projectSlug: string }) {
       type="button"
       onClick={() => setInquiryOpen(true)}
       data-project-slug={projectSlug}
-      className="relative inline-flex h-[var(--button-h)] items-center justify-center rounded-[var(--radius-pill)] px-8 text-label text-bone bg-gold hover:bg-gold-deep transition-colors duration-300"
+      className="relative inline-flex h-[var(--button-h)] items-center justify-center rounded-[var(--radius-pill)] px-8 text-label text-bone bg-gold hover:bg-canvas-soft hover:text-ink transition-colors duration-300"
     >
       Inquire
     </button>

@@ -101,7 +101,7 @@ function FilterRow({
           type="button"
           onClick={() => onPick(o)}
           className={`text-label uppercase tracking-[0.12em] transition-colors duration-300 ${
-            active === o ? 'text-gold-deep' : 'text-bronze hover:text-bronze-deep'
+            active === o ? 'text-bronze-deep' : 'text-bronze hover:text-bronze-deep'
           }`}
         >
           {o}
@@ -118,7 +118,7 @@ function EmptyState({ onReset }: { onReset: () => void }) {
       <p className="max-w-md text-body text-bronze">
         Try fewer constraints, or browse our full inventory.
       </p>
-      <button type="button" onClick={onReset} className="text-label uppercase tracking-[0.12em] text-gold-deep border-b border-gold-deep pb-1 hover:text-gold">
+      <button type="button" onClick={onReset} className="text-label uppercase tracking-[0.12em] text-bronze-deep border-b border-bronze-deep pb-1 hover:text-ink hover:border-ink transition-colors">
         View all residences
       </button>
     </div>

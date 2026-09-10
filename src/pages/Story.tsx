@@ -93,10 +93,10 @@ export default function Story() {
         </div>
       </section>
 
-      <ChapterDivider index="II" label="Philosophy" />
+      <ChapterDivider index="II" label="Philosophy" className="bg-canvas-soft" />
 
       {/* PHILOSOPHY */}
-      <section className="site-max site-grid section-pad" aria-label="Philosophy">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Philosophy">
         <div className="col-span-12 md:col-span-10 md:col-start-2">
           <RevealText
             as="p"
@@ -132,10 +132,10 @@ export default function Story() {
         </div>
       </section>
 
-      <ChapterDivider index="IV" label="Honours" />
+      <ChapterDivider index="IV" label="Honours" className="bg-canvas-soft" />
 
       {/* AWARDS */}
-      <section className="site-max site-grid section-pad" aria-label="Awards & honours">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Awards & honours">
         <div className="col-span-12 mb-12">
           <SectionLabel>Awards & honours</SectionLabel>
         </div>

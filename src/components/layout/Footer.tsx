@@ -53,10 +53,10 @@ export default function Footer() {
     <footer className="bg-night text-bone">
       <div className="site-max site-grid section-pad">
         <div className="col-span-12 md:col-span-7">
-          <Link to="/" className="font-display text-display text-bone leading-[0.9]" aria-label="The Meridian — Home">
-            The Meridian<span className="text-gold">.</span>
+          <Link to="/" className="font-display text-display text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="The Meridian — Home">
+            The Meridian<span className="text-canvas">.</span>
           </Link>
-          <p className="mt-8 max-w-md text-body-l text-bone/70 font-light">
+          <p className="mt-8 max-w-md text-body-l text-bone/80 font-light">
             A rarefied collection of full-floor residences across New York, Miami, and Los Angeles.
           </p>
         </div>
@@ -64,11 +64,11 @@ export default function Footer() {
         <div className="col-span-12 md:col-span-5 grid grid-cols-3 gap-6">
           {COLUMNS.map((col) => (
             <div key={col.heading}>
-              <div className="text-micro text-bone/60 mb-4">{col.heading}</div>
+              <div className="text-micro text-bone/70 mb-4">{col.heading}</div>
               <ul className="space-y-3">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <Link to={l.to} className="text-micro text-bone hover:text-gold transition-colors duration-300">
+                    <Link to={l.to} className="text-micro text-bone hover:text-canvas transition-colors duration-300">
                       {l.label}
                     </Link>
                   </li>
@@ -78,23 +78,23 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="col-span-12 mt-16 flex flex-col gap-6 border-t border-bone/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="text-micro text-bone/50">
+        <div className="col-span-12 mt-16 flex flex-col gap-6 border-t border-bone/20 pt-6 md:flex-row md:items-center md:justify-between">
+          <div className="text-micro text-bone/60">
             © {new Date().getFullYear()} The Meridian. All rights reserved.
           </div>
-          <div className="flex items-center gap-6 text-micro text-bone/70">
-            <a href="https://instagram.com" className="border-b border-bone/20 hover:text-gold hover:border-gold transition-colors" rel="noreferrer" target="_blank">Instagram</a>
-            <a href="https://linkedin.com" className="border-b border-bone/20 hover:text-gold hover:border-gold transition-colors" rel="noreferrer" target="_blank">LinkedIn</a>
+          <div className="flex items-center gap-6 text-micro text-bone/80">
+            <a href="https://instagram.com" className="border-b border-bone/30 hover:text-canvas hover:border-canvas transition-colors" rel="noreferrer" target="_blank">Instagram</a>
+            <a href="https://linkedin.com" className="border-b border-bone/30 hover:text-canvas hover:border-canvas transition-colors" rel="noreferrer" target="_blank">LinkedIn</a>
             <button
               type="button"
               onClick={scrollTop}
-              className="text-micro text-bone hover:text-gold border-b border-bone/20 hover:border-gold transition-colors"
+              className="text-micro text-bone hover:text-canvas border-b border-bone/30 hover:border-canvas transition-colors"
             >
               Back to top ↑
             </button>
           </div>
         </div>
-        <div className="col-span-12 text-micro text-bone/40 mt-4">
+        <div className="col-span-12 text-micro text-bone/50 mt-4">
           Equal Housing Opportunity. License No. 1043076. Pricing and availability subject to change.
         </div>
       </div>

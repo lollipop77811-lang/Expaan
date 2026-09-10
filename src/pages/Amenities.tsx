@@ -34,6 +34,7 @@ const CHAPTERS = [
     seed: 'amen-3',
     alt: `Private dining room and chef's kitchen`,
     cta: 'Reserve the dining room',
+    soft: true,
   },
   {
     label: 'Cellar',
@@ -52,6 +53,7 @@ const CHAPTERS = [
     seed: 'amen-5',
     alt: 'Roof terrace, planted',
     cta: 'Tour the terrace',
+    soft: true,
   },
 ]
 
@@ -83,7 +85,7 @@ export default function Amenities() {
       {CHAPTERS.map((ch, i) => (
         <section
           key={ch.seed}
-          className={ch.dark ? 'bg-night text-bone' : ''}
+          className={ch.dark ? 'bg-night text-bone' : ch.soft ? 'bg-canvas-soft' : ''}
           aria-label={ch.label}
         >
           <div className="site-max site-grid section-pad">
@@ -118,8 +120,8 @@ export default function Amenities() {
             </div>
           </div>
           {i < CHAPTERS.length - 1 && (
-            <div className="site-max">
-              <ChapterDivider index={`0${i + 1}`} label={ch.label} />
+            <div className={`site-max ${ch.soft ? 'bg-canvas-soft' : ''}`}>
+              <ChapterDivider index={`0${i + 1}`} label={ch.label} className={ch.soft ? 'bg-canvas-soft' : ''} />
             </div>
           )}
         </section>

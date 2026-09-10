@@ -5,9 +5,10 @@ import { useUI } from '../../lib/store'
 
 /**
  * Header
- *  Fixed, transparent, mix-blend-difference; wordmark left, INQUIRE right,
- *  hamburger (two 24px lines that morph to X) center-right.
- *  Hides on scroll-down, reveals on scroll-up at 120px.
+ *  Fixed, solid #293A4A navy background; wordmark + nav links in
+ *  #BCD1D4 seafoam (period accent in white), #FFFFFF hover on links.
+ *  Wordmark left, INQUIRE right, hamburger (two 24px lines that morph to X)
+ *  center-right. Hides on scroll-down, reveals on scroll-up at 120px.
  */
 export default function Header() {
   const ref = useRef<HTMLElement | null>(null)
@@ -56,24 +57,23 @@ export default function Header() {
   return (
     <header
       ref={ref}
-      className={`fixed inset-x-0 top-0 z-[100] transition-transform duration-500`}
+      className="fixed inset-x-0 top-0 z-[100] bg-ink transition-transform duration-500"
       style={{
         transform: hidden && !menuOpen ? 'translateY(-100%)' : 'translateY(0)',
-        mixBlendMode: 'difference',
-        pointerEvents: 'none',
+        borderBottom: '1px solid rgba(188, 209, 212, 0.18)',
       }}
     >
       <div
         className="site-max flex items-center justify-between"
-        style={{ paddingTop: 'var(--container-pad)', paddingBottom: 'var(--container-pad)', pointerEvents: 'auto' }}
+        style={{ paddingTop: 'var(--container-pad)', paddingBottom: 'var(--container-pad)' }}
       >
-        <Link to="/" className="font-display text-label text-bone leading-none" aria-label="The Meridian — Home">
-          The Meridian<span className="text-gold">.</span>
+        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="The Meridian — Home">
+          The Meridian<span className="text-canvas">.</span>
         </Link>
 
         <button
           type="button"
-          className="group flex items-center gap-4 text-bone"
+          className="group flex items-center gap-4 text-bone hover:text-canvas transition-colors duration-300"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -94,7 +94,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setInquiryOpen(true)}
-          className="text-micro text-bone hover:text-gold transition-colors duration-300"
+          className="text-micro text-bone hover:text-canvas transition-colors duration-300"
         >
           Inquire
         </button>

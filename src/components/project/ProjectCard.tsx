@@ -30,7 +30,7 @@ export default function ProjectCard({ project, className = '', index }: ProjectC
         />
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-          style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(26,25,24,0.35) 100%)' }}
+          style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(41,58,74,0.40) 100%)' }}
         />
       </div>
       <div className="mt-6 flex flex-col gap-1 transition-transform duration-500 ease-out group-hover:-translate-y-2">
@@ -41,7 +41,7 @@ export default function ProjectCard({ project, className = '', index }: ProjectC
         <p className="text-body text-bronze">
           {project.config.join(' · ')} · {project.city}
         </p>
-        <p className="text-label text-gold-deep mt-2">
+        <p className="text-label text-bronze-deep mt-2">
           From {project.priceFrom}
         </p>
       </div>

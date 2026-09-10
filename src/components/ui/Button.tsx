@@ -19,9 +19,12 @@ interface ButtonProps {
 }
 
 /**
- * Button — variants `gold` (filled, bone text, 999px radius, 56px height,
- *   0.6s hover darkening + 8px magnetic drift) and `ghost` (hairline border,
- *   bronze text, border sweeps to gold).
+ * Button — two-tone brand palette.
+ *   `gold` (primary): solid #293A4A navy background with #BCD1D4 seafoam text.
+ *     On hover, INVERTS: #BCD1D4 seafoam background with #293A4A navy text.
+ *     999px pill radius, 56px height, 8px magnetic drift.
+ *   `ghost` (secondary): hairline navy border + navy text on light sections.
+ *     On hover, fills to solid navy with seafoam text.
  *
  * Magnetic via useMagnetic (±8px).
  */
@@ -43,10 +46,13 @@ export default function Button({
     size === 'lg' ? 'h-[64px] px-10 text-body-l' : 'h-[var(--button-h)] px-8 text-label'
   } ${disabled ? 'opacity-50 pointer-events-none' : ''} ${className}`
 
+  // Two-tone brand palette: navy ↔ seafoam inversion on hover.
+  // - Primary (gold): default navy bg + seafoam text → hover seafoam bg + navy text.
+  // - Ghost: default hairline navy border + navy text → hover solid navy bg + seafoam text.
   const variantCls =
     variant === 'gold'
-      ? 'bg-gold text-bone hover:bg-gold-deep'
-      : 'border border-line text-bronze hover:border-gold hover:text-gold-deep'
+      ? 'bg-gold text-bone hover:bg-canvas-soft hover:text-ink'
+      : 'border border-line text-ink hover:bg-ink hover:text-bone hover:border-ink'
 
   const inner = <span className="relative z-10 inline-flex items-center gap-2">{children}</span>
 

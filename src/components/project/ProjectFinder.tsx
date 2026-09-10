@@ -117,13 +117,13 @@ function Select({ value, onChange, options, placeholder, disabled }: SelectProps
         value={value}
         disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full appearance-none border-b border-bone/30 bg-transparent py-3 pr-8 text-body-l text-bone focus:outline-none focus:border-gold disabled:opacity-40"
+        className="w-full appearance-none border-b border-bone/30 bg-transparent py-3 pr-8 text-body-l text-bone focus:outline-none focus:border-canvas-soft disabled:opacity-40"
       >
-        <option value="" disabled style={{ color: '#1A1918' }}>
+        <option value="" disabled style={{ color: '#293A4A' }}>
           {placeholder ?? 'Select'}
         </option>
         {options.map((o) => (
-          <option key={o.value} value={o.value} style={{ color: '#1A1918' }}>
+          <option key={o.value} value={o.value} style={{ color: '#293A4A' }}>
             {o.label}
           </option>
         ))}

@@ -1,24 +1,35 @@
 /* ============================================================================
    TOKENS — The Meridian
-   Single source of truth. Nothing else in the codebase hardcodes a value.
+   Two-tone brand palette: deep slate navy (#293A4A) + pale dusty seafoam
+   (#BCD1D4) + white. Semantic names preserved across the swap so the
+   existing Tailwind utility classes (text-bronze, bg-canvas, etc.) re-skin
+   the whole site from this single file. Inspired by duoswynwood.com.
    Loaded via Tailwind v4 @theme so utilities like `text-bronze` work.
    ========================================================================== */
 
 @theme {
-  /* -- Color system -- */
-  --color-canvas:        #F0EEEA;   /* warm ivory — page background */
-  --color-canvas-soft:   #F4F4F4;   /* alternate band for section rhythm */
-  --color-canvas-deep:   #EAE7E1;   /* tertiary band / hover fills */
-  --color-ink:           #212121;   /* headings, primary text */
-  --color-bronze:        #7C7262;   /* signature body text & quiet labels */
-  --color-bronze-deep:   #5E564A;   /* bronze on hover, captions */
-  --color-gold:          #AE9751;   /* conversion moments only */
-  --color-gold-deep:     #8F7A42;   /* CTA hover */
-  --color-sage:          #D0D5D2;   /* hairlines, image borders */
-  --color-navy:          #293C5B;   /* links, selective emphasis */
-  --color-night:         #1A1918;   /* footer & dark chapters background */
-  --color-bone:          #F5F2ED;   /* text on dark sections */
-  --color-line:          rgba(124, 114, 98, 0.25);
+  /* -- Color system (remapped to navy / seafoam / white) -- */
+  --color-canvas:        #FFFFFF;   /* pure white — primary page background */
+  --color-canvas-soft:   #BCD1D4;   /* pale dusty seafoam — alternate section band (one of two dominant tones) */
+  --color-canvas-deep:   #D6E2E4;   /* lighter seafoam tint — hover fills, soft surfaces */
+  --color-ink:           #293A4A;   /* deep slate navy — headings on light, primary text */
+  --color-bronze:        #293A4A;   /* deep slate navy — body text on light (was bronze, now navy) */
+  --color-bronze-deep:   #1E2A37;   /* darker navy — emphasis, hover on body links */
+  --color-gold:          #293A4A;   /* deep slate navy — primary CTA background (was gold, now navy) */
+  --color-gold-deep:     #1E2A37;   /* darker navy — CTA hover (used for emphasis, NOT hover-invert) */
+  --color-sage:          #BCD1D4;   /* pale dusty seafoam — hairlines, image borders, dividers */
+  --color-navy:          #293A4A;   /* deep slate navy — links, selective emphasis (canonical) */
+  --color-night:         #293A4A;   /* deep slate navy — footer & dark chapters background */
+  --color-bone:          #BCD1D4;   /* pale dusty seafoam — text on dark sections */
+  --color-line:          rgba(41, 58, 74, 0.18);  /* navy at 18% — hairlines, visible on white AND seafoam */
+  --color-white:         #FFFFFF;   /* white — for base light backgrounds and high-contrast accents on navy */
+
+  /* WCAG AA contrast verification (computed):
+     - #293A4A on #BCD1D4 = 7.39:1  ✓ AA + AAA (normal text)
+     - #BCD1D4 on #293A4A = 7.39:1  ✓ AA + AAA (normal text)
+     - #FFFFFF on #293A4A = 11.7:1 ✓ AAA
+     - #FFFFFF on #BCD1D4 = 1.59:1 ✗ — white NOT used as text on seafoam (navy used instead)
+  */
 
   /* -- Typography -- */
   --font-display: "Fraunces Variable", "Fraunces", ui-serif, Georgia, serif;

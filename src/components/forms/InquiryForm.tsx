@@ -66,7 +66,7 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
         <button
           type="button"
           onClick={() => setSuccess(false)}
-          className="mt-8 text-label uppercase tracking-[0.12em] text-gold-deep border-b border-gold-deep pb-1 hover:text-gold"
+          className="mt-8 text-label uppercase tracking-[0.12em] text-ink border-b border-ink pb-1 hover:text-bronze-deep hover:border-bronze-deep transition-colors"
         >
           Send another enquiry
         </button>
@@ -113,9 +113,9 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
           {...register('interest')}
           className="w-full appearance-none border-b border-line bg-transparent py-3 pr-6 text-body-l text-ink focus:outline-none focus:border-gold transition-colors"
         >
-          <option value="" disabled style={{ color: '#7C7262' }}>Select a residence</option>
+          <option value="" disabled style={{ color: '#293A4A' }}>Select a residence</option>
           {projects.map((p) => (
-            <option key={p.slug} value={p.slug} style={{ color: '#212121' }}>
+            <option key={p.slug} value={p.slug} style={{ color: '#293A4A' }}>
               {p.name} — {p.city}
             </option>
           ))}
@@ -153,12 +153,12 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
         <button
           type="submit"
           disabled={submitting}
-          className="relative inline-flex h-[var(--button-h)] items-center justify-center overflow-hidden rounded-[var(--radius-pill)] px-8 text-label text-bone bg-gold transition-colors duration-300 hover:bg-gold-deep disabled:opacity-90 disabled:cursor-wait"
+          className="relative inline-flex h-[var(--button-h)] items-center justify-center overflow-hidden rounded-[var(--radius-pill)] px-8 text-label text-bone bg-gold transition-colors duration-300 hover:bg-canvas-soft hover:text-ink disabled:opacity-90 disabled:cursor-wait"
         >
           {submitting && (
             <span
               aria-hidden
-              className="absolute inset-0 origin-left bg-gold-deep"
+              className="absolute inset-0 origin-left bg-canvas-soft"
               style={{ animation: 'sweepFill 1.2s var(--ease-primary) forwards' }}
             />
           )}

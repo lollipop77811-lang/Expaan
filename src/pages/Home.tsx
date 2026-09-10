@@ -100,7 +100,7 @@ export default function Home() {
         <div
           className="absolute inset-0"
           data-hero-tint
-          style={{ background: 'linear-gradient(180deg, rgba(26,25,24,0.7) 0%, rgba(26,25,24,0.4) 60%, rgba(240,238,234,0.2) 100%)' }}
+          style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.85) 0%, rgba(41,58,74,0.55) 60%, rgba(41,58,74,0.30) 100%)' }}
         />
         <img
           src={featured.heroImage}
@@ -125,10 +125,10 @@ export default function Home() {
               <span className="text-micro text-bone/80">111 West 57th Street, New York</span>
               <button
                 type="button"
-                className="flex items-center gap-3 text-micro text-bone hover:text-gold transition-colors duration-300"
+                className="flex items-center gap-3 text-micro text-bone hover:text-canvas transition-colors duration-300"
                 aria-label="Watch the film"
               >
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-bone/40">▶</span>
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-bone/50">▶</span>
                 Watch the film
               </button>
             </div>
@@ -156,10 +156,10 @@ export default function Home() {
         </div>
       </section>
 
-      <ChapterDivider index="I" label="Press" />
+      <ChapterDivider index="I" label="Press" className="bg-canvas-soft" />
 
       {/* 3. PRESS PULL-QUOTE */}
-      <section className="site-max site-grid section-pad" aria-label="Press">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Press">
         <div className="col-span-12 md:col-span-10 md:col-start-2">
           <hr className="hairline mb-10" />
           <blockquote className="font-display text-quote text-ink leading-tight">
@@ -227,7 +227,7 @@ export default function Home() {
           data-design-image
           className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
         />
-        <div className="absolute inset-0 flex items-end" style={{ background: 'linear-gradient(180deg, transparent 0%, rgba(26,25,24,0.6) 100%)' }}>
+        <div className="absolute inset-0 flex items-end" style={{ background: 'linear-gradient(180deg, transparent 0%, rgba(41,58,74,0.70) 100%)' }}>
           <div className="site-max site-grid w-full pb-[var(--container-pad)]">
             <div className="col-span-12 flex items-end justify-between">
               <SectionLabel className="text-bone/80">Design</SectionLabel>
@@ -241,10 +241,10 @@ export default function Home() {
         </div>
       </section>
 
-      <ChapterDivider index="III" label="Featured" />
+      <ChapterDivider index="III" label="Featured" className="bg-canvas-soft" />
 
       {/* 6. FEATURED PROJECT */}
-      <section className="site-max site-grid section-pad" aria-label="Featured project">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Featured project">
         <div className="col-span-12 mb-10">
           <SectionLabel>Featured</SectionLabel>
         </div>
@@ -265,14 +265,16 @@ export default function Home() {
         </div>
       </section>
 
-      <ChapterDivider index="IV" label="Find your home" />
+      <ChapterDivider index="IV" label="Find your home" className="bg-canvas-soft" />
 
-      {/* 7. PROJECTFINDER (dark interlude) */}
-      <section className="site-max section-pad" aria-label="Project finder">
-        <div className="mb-10">
-          <SectionLabel className="text-bone">Find your home</SectionLabel>
+      {/* 7. PROJECTFINDER (navy form panel on seafoam wash) */}
+      <section className="bg-canvas-soft section-pad" aria-label="Project finder">
+        <div className="site-max">
+          <div className="mb-10">
+            <SectionLabel>Find your home</SectionLabel>
+          </div>
+          <ProjectFinder />
         </div>
-        <ProjectFinder />
       </section>
 
       <ChapterDivider index="V" label="Amenities" />
@@ -303,10 +305,10 @@ export default function Home() {
         ))}
       </section>
 
-      <ChapterDivider index="VI" label="Numbers" />
+      <ChapterDivider index="VI" label="Numbers" className="bg-canvas-soft" />
 
       {/* 9. STATS BAR */}
-      <section className="site-max site-grid section-pad" aria-label="Stats">
+      <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Stats">
         <div className="col-span-12 mb-12">
           <SectionLabel>By the numbers</SectionLabel>
         </div>
@@ -353,7 +355,7 @@ export default function Home() {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
-        <div className="absolute inset-0 flex items-center" style={{ background: 'linear-gradient(180deg, rgba(26,25,24,0.45) 0%, rgba(26,25,24,0.65) 100%)' }}>
+        <div className="absolute inset-0 flex items-center" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.50) 0%, rgba(41,58,74,0.75) 100%)' }}>
           <div className="site-max site-grid w-full">
             <div className="col-span-12 flex flex-col items-start gap-10">
               <RevealText

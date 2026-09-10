@@ -23,11 +23,11 @@ export default function Select({ value, onChange, options, placeholder, invalid,
         invalid ? 'border-bronze-deep' : 'border-line focus:border-gold'
       }`}
     >
-      <option value="" disabled style={{ color: '#7C7262' }}>
+      <option value="" disabled style={{ color: '#293A4A' }}>
         {placeholder ?? 'Select'}
       </option>
       {options.map((o) => (
-        <option key={o.value} value={o.value} style={{ color: '#212121' }}>
+        <option key={o.value} value={o.value} style={{ color: '#293A4A' }}>
           {o.label}
         </option>
       ))}

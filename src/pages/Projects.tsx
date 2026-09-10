@@ -34,7 +34,9 @@ export default function Projects() {
         </div>
       </section>
 
-      <ProjectGrid />
+      <section className="bg-canvas-soft">
+        <ProjectGrid />
+      </section>
     </>
   )
 }

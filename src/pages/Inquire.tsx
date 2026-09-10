@@ -62,7 +62,7 @@ function Contact({ label, lines, href }: { label: string; lines: string[]; href?
       <span className="text-micro text-bronze uppercase">{label}</span>
       {lines.map((l) =>
         href ? (
-          <a key={l} href={href} className="text-body text-ink hover:text-gold transition-colors">
+          <a key={l} href={href} className="text-body text-ink hover:text-bronze-deep transition-colors">
             {l}
           </a>
         ) : (
