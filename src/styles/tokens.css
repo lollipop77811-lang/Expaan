@@ -1,0 +1,87 @@
+/* ============================================================================
+   TOKENS — The Meridian
+   Single source of truth. Nothing else in the codebase hardcodes a value.
+   Loaded via Tailwind v4 @theme so utilities like `text-bronze` work.
+   ========================================================================== */
+
+@theme {
+  /* -- Color system -- */
+  --color-canvas:        #F0EEEA;   /* warm ivory — page background */
+  --color-canvas-soft:   #F4F4F4;   /* alternate band for section rhythm */
+  --color-canvas-deep:   #EAE7E1;   /* tertiary band / hover fills */
+  --color-ink:           #212121;   /* headings, primary text */
+  --color-bronze:        #7C7262;   /* signature body text & quiet labels */
+  --color-bronze-deep:   #5E564A;   /* bronze on hover, captions */
+  --color-gold:          #AE9751;   /* conversion moments only */
+  --color-gold-deep:     #8F7A42;   /* CTA hover */
+  --color-sage:          #D0D5D2;   /* hairlines, image borders */
+  --color-navy:          #293C5B;   /* links, selective emphasis */
+  --color-night:         #1A1918;   /* footer & dark chapters background */
+  --color-bone:          #F5F2ED;   /* text on dark sections */
+  --color-line:          rgba(124, 114, 98, 0.25);
+
+  /* -- Typography -- */
+  --font-display: "Fraunces Variable", "Fraunces", ui-serif, Georgia, serif;
+  --font-sans:    "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-xl: clamp(3.5rem, 9vw, 8rem);
+  --leading-display-xl: 1.02;
+  --tracking-display-xl: -0.03em;
+
+  --text-display: clamp(2.75rem, 6vw, 5rem);
+  --leading-display: 1.05;
+  --tracking-display: -0.02em;
+
+  --text-display-s: clamp(2rem, 4vw, 3.25rem);
+  --leading-display-s: 1.1;
+  --tracking-display-s: -0.015em;
+
+  --text-quote: clamp(1.5rem, 2.5vw, 2rem);
+  --leading-quote: 1.35;
+  --tracking-quote: 0em;
+
+  --text-body-l: 1.2rem;
+  --text-body: 1rem;
+  --text-label: 0.9375rem;
+  --text-micro: 0.75rem;
+
+  /* -- Space & grid -- */
+  --spacing-section: clamp(6rem, 12vh, 9.375rem);
+  --spacing-component: 2.5rem;
+  --spacing-section-tight: clamp(3.5rem, 7vh, 6rem);
+
+  --container-max: 1600px;
+  --container-pad: clamp(20px, 4vw, 80px);
+  --grid-columns: 12;
+  --grid-gutter: clamp(16px, 2vw, 32px);
+
+  --ratio-portrait: 3 / 4;
+  --ratio-portrait-alt: 4 / 5;
+  --ratio-landscape: 16 / 9;
+
+  /* -- Motion -- */
+  --ease-primary: cubic-bezier(0.16, 1, 0.3, 1);      /* expo.out */
+  --ease-secondary: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-tertiary: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* power2.out */
+  --ease-magnetic: cubic-bezier(0.22, 1, 0.36, 1);    /* power3.out */
+
+  --duration-text: 1.2s;
+  --duration-image: 1.4s;
+  --duration-hover: 0.4s;
+  --duration-loader: 1.8s;
+  --duration-loader-curtain: 0.9s;
+  --duration-menu: 1s;
+  --duration-cta: 0.6s;
+
+  --stagger-lines: 0.09s;
+  --stagger-cards: 0.08s;
+  --stagger-menu: 0.07s;
+
+  /* -- Misc -- */
+  --cursor-dot: 12px;
+  --cursor-ring: 36px;
+  --radius-pill: 999px;
+  --button-h: 56px;
+  --image-saturate: 0.85;
+  --image-contrast: 1.02;
+}

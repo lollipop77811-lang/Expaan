@@ -1,0 +1,201 @@
+/* ============================================================================
+   GLOBAL — resets, selection, scrollbar, focus, base typography
+   ========================================================================== */
+
+@import "tailwindcss";
+@import "./tokens.css";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+
+/* ----------------------------------------------------------------------------
+   Base reset
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: auto; /* Lenis owns scrolling */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--text-body);
+  line-height: 1.7;
+  color: var(--color-bronze);
+  background: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11", "tnum" 0;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; padding: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ----------------------------------------------------------------------------
+   Typographic primitives
+   -------------------------------------------------------------------------- */
+.font-display { font-family: var(--font-display); font-weight: 300; }
+.font-sans   { font-family: var(--font-sans); }
+
+.tnum { font-feature-settings: "tnum" 1; }
+
+.text-display-xl {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: var(--text-display-xl);
+  line-height: var(--leading-display-xl);
+  letter-spacing: var(--tracking-display-xl);
+}
+.text-display {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+.text-display-s {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: var(--text-display-s);
+  line-height: var(--leading-display-s);
+  letter-spacing: var(--tracking-display-s);
+}
+.text-quote {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: var(--text-quote);
+  line-height: var(--leading-quote);
+  letter-spacing: var(--tracking-quote);
+}
+.text-body-l { font-size: var(--text-body-l); line-height: 1.6; font-weight: 300; }
+.text-body   { font-size: var(--text-body); line-height: 1.7; font-weight: 300; }
+.text-label {
+  font-size: var(--text-label); line-height: 1.2;
+  letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+}
+.text-micro {
+  font-size: var(--text-micro); line-height: 1.4;
+  letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
+}
+
+/* ----------------------------------------------------------------------------
+   Layout primitives — .site-max .site-grid (111w57 convention)
+   -------------------------------------------------------------------------- */
+.site-max {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+}
+@media (max-width: 900px) {
+  .site-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .site-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.section-pad { padding-block: var(--spacing-section); }
+.section-pad-tight { padding-block: var(--spacing-section-tight); }
+
+/* ----------------------------------------------------------------------------
+   Selection, scrollbar, focus
+   -------------------------------------------------------------------------- */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-canvas);
+}
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bronze) var(--color-sage);
+}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--color-sage); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-bronze);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-bronze-deep); }
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+/* ----------------------------------------------------------------------------
+   Image treatment token
+   -------------------------------------------------------------------------- */
+.img-treat {
+  filter: saturate(var(--image-saturate)) contrast(var(--image-contrast));
+}
+
+/* Hide default cursor on devices with fine pointer (cursor: custom) */
+@media (pointer: fine) {
+  .cursor-custom-active,
+  .cursor-custom-active * {
+    cursor: none;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Reduced motion — strip animations entirely
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-line__inner { transform: none !important; opacity: 1 !important; }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 12px 20px;
+  background: var(--color-night);
+  color: var(--color-bone);
+  z-index: 9999;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+}
+
+/* ----------------------------------------------------------------------------
+   Utility — hairline
+   -------------------------------------------------------------------------- */
+.hairline {
+  height: 1px;
+  width: 100%;
+  background: var(--color-line);
+  border: 0;
+}
+.hairline-strong { background: var(--color-sage); }
+
+/* ----------------------------------------------------------------------------
+   Keyframes — `fadeUp` is used by staggered grid reveals (cards, leadership
+   grid). `sweepFill` is the 1.2s gold sweep on the submit button. Everything
+   else uses GSAP / framer-motion. Keep this minimal.
+   -------------------------------------------------------------------------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sweepFill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
