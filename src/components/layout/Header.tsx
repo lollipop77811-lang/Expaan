@@ -73,10 +73,13 @@ export default function Header() {
   return (
     <header
       ref={ref}
-      className="fixed inset-x-0 top-0 z-[100] bg-ink transition-transform duration-500"
+      className="fixed inset-x-0 top-0 z-[100] transition-transform duration-500"
       style={{
         transform: visible ? 'translateY(0)' : 'translateY(-100%)',
-        borderBottom: '1px solid rgba(188, 209, 212, 0.18)',
+        backgroundColor: 'rgba(41, 58, 74, 0.55)',
+        backdropFilter: 'blur(15px)',
+        WebkitBackdropFilter: 'blur(15px)',
+        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
       }}
     >
       <div
