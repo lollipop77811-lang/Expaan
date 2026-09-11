@@ -65,7 +65,7 @@ export default function Header() {
     >
       <div
         className="site-max flex items-center justify-between"
-        style={{ paddingTop: 'var(--container-pad)', paddingBottom: 'var(--container-pad)' }}
+        style={{ paddingTop: 'clamp(18px, 2.5vw, 28px)', paddingBottom: 'clamp(18px, 2.5vw, 28px)' }}
       >
         <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="DUOS Wynwood — Home">
           DUOS<span className="text-canvas"> </span>Wynwood

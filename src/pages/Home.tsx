@@ -104,18 +104,23 @@ export default function Home() {
         className="relative h-screen w-full overflow-hidden bg-night"
         aria-label="DUOS Wynwood — hero"
       >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={duos.heroImage}
+          aria-hidden
+          data-hero-image
+          className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
         <div
           className="absolute inset-0"
           data-hero-tint
           style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.85) 0%, rgba(41,58,74,0.55) 60%, rgba(41,58,74,0.30) 100%)' }}
-        />
-        <img
-          src={duos.heroImage}
-          alt={`${duos.name}, ${duos.district}, ${duos.city}`}
-          data-hero-image
-          // @ts-ignore — fetchpriority is valid HTML
-          fetchpriority="high"
-          className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
         />
         <div className="site-max site-grid relative z-10 h-full items-end pb-[calc(var(--container-pad)*2)]">
           <div className="col-span-12 flex h-full flex-col justify-end gap-12">
