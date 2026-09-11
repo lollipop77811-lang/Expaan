@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import { useParams, Link } from 'react-router-dom'
 import { useUI } from '../lib/store'
 import RevealText from '../components/motion/RevealText'
@@ -33,44 +32,14 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <Helmet>
-        <title>{`Expaan — ${project.config.join(', ')} residences`}</title>
-        <meta name="description" content={`${project.name} at ${project.district}, ${project.city}. ${project.config.join(', ')}. Possession ${project.possession}. From $495,000.`} />
-        <link rel="canonical" href={`https://expaan.com/projects/${project.slug}`} />
-        <meta property="og:title" content={`${project.name} — ${project.city}`} />
-        <meta property="og:description" content={project.overview} />
-        <meta property="og:image" content={project.heroImage} />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Residence',
-          name: project.name,
-          description: project.overview,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '335 NW 28th Street',
-            addressLocality: project.city,
-            addressRegion: 'FL',
-            postalCode: '33127',
-            addressCountry: 'US',
-          },
-          offers: {
-            '@type': 'Offer',
-            price: '495000',
-            priceCurrency: 'USD',
-            availability: project.status,
-          },
-        })}</script>
-      </Helmet>
-
-      {/* 1. HERO */}
+{/* 1. HERO */}
       <section className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 9', minHeight: '90vh' }}>
         <img
           src={project.heroImageLandscape}
           alt={`${project.name}, ${project.district}, ${project.city}`}
           // @ts-ignore
           fetchpriority="high"
-          className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
+          className="absolute inset-0 h-full w-full object-cover will-change-transform"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.35) 0%, rgba(41,58,74,0.70) 100%)' }} />
         <div className="site-max site-grid relative z-10 h-full items-end pb-[calc(var(--container-pad)*3)]">
@@ -144,7 +113,7 @@ export default function ProjectDetail() {
               src={landscape(`${project.slug}-map`, 1600, 1200)}
               alt={`${project.district}, ${project.city} — aerial`}
               loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover img-treat"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         </div>
@@ -199,7 +168,7 @@ export default function ProjectDetail() {
           src={next.heroImageLandscape}
           alt={`Expaan, Expaan, Miami`}
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover img-treat"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.45) 0%, rgba(41,58,74,0.80) 100%)' }} />
         <Link to="/inquire" className="absolute inset-0 flex items-end p-[var(--container-pad)] group">

@@ -1,14 +1,18 @@
 import { useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { useUI } from '../../lib/store'
 import { useLockScroll } from '../../hooks/useLockScroll'
 import InquiryForm from '../forms/InquiryForm'
 
 /**
- * InquiryModal
- *  Triggered by Header's INQUIRE button and the ProjectDetail sticky rail.
- *  AnimatePresence fade + slide; Escape closes; focus trap; Lenis-prevent.
- *  Renders the InquiryForm with a tailored headline and a close button.
+ * InquiryModal — DEMO MODE (no framer-motion).
+ *
+ * Originally this modal used AnimatePresence + motion.div for a fade +
+ * slide-in animation. For the demo build, all slow expo-out motion has
+ * been stripped — the modal now renders instantly via plain conditional
+ * `{open && <div>...}` when open.
+ *
+ * Preserves: Escape close, click-outside close, focus trap, scroll lock
+ * via useLockScroll, sticky header with Close button, InquiryForm inside.
  */
 export default function InquiryModal() {
   const open = useUI((s) => s.inquiryOpen)
@@ -37,62 +41,51 @@ export default function InquiryModal() {
       }
     }
     window.addEventListener('keydown', onKey)
-    // focus the close button on mount
+    // focus the close button on open
     setTimeout(() => {
       const first = containerRef.current?.querySelector<HTMLElement>('button[data-close]')
       first?.focus()
-    }, 200)
+    }, 50)
     return () => window.removeEventListener('keydown', onKey)
   }, [open, setOpen])
 
+  if (!open) return null
+
   return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          className="fixed inset-0 z-[180] flex items-start justify-end p-[var(--container-pad)]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(false)
-          }}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Enquiry"
-        >
-          <motion.div
-            ref={containerRef}
-            data-lenis-prevent
-            className="relative mt-[calc(var(--container-pad)*2)] w-full max-w-xl bg-canvas border border-line shadow-sm max-h-[calc(100vh-8rem)] overflow-y-auto"
-            initial={{ y: 32, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 32, opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    <div
+      className="fixed inset-0 z-[180] flex items-start justify-end p-[var(--container-pad)]"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) setOpen(false)
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Enquiry"
+    >
+      <div
+        ref={containerRef}
+        className="relative mt-[calc(var(--container-pad)*2)] w-full max-w-xl bg-canvas border border-line shadow-sm max-h-[calc(100vh-8rem)] overflow-y-auto"
+      >
+        <div className="sticky top-0 z-10 flex items-center justify-between bg-canvas px-[var(--container-pad)] py-6 border-b border-line">
+          <h2 className="font-display text-display-s text-ink leading-tight">
+            Enquire
+          </h2>
+          <button
+            type="button"
+            data-close
+            onClick={() => setOpen(false)}
+            aria-label="Close"
+            className="text-micro text-bronze hover:text-gold transition-colors"
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between bg-canvas px-[var(--container-pad)] py-6 border-b border-line">
-              <h2 className="font-display text-display-s text-ink leading-tight">
-                Enquire
-              </h2>
-              <button
-                type="button"
-                data-close
-                onClick={() => setOpen(false)}
-                aria-label="Close"
-                className="text-micro text-bronze hover:text-gold transition-colors"
-              >
-                Close ✕
-              </button>
-            </div>
-            <div className="p-[var(--container-pad)]" data-lenis-prevent>
-              <p className="text-body text-bronze mb-8 max-w-md">
-                A member of the sales gallery will respond within one working day.
-              </p>
-              <InquiryForm />
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+            Close ✕
+          </button>
+        </div>
+        <div className="p-[var(--container-pad)]">
+          <p className="text-body text-bronze mb-8 max-w-md">
+            A member of the sales gallery will respond within one working day.
+          </p>
+          <InquiryForm />
+        </div>
+      </div>
+    </div>
   )
 }

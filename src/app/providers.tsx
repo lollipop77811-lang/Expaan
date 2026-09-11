@@ -1,31 +1,18 @@
 import { type ReactNode } from 'react'
-import { HelmetProvider } from 'react-helmet-async'
-import LenisProvider from '../hooks/useLenis'
-import CustomCursor from '../components/motion/CustomCursor'
-import Preloader from '../components/motion/Preloader'
-import { useUI } from '../lib/store'
 
 interface ProvidersProps {
   children: ReactNode
 }
 
 /**
- * providers.tsx — single tree:
- *   HelmetProvider (SEO per route)
- *     LenisProvider (smooth scroll + ScrollTrigger sync)
- *       Preloader (mounts once, locks scroll while visible)
- *         CustomCursor (overlay)
- *         children (router + pages)
+ * providers.tsx — demo mode tree (all motion + SEO stripped):
+ *   children (router + pages)
+ *
+ * Originally wrapped children in HelmetProvider (per-route SEO),
+ * LenisProvider (smooth scroll + ScrollTrigger sync), Preloader
+ * (loading curtain), and CustomCursor (12px dot + 36px ring). All
+ * removed for the demo build.
  */
 export default function Providers({ children }: ProvidersProps) {
-  const preloaded = useUI((s) => s.preloaded)
-  return (
-    <HelmetProvider>
-      <LenisProvider>
-        {!preloaded && <Preloader />}
-        <CustomCursor />
-        {children}
-      </LenisProvider>
-    </HelmetProvider>
-  )
+  return <>{children}</>
 }

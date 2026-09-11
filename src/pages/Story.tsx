@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import RevealText from '../components/motion/RevealText'
 import SectionLabel from '../components/ui/SectionLabel'
 import ParallaxImage from '../components/motion/ParallaxImage'
@@ -45,13 +44,7 @@ const TIMELINE = [
 export default function Story() {
   return (
     <>
-      <Helmet>
-        <title>Expaan — About the developers, architect, and interiors team</title>
-        <meta name="description" content="Expaan is developed by Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments. Architecture by MKDA. Interiors and curated amenities by AvroKO, the team behind 1 Hotel Central Park." />
-        <link rel="canonical" href="https://expaan.com/story" />
-      </Helmet>
-
-      {/* HERO */}
+{/* HERO */}
       <section className="site-max site-grid section-pad pt-32">
         <div className="col-span-12 mb-12">
           <SectionLabel>About</SectionLabel>

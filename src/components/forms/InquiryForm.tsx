@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { projects } from '../../data/projects'
-import { prefersReducedMotion } from '../../lib/gsap'
 import Field from './Field'
 
 const schema = z.object({
@@ -24,10 +23,10 @@ interface InquiryFormProps {
 /**
  * InquiryForm — RHF + Zod with designed success state.
  *
- * On submit:
- *  1. Gold fill sweep on the button (1.2s).
- *  2. Form replaces itself with a serif thank-you line.
- *  No browser alerts. Errors in micro bronze-deep under fields, gold focus ring.
+ * On submit: form replaces itself with a serif thank-you line.
+ * No browser alerts. Errors in micro bronze-deep under fields, gold focus ring.
+ *
+ * Demo mode: the 1.2s gold fill sweep animation has been stripped.
  */
 export default function InquiryForm({ projectSlug }: InquiryFormProps) {
   const [success, setSuccess] = useState(false)
@@ -47,8 +46,8 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
 
   const onSubmit = async (data: FormData) => {
     setSubmitting(true)
-    // Sweep the button for 1.2s before showing the success state.
-    await new Promise((res) => setTimeout(res, prefersReducedMotion() ? 200 : 1200))
+    // Brief async delay so the 'Sending…' state shows, then success.
+    await new Promise((res) => setTimeout(res, 400))
     console.info('Inquiry submitted', data)
     setSubmitting(false)
     setSuccess(true)
@@ -154,7 +153,7 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
           className="mt-1.5 h-4 w-4 accent-gold border-line"
         />
         <span>
-          I consent to be contacted by The Meridian regarding this enquiry and accept the privacy policy.
+          I consent to be contacted by Expaan regarding this enquiry and accept the privacy policy.
         </span>
       </label>
       {errors.consent && (
@@ -167,15 +166,8 @@ export default function InquiryForm({ projectSlug }: InquiryFormProps) {
         <button
           type="submit"
           disabled={submitting}
-          className="relative inline-flex h-[var(--button-h)] items-center justify-center overflow-hidden rounded-[var(--radius-pill)] px-8 text-label text-bone bg-gold transition-colors duration-300 hover:bg-canvas-soft hover:text-ink disabled:opacity-90 disabled:cursor-wait"
+          className="relative inline-flex h-[var(--button-h)] items-center justify-center rounded-[var(--radius-pill)] px-8 text-label text-bone bg-gold transition-colors duration-300 hover:bg-canvas-soft hover:text-ink disabled:opacity-90 disabled:cursor-wait"
         >
-          {submitting && (
-            <span
-              aria-hidden
-              className="absolute inset-0 origin-left bg-canvas-soft"
-              style={{ animation: 'sweepFill 1.2s var(--ease-primary) forwards' }}
-            />
-          )}
           <span className="relative z-10">{submitting ? 'Sending…' : 'Begin the conversation'}</span>
         </button>
       </div>

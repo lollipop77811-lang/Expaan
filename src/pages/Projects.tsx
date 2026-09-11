@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import RevealText from '../components/motion/RevealText'
 import SectionLabel from '../components/ui/SectionLabel'
 import Button from '../components/ui/Button'
@@ -16,40 +15,34 @@ const CONFIGS = [
     label: 'Studio',
     area: '478 sq ft',
     priceFrom: '$495,000',
-    image: portrait('duos-studio', 900, 1200),
-    seed: 'duos-studio',
+    image: portrait('expaan-studio', 900, 1200),
+    seed: 'expaan-studio',
     blurb: 'A fully furnished studio with 9-foot ceilings, kitchenette, and a single live-work zone. Operated as a residential residence.',
   },
   {
     label: 'One-bedroom',
     area: '612 sq ft',
     priceFrom: '$565,000',
-    image: portrait('duos-1br', 900, 1200),
-    seed: 'duos-1br',
+    image: portrait('expaan-1br', 900, 1200),
+    seed: 'expaan-1br',
     blurb: 'A one-bedroom residence with a separate sleeping room, full kitchen, and a 9-foot ceiling throughout. Furnished for residential.',
   },
   {
     label: 'Two-bedroom',
     area: '844 sq ft',
     priceFrom: '$795,000',
-    image: portrait('duos-2br', 900, 1200),
-    seed: 'duos-2br',
+    image: portrait('expaan-2br', 900, 1200),
+    seed: 'expaan-2br',
     blurb: 'A two-bedroom residence with two private sleeping rooms, full kitchen, and a corner exposure over Expaan. The largest configuration.',
   },
 ]
 
 export default function Projects() {
-  const duos = projects[0]
+  const expaan = projects[0]
 
   return (
     <>
-      <Helmet>
-        <title>Expaan — Residences: Studio, One-bedroom, Two-bedroom</title>
-        <meta name="description" content="Three configurations at Expaan — studio (478 sq ft), one-bedroom (612 sq ft), and two-bedroom (844 sq ft). Fully furnished, 9-foot ceilings, from $495,000. Pre-construction." />
-        <link rel="canonical" href="https://expaan.com/projects" />
-      </Helmet>
-
-      <section className="site-max site-grid pt-32 section-pad">
+<section className="site-max site-grid pt-32 section-pad">
         <div className="col-span-12 mb-12">
           <SectionLabel>Residences</SectionLabel>
         </div>
@@ -66,7 +59,7 @@ export default function Projects() {
             furnished, 9-foot ceilings. Operated as a boutique condominium for
             residential. Pre-construction, from $495,000.
           </p>
-          <Button variant="ghost" to={`/projects/${duos.slug}`}>View floor plans & availability</Button>
+          <Button variant="ghost" to={`/projects/${expaan.slug}`}>View floor plans & availability</Button>
         </div>
       </section>
 
@@ -80,7 +73,7 @@ export default function Projects() {
                 style={{ animation: `fadeUp 1s var(--ease-primary) ${i * 0.08}s forwards` }}
               >
                 <a
-                  href={`/projects/${duos.slug}?config=${encodeURIComponent(c.label)}`}
+                  href={`/projects/${expaan.slug}?config=${encodeURIComponent(c.label)}`}
                   className="group block"
                   data-cursor="view"
                   aria-label={`${c.label} residence — ${c.area}, from ${c.priceFrom}`}
@@ -91,7 +84,7 @@ export default function Projects() {
                       alt={`${c.label} residence, ${c.area}`}
                       loading="lazy"
                       sizes="(min-width: 900px) 720px, 100vw"
-                      className="absolute inset-0 h-full w-full object-cover img-treat transition-transform duration-[800ms] ease-out group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105"
                     />
                   </div>
                   <div className="mt-6 flex flex-col gap-1 transition-transform duration-500 ease-out group-hover:-translate-y-2">

@@ -1,5 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react'
-import { gsap, prefersReducedMotion } from '../../lib/gsap'
+import { type ReactNode } from 'react'
 
 interface ChapterDividerProps {
   index?: string
@@ -9,37 +8,16 @@ interface ChapterDividerProps {
 }
 
 /**
- * ChapterDivider
- *  A 12-col grid row with the section label on the left and an oversized
- *  chapter index numeral on the right. Hairline grows on enter.
+ * ChapterDivider — STATIC RENDER (demo mode).
  *
- *  Used between major chapters to mark the cinematic arc.
+ * Originally this component grew its hairline 0→100% on scroll-enter
+ * (0.8s expo.out, from left center). For the demo build, all slow expo-out
+ * motion has been stripped — the hairline now renders full-width on mount.
+ *
+ * Still a 12-col grid row with the section label on the left and an
+ * oversized chapter index numeral on the right.
  */
 export default function ChapterDivider({ index, label, children, className = '' }: ChapterDividerProps) {
-  const lineRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (prefersReducedMotion()) {
-      if (lineRef.current) gsap.set(lineRef.current, { scaleX: 1 })
-      return
-    }
-    const el = lineRef.current
-    if (!el) return
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        el,
-        { scaleX: 0, transformOrigin: 'left center' },
-        {
-          scaleX: 1,
-          duration: 0.8,
-          ease: 'expo.out',
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        },
-      )
-    }, el)
-    return () => ctx.revert()
-  }, [])
-
   return (
     <div className={`site-max site-grid section-pad-tight ${className}`}>
       <div className="col-span-12 flex items-baseline justify-between">
@@ -51,7 +29,7 @@ export default function ChapterDivider({ index, label, children, className = '' 
         )}
       </div>
       <div className="col-span-12 mt-6">
-        <div ref={lineRef} className="hairline" />
+        <div className="hairline" />
       </div>
       {children && <div className="col-span-12 mt-8">{children}</div>}
     </div>

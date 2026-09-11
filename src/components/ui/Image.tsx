@@ -18,7 +18,7 @@ interface ImageProps {
  *  so we ask explicitly via the source's type. The image is loaded in an
  *  aspect-ratio box; hero gets fetchpriority="high", everything else lazy.
  *
- *  Treatment filter saturate(0.85) contrast(1.02) applied via the `img-treat`
+ *  Treatment filter saturate(0.85) contrast(1.02) applied via the ``
  *  utility class.
  */
 export default function Image({
@@ -54,7 +54,7 @@ export default function Image({
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore — fetchpriority is valid HTML, React 18 doesn't type it
           fetchpriority={fetchPriority}
-          className={`absolute inset-0 h-full w-full object-cover img-treat ${imgClassName}`}
+          className={`absolute inset-0 h-full w-full object-cover ${imgClassName}`}
         />
       </picture>
     </div>

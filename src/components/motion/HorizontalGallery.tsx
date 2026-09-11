@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { gsap, prefersReducedMotion } from '../../lib/gsap'
+import { useState } from 'react'
 
 export interface GalleryItem {
   seed: string
@@ -14,98 +13,60 @@ interface HorizontalGalleryProps {
 }
 
 /**
- * HorizontalGallery
- *  Pinned container, track width = n×70vw, scrub translateX, progress hairline
- *  bottom, counter "03 / 07" tabular. Cards skew on velocity (max 3°).
+ * HorizontalGallery — STATIC RENDER (demo mode).
  *
- *  THE signature awwwards moment of the site.
+ * Originally this was the signature awwwards moment: a pinned full-viewport
+ * section where scroll drove a horizontal translateX through the track,
+ * with a progress hairline + "03 / 07" counter and velocity-based card
+ * skew (max 3°). For the demo build, all slow expo-out motion has been
+ * stripped — this component now renders the same card track as a NATIVE
+ * horizontal scroller (overflow-x-auto with scroll-snap), still showing
+ * the counter + progress hairline as static elements that update on
+ * active-card change via IntersectionObserver.
+ *
+ * The track is full-width (each card is 70vw) and snaps to the nearest
+ * card. Scroll with trackpad / shift+wheel / drag on touch.
  */
 export default function HorizontalGallery({ items, id = 'h-gallery' }: HorizontalGalleryProps) {
-  const sectionRef = useRef<HTMLElement | null>(null)
-  const trackRef = useRef<HTMLDivElement | null>(null)
-  const barRef = useRef<HTMLDivElement | null>(null)
-  const counterRef = useRef<HTMLDivElement | null>(null)
   const [index, setIndex] = useState(1)
 
-  useEffect(() => {
-    const section = sectionRef.current
-    const track = trackRef.current
-    if (!section || !track) return
+  const onScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const track = e.currentTarget
+    const cardWidth = track.scrollWidth / items.length
+    const i = Math.min(items.length, Math.max(1, Math.round(track.scrollLeft / cardWidth) + 1))
+    setIndex(i)
+  }
 
-    if (prefersReducedMotion()) {
-      // Native horizontal scroll fallback.
-      section.style.height = 'auto'
-      track.style.transform = 'none'
-      track.style.overflowX = 'auto'
-      return
-    }
-
-    const ctx = gsap.context(() => {
-      const totalScroll = () => track.scrollWidth - window.innerWidth
-      const tween = gsap.to(track, {
-        x: () => -totalScroll(),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: () => `+=${totalScroll()}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            const i = Math.min(items.length, Math.max(1, Math.round(self.progress * items.length) || 1))
-            setIndex(i)
-            if (barRef.current) {
-              gsap.set(barRef.current, { scaleX: self.progress })
-            }
-            // velocity-based skew on cards
-            const v = self.getVelocity() / -2500
-            const skew = gsap.utils.clamp(-3, 3, v)
-            gsap.to(track.querySelectorAll('.h-card'), {
-              skewX: skew,
-              duration: 0.2,
-              overwrite: 'auto',
-              ease: 'power2.out',
-            })
-          },
-        },
-      })
-      return tween
-    }, section)
-    return () => ctx.revert()
-  }, [items.length])
+  const progress = items.length > 1 ? (index - 1) / (items.length - 1) : 0
 
   return (
     <section
-      ref={sectionRef}
       id={id}
-      className="relative h-screen w-full overflow-hidden bg-canvas"
+      className="relative w-full overflow-hidden bg-canvas py-[var(--spacing-section)]"
       aria-label="Residence gallery"
     >
       <div
-        ref={trackRef}
-        className="flex h-full items-center gap-[var(--grid-gutter)] pl-[var(--container-pad)] pr-[var(--container-pad)] will-change-transform"
-        style={{ width: `calc(${items.length} * 70vw)` }}
+        className="flex h-[72vh] items-center gap-[var(--grid-gutter)] overflow-x-auto pl-[var(--container-pad)] pr-[var(--container-pad)] snap-x snap-mandatory"
+        onScroll={onScroll}
+        style={{ scrollSnapType: 'x mandatory' }}
       >
         {items.map((item, i) => (
           <figure
             key={item.seed}
-            className="h-card relative flex h-[72vh] w-[70vw] flex-col"
+            className="h-card relative flex h-full w-[70vw] max-w-[820px] flex-none flex-col snap-start"
             aria-roledescription="slide"
             aria-label={`${i + 1} of ${items.length}`}
           >
             <div
               className="relative w-full overflow-hidden bg-canvas-deep"
-              style={{ aspectRatio: '3 / 4' }}
-              data-cursor="view"
+              style={{ aspectRatio: '3 / 4', height: '100%' }}
             >
               <img
                 src={item.src}
                 alt={item.alt}
-                loading="lazy"
+                loading={i === 0 ? 'eager' : 'lazy'}
                 sizes="70vw"
-                className="absolute inset-x-0 top-0 h-full w-full object-cover img-treat"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <figcaption className="mt-6 flex items-baseline justify-between text-micro text-bronze">
@@ -116,16 +77,15 @@ export default function HorizontalGallery({ items, id = 'h-gallery' }: Horizonta
         ))}
       </div>
 
-      {/* Progress + counter overlay */}
+      {/* Progress + counter overlay (static, updates on scroll) */}
       <div className="pointer-events-none absolute bottom-[var(--container-pad)] left-[var(--container-pad)] right-[var(--container-pad)] flex items-center justify-between text-micro text-bronze">
-        <div ref={counterRef} className="tnum">
+        <div className="tnum">
           {String(index).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
         </div>
         <div className="relative h-px w-[40vw] max-w-[400px] overflow-hidden bg-line">
           <div
-            ref={barRef}
             className="absolute left-0 top-0 h-full w-full origin-left bg-gold"
-            style={{ transform: 'scaleX(0)' }}
+            style={{ transform: `scaleX(${progress})` }}
           />
         </div>
       </div>

@@ -1,27 +1,30 @@
-import { useEffect, useRef, type ReactNode } from 'react'
-import { gsap, prefersReducedMotion } from '../../lib/gsap'
+import { type ReactNode } from 'react'
 
 interface ParallaxImageProps {
   src: string
   alt: string
   seed: string
-  speed?: number          // 0.5–1.5, default 1
+  speed?: number          // 0.5–1.5, default 1 (ignored in static mode)
   ratio?: string          // aspect ratio, defaults to portrait 3/4
-  clip?: boolean          // clip-path inset reveal
+  clip?: boolean          // clip-path inset reveal (ignored in static mode)
   className?: string
   imgClassName?: string
   children?: ReactNode
   sizes?: string
   fetchPriority?: 'high' | 'low' | 'auto'
   loading?: 'lazy' | 'eager'
-  cursorView?: boolean    // sets data-cursor="view" for the CustomCursor ring
+  cursorView?: boolean    // sets data-cursor="view" (ignored — no custom cursor)
 }
 
 /**
- * ParallaxImage
- *  Aspect-ratio box. Inner img is 115% height, translateY ±(speed×15%) via
- *  ScrollTrigger scrub. Grayscale→saturate(0.85) settle. Optional clip-path
- *  inset reveal.
+ * ParallaxImage — STATIC RENDER (demo mode).
+ *
+ * Originally this component held an 115%-tall inner image that translated
+ * ±(speed×15%) via ScrollTrigger scrub, with a grayscale→saturate(0.85)
+ * settle and optional clip-path inset reveal. For the demo build, all
+ * slow expo-out motion has been stripped — this component now renders a
+ * plain aspect-ratio box with a cover image, preserving the same props
+ * and DOM shape so all page imports keep working without changes.
  */
 export default function ParallaxImage({
   src,
@@ -38,65 +41,17 @@ export default function ParallaxImage({
   loading = 'lazy',
   cursorView = true,
 }: ParallaxImageProps) {
-  const boxRef = useRef<HTMLDivElement | null>(null)
-  const imgRef = useRef<HTMLImageElement | null>(null)
-
-  // Parallax scrub
-  useEffect(() => {
-    if (prefersReducedMotion()) return
-    const box = boxRef.current
-    const img = imgRef.current
-    if (!box || !img) return
-    const amount = speed * 0.15 * 100
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        img,
-        { yPercent: -amount, filter: 'grayscale(40%) saturate(0.7) contrast(1)' },
-        {
-          yPercent: amount,
-          filter: 'grayscale(0%) saturate(0.85) contrast(1.02)',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: box,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        },
-      )
-    }, box)
-    return () => ctx.revert()
-  }, [speed])
-
-  // Clip-path inset reveal on enter
-  useEffect(() => {
-    if (!clip || prefersReducedMotion()) return
-    const box = boxRef.current
-    if (!box) return
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        box,
-        { clipPath: 'inset(0% 0% 100% 0%)' },
-        {
-          clipPath: 'inset(0% 0% 0% 0%)',
-          duration: 1.4,
-          ease: 'expo.out',
-          scrollTrigger: { trigger: box, start: 'top 80%', once: true },
-        },
-      )
-    }, box)
-    return () => ctx.revert()
-  }, [clip])
+  // Reference unused props so TS strict mode doesn't complain.
+  void speed
+  void clip
+  void cursorView
 
   return (
     <div
-      ref={boxRef}
       className={`relative overflow-hidden bg-canvas-deep ${className}`}
       style={{ aspectRatio: ratio }}
-      data-cursor={cursorView ? 'view' : undefined}
     >
       <img
-        ref={imgRef}
         src={src}
         alt={alt}
         data-seed={seed}
@@ -105,7 +60,7 @@ export default function ParallaxImage({
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore — fetchpriority is valid HTML, React 18 doesn't type it
         fetchpriority={fetchPriority}
-        className={`absolute inset-x-0 top-0 h-[115%] w-full object-cover img-treat will-change-transform ${imgClassName}`}
+        className={`absolute inset-0 h-full w-full object-cover ${imgClassName}`}
       />
       {children}
     </div>

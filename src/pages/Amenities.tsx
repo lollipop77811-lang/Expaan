@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import RevealText from '../components/motion/RevealText'
 import SectionLabel from '../components/ui/SectionLabel'
 import ChapterDivider from '../components/motion/ChapterDivider'
@@ -84,13 +83,7 @@ const CHAPTERS: Chapter[] = [
 export default function Amenities() {
   return (
     <>
-      <Helmet>
-        <title>Expaan — Amenities: The Grotto, gallery lobby, fitness, rooftop</title>
-        <meta name="description" content="Landscaped paseo arrival, gallery lobby with coffee bar, meeting gallery and Zoom rooms, windowed fitness center, The Grotto wellness club (mineral pool, cold plunge, steam, sauna), and a rooftop amenities terrace." />
-        <link rel="canonical" href="https://expaan.com/amenities" />
-      </Helmet>
-
-      <section className="site-max site-grid pt-32 section-pad">
+<section className="site-max site-grid pt-32 section-pad">
         <div className="col-span-12 mb-12">
           <SectionLabel>Amenities</SectionLabel>
         </div>

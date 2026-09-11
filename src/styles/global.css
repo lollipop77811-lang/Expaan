@@ -132,11 +132,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ----------------------------------------------------------------------------
-   Image treatment token
+   Image treatment token — REMOVED for demo build (module 19).
+   Originally: filter: saturate(0.85) contrast(1.02) — slightly muted, warm.
+   Now: no global filter; images render with native saturation/contrast.
    -------------------------------------------------------------------------- */
-.img-treat {
-  filter: saturate(var(--image-saturate)) contrast(var(--image-contrast));
-}
 
 /* Hide default cursor on devices with fine pointer (cursor: custom) */
 @media (pointer: fine) {
@@ -146,9 +145,9 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* ----------------------------------------------------------------------------
-   Reduced motion — strip animations entirely
-   -------------------------------------------------------------------------- */
+/* Reduced motion — strip animations entirely.
+ * Demo build: no GSAP, no framer-motion. This block now only affects CSS
+ * transitions/animations (Marquee, fadeUp card reveals, hairline transitions). */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -156,7 +155,6 @@ a { color: inherit; text-decoration: none; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal-line__inner { transform: none !important; opacity: 1 !important; }
 }
 
 /* Skip link */
@@ -187,15 +185,11 @@ a { color: inherit; text-decoration: none; }
 
 /* ----------------------------------------------------------------------------
    Keyframes — `fadeUp` is used by staggered grid reveals (cards, leadership
-   grid). `sweepFill` is the 1.2s gold sweep on the submit button. Everything
-   else uses GSAP / framer-motion. Keep this minimal.
+   grid). `sweepFill` was the 1.2s gold sweep on the InquiryForm submit
+   button — REMOVED for demo build (module 18: slow expo-out motion).
+   Keep this minimal.
    -------------------------------------------------------------------------- */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes sweepFill {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
 }

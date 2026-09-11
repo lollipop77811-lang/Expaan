@@ -26,7 +26,7 @@ export default function ProjectCard({ project, className = '', index }: ProjectC
           alt={`${project.name}, ${project.city}`}
           loading="lazy"
           sizes="(min-width: 900px) 720px, 100vw"
-          className="absolute inset-0 h-full w-full object-cover img-treat transition-transform duration-[800ms] ease-out group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-105"
         />
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"

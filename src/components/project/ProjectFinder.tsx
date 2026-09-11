@@ -13,11 +13,11 @@ import Button from '../ui/Button'
  *  Navy panel, seafoam text, seafoam hairlines. Direct Sobha-style conversion
  *  widget restyled for Expaan.
  */
-const DUOS = projects[0]
+const expaan = projects[0]
 
-const CONFIGS = DUOS.config.map((label, i) => ({
+const CONFIGS = expaan.config.map((label, i) => ({
   label,
-  area: DUOS.floorPlans[i]?.area ?? '',
+  area: expaan.floorPlans[i]?.area ?? '',
   priceFrom: i === 0 ? 'From $495,000' : i === 1 ? 'From $565,000' : 'From $795,000',
 }))
 
@@ -62,7 +62,7 @@ export default function ProjectFinder() {
           49 residences. Studio, one-bedroom, and two-bedroom. Pre-construction.
         </p>
         <Link
-          to={`/projects/${DUOS.slug}${selected ? `?config=${encodeURIComponent(selected)}` : ''}`}
+          to={`/projects/${expaan.slug}${selected ? `?config=${encodeURIComponent(selected)}` : ''}`}
           className="inline-flex"
         >
           <Button type="button" variant="gold">

@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import RevealText from '../components/motion/RevealText'
 import SectionLabel from '../components/ui/SectionLabel'
 import ChapterDivider from '../components/motion/ChapterDivider'
@@ -59,20 +58,14 @@ const CORPORATE = ['Amazon', 'Citadel', 'Spotify', 'PwC', 'Live Nation']
 export default function Neighborhood() {
   return (
     <>
-      <Helmet>
-        <title>Expaan — Neighbourhood: Expaan, the Design District, and beyond</title>
-        <meta name="description" content="Expaan is in the heart of Expaan, Miami — within walking distance of Expaan Walls, the Design District, Midtown Miami, and Brightline MiamiCentral. Walk score 94." />
-        <link rel="canonical" href="https://expaan.com/neighborhood" />
-      </Helmet>
-
-      {/* OPENING */}
+{/* OPENING */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: '90vh', aspectRatio: '16 / 9' }}>
         <img
           src={landscape('expaan-hero', 1920, 1080)}
           alt="Aerial of Expaan, Miami at dusk"
           // @ts-ignore
           fetchpriority="high"
-          className="absolute inset-0 h-full w-full object-cover img-treat"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(41,58,74,0.35) 0%, rgba(41,58,74,0.75) 100%)' }} />
         <div className="site-max site-grid relative z-10 h-full items-end pb-[calc(var(--container-pad)*3)]">
@@ -161,7 +154,7 @@ export default function Neighborhood() {
                   src={d.image}
                   alt={`${d.label}, Miami`}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover img-treat"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </div>

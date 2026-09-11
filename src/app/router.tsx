@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
-import PageTransition from '../components/layout/PageTransition'
+import { Routes, Route } from 'react-router-dom'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import FullscreenMenu from '../components/layout/FullscreenMenu'
@@ -19,8 +18,12 @@ function PageFallback() {
   return <div className="min-h-screen bg-canvas" aria-label="Loading" />
 }
 
+/**
+ * Router — demo mode (no PageTransition wrapper).
+ * Routes swap instantly. Header + FullscreenMenu + InquiryModal mount
+ * once outside the route tree so they don't remount per route.
+ */
 export default function Router() {
-  const location = useLocation()
   return (
     <>
       <a href="#main" className="skip-link">Skip to content</a>
@@ -28,20 +31,18 @@ export default function Router() {
       <FullscreenMenu />
       <InquiryModal />
       <main id="main">
-        <PageTransition routeKey={location.pathname}>
-          <Suspense fallback={<PageFallback />}>
-            <Routes location={location}>
-              <Route path="/" element={<Home />} />
-              <Route path="/story" element={<Story />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/projects/:slug" element={<ProjectDetail />} />
-              <Route path="/amenities" element={<Amenities />} />
-              <Route path="/neighborhood" element={<Neighborhood />} />
-              <Route path="/inquire" element={<Inquire />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </PageTransition>
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/story" element={<Story />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/amenities" element={<Amenities />} />
+            <Route path="/neighborhood" element={<Neighborhood />} />
+            <Route path="/inquire" element={<Inquire />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </>

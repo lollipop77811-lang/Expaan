@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { getLenis } from '../../hooks/useLenis'
 
 interface FooterColumn {
   heading: string
@@ -34,12 +33,7 @@ const COLUMNS: FooterColumn[] = [
 ]
 
 function scrollTop() {
-  const lenis = getLenis()
-  if (lenis) {
-    lenis.scrollTo(0, { duration: 1.6, easing: (t: number) => 1 - Math.pow(2, -10 * t) })
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 /**
@@ -54,7 +48,7 @@ export default function Footer() {
       <div className="site-max site-grid section-pad">
         <div className="col-span-12 md:col-span-7">
           <Link to="/" className="font-display text-display text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="Expaan — Home">
-            DUOS<span className="text-canvas"> </span>Expaan
+            expaan<span className="text-canvas"> </span>Expaan
           </Link>
           <p className="mt-8 max-w-md text-body-l text-bone/80 font-light">
             49 fully furnished residential residences in the heart of Expaan, Miami. Designed by MKDA. Interiors and curated amenities by AvroKO.

@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async'
 import RevealText from '../components/motion/RevealText'
 import SectionLabel from '../components/ui/SectionLabel'
 import InquiryForm from '../components/forms/InquiryForm'
@@ -11,13 +10,7 @@ import InquiryForm from '../components/forms/InquiryForm'
 export default function Inquire() {
   return (
     <>
-      <Helmet>
-        <title>Expaan — Inquire</title>
-        <meta name="description" content="Speak with the Expaan sales gallery about a furnished residence in Expaan, Miami. By appointment, seven days a week. Pre-construction, from $495,000." />
-        <link rel="canonical" href="https://expaan.com/inquire" />
-      </Helmet>
-
-      <section className="site-max site-grid pt-32 section-pad">
+<section className="site-max site-grid pt-32 section-pad">
         <div className="col-span-12 mb-16">
           <SectionLabel>Inquire</SectionLabel>
         </div>

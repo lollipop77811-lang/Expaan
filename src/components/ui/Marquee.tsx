@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { prefersReducedMotion } from '../../lib/gsap'
 
 interface MarqueeProps {
   items: string[]
@@ -12,12 +11,18 @@ interface MarqueeProps {
  * Marquee
  *  Infinite translateX loop, 60s linear (the ONLY linear animation), pauses
  *  on hover, aria-hidden duplicate track.
+ *
+ * Demo mode: still runs (it's a CSS-only RAF loop, not GSAP). The
+ * prefers-reduced-motion check now uses native matchMedia instead of the
+ * deleted lib/gsap.ts helper.
  */
 export default function Marquee({ items, className = '', duration = 60, separator = '·' }: MarqueeProps) {
   const trackRef = useRef<HTMLDivElement | null>(null)
   const [paused, setPaused] = useState(false)
 
-  const reduced = prefersReducedMotion()
+  const reduced = typeof window !== 'undefined'
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false
 
   useEffect(() => {
     if (reduced) return
