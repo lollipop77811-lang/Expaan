@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { prefersReducedMotion } from '../../lib/gsap'
 import { useUI } from '../../lib/store'
 
 /**
@@ -7,14 +8,62 @@ import { useUI } from '../../lib/store'
  *  Fixed, solid #293A4A navy background; wordmark + nav links in
  *  #BCD1D4 seafoam (period accent in white), #FFFFFF hover on links.
  *  Wordmark left, INQUIRE right, hamburger (two 24px lines that morph to X)
- *  center-right. Always visible (no hide-on-scroll behaviour).
+ *  center-right.
+ *
+ *  Visibility rule: HIDDEN by default. Becomes VISIBLE while the user is
+ *  scrolling, then HIDES again after ~1.5s of scroll inactivity. Always
+ *  visible while the FullscreenMenu is open. Always visible when
+ *  prefers-reduced-motion (a11y: keyboard users need a stable nav).
  */
 export default function Header() {
   const ref = useRef<HTMLElement | null>(null)
+  const [visible, setVisible] = useState(false)
   const menuOpen = useUI((s) => s.menuOpen)
   const setMenuOpen = useUI((s) => s.setMenuOpen)
   const setInquiryOpen = useUI((s) => s.setInquiryOpen)
   const location = useLocation()
+  const reducedRef = useRef(false)
+
+  useEffect(() => {
+    reducedRef.current = prefersReducedMotion()
+  }, [])
+
+  // Show navbar while scrolling; hide after 1.5s of scroll inactivity.
+  // Always hidden at the top of the page (scrollY < 10).
+  useEffect(() => {
+    if (reducedRef.current) {
+      setVisible(true)
+      return
+    }
+    if (menuOpen) return // menu-open effect handles visibility
+
+    let idleTimer: ReturnType<typeof setTimeout> | null = null
+
+    const onScroll = () => {
+      if (window.scrollY < 10) {
+        // At top of page: hide immediately
+        if (idleTimer) clearTimeout(idleTimer)
+        setVisible(false)
+        return
+      }
+      setVisible(true)
+      if (idleTimer) clearTimeout(idleTimer)
+      idleTimer = setTimeout(() => setVisible(false), 1500)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll() // initial check
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (idleTimer) clearTimeout(idleTimer)
+    }
+  }, [menuOpen])
+
+  // Force visible while the FullscreenMenu is open
+  useEffect(() => {
+    if (menuOpen) setVisible(true)
+  }, [menuOpen])
 
   // Close menu on route change
   useEffect(() => {
@@ -24,8 +73,9 @@ export default function Header() {
   return (
     <header
       ref={ref}
-      className="fixed inset-x-0 top-0 z-[100] bg-ink"
+      className="fixed inset-x-0 top-0 z-[100] bg-ink transition-transform duration-500"
       style={{
+        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
         borderBottom: '1px solid rgba(188, 209, 212, 0.18)',
       }}
     >
