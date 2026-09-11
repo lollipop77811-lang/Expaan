@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { gsap, ScrollTrigger, prefersReducedMotion } from '../../lib/gsap'
 import { useUI } from '../../lib/store'
 
 /**
@@ -8,46 +7,14 @@ import { useUI } from '../../lib/store'
  *  Fixed, solid #293A4A navy background; wordmark + nav links in
  *  #BCD1D4 seafoam (period accent in white), #FFFFFF hover on links.
  *  Wordmark left, INQUIRE right, hamburger (two 24px lines that morph to X)
- *  center-right. Hides on scroll-down, reveals on scroll-up at 120px.
+ *  center-right. Always visible (no hide-on-scroll behaviour).
  */
 export default function Header() {
   const ref = useRef<HTMLElement | null>(null)
-  const [hidden, setHidden] = useState(false)
   const menuOpen = useUI((s) => s.menuOpen)
   const setMenuOpen = useUI((s) => s.setMenuOpen)
   const setInquiryOpen = useUI((s) => s.setInquiryOpen)
   const location = useLocation()
-
-  // Hide-on-scroll-down, reveal-on-scroll-up at 120px
-  useEffect(() => {
-    if (prefersReducedMotion() || menuOpen) return
-    const header = ref.current
-    if (!header) return
-    let lastY = window.scrollY
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        start: 0,
-        end: 'max',
-        onUpdate: (self) => {
-          const y = self.scroll()
-          if (y < 120) {
-            setHidden(false)
-          } else if (y > lastY + 8) {
-            setHidden(true)
-          } else if (y < lastY - 8) {
-            setHidden(false)
-          }
-          lastY = y
-        },
-      })
-    }, header)
-    return () => ctx.revert()
-  }, [menuOpen])
-
-  // Lock header visible while menu open
-  useEffect(() => {
-    if (menuOpen) setHidden(false)
-  }, [menuOpen])
 
   // Close menu on route change
   useEffect(() => {
@@ -57,9 +24,8 @@ export default function Header() {
   return (
     <header
       ref={ref}
-      className="fixed inset-x-0 top-0 z-[100] bg-ink transition-transform duration-500"
+      className="fixed inset-x-0 top-0 z-[100] bg-ink"
       style={{
-        transform: hidden && !menuOpen ? 'translateY(-100%)' : 'translateY(0)',
         borderBottom: '1px solid rgba(188, 209, 212, 0.18)',
       }}
     >
@@ -67,8 +33,8 @@ export default function Header() {
         className="site-max flex items-center justify-between"
         style={{ paddingTop: 'clamp(18px, 2.5vw, 28px)', paddingBottom: 'clamp(18px, 2.5vw, 28px)' }}
       >
-        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="DUOS Wynwood — Home">
-          DUOS<span className="text-canvas"> </span>Wynwood
+        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="Expaan — Home">
+          Expaan<span className="text-canvas">.</span>
         </Link>
 
         <button

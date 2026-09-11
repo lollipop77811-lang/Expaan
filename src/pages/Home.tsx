@@ -14,7 +14,7 @@ import { projects } from '../data/projects'
 import { portrait, landscape, og } from '../lib/image'
 
 /**
- * Home — DUOS Wynwood cinematic narrative.
+ * Home — Expaan cinematic narrative.
  * Single-property microsite, structured after the original 11-section arc.
  */
 export default function Home() {
@@ -73,18 +73,18 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>DUOS Wynwood — 49 furnished residences in the heart of Wynwood</title>
-        <meta name="description" content="DUOS Wynwood is an 8-story boutique condominium at 335 NW 28th Street, Miami. 49 fully furnished short-term-rental residences — studio, one-bedroom, and two-bedroom — designed by MKDA with interiors by AvroKO. Pre-construction. From $495,000." />
-        <link rel="canonical" href="https://duoswynwood.com/" />
-        <meta property="og:title" content="DUOS Wynwood — Residences in the heart of Wynwood" />
-        <meta property="og:description" content="49 fully furnished residences in Wynwood, Miami. Designed by MKDA. Interiors by AvroKO. Pre-construction. From $495,000." />
+        <title>Expaan — 49 furnished residences in the heart of Expaan</title>
+        <meta name="description" content="Expaan is an 8-story boutique condominium at 335 NW 28th Street, Miami. 49 fully furnished residential residences — studio, one-bedroom, and two-bedroom — designed by MKDA with interiors by AvroKO. Pre-construction. From $495,000." />
+        <link rel="canonical" href="https://expaan.com/" />
+        <meta property="og:title" content="Expaan — Residences in the heart of Expaan" />
+        <meta property="og:description" content="49 fully furnished residences in Expaan, Miami. Designed by MKDA. Interiors by AvroKO. Pre-construction. From $495,000." />
         <meta property="og:image" content={og('duos-hero')} />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Residence',
-          name: 'DUOS Wynwood',
-          description: '49 fully furnished short-term-rental residences in Wynwood, Miami. Designed by MKDA. Interiors by AvroKO.',
+          name: 'Expaan',
+          description: '49 fully furnished residential residences in Expaan, Miami. Designed by MKDA. Interiors by AvroKO.',
           address: {
             '@type': 'PostalAddress',
             streetAddress: '335 NW 28th Street',
@@ -93,7 +93,7 @@ export default function Home() {
             postalCode: '33127',
             addressCountry: 'US',
           },
-          url: 'https://duoswynwood.com',
+          url: 'https://expaan.com',
           sameAs: ['https://instagram.com'],
         })}</script>
       </Helmet>
@@ -102,7 +102,7 @@ export default function Home() {
       <section
         ref={heroRef}
         className="relative h-screen w-full overflow-hidden bg-night"
-        aria-label="DUOS Wynwood — hero"
+        aria-label="Expaan — hero"
       >
         <video
           autoPlay
@@ -124,17 +124,7 @@ export default function Home() {
         />
         <div className="site-max site-grid relative z-10 h-full items-end pb-[calc(var(--container-pad)*2)]">
           <div className="col-span-12 flex h-full flex-col justify-end gap-12">
-            <RevealText
-              as="h1"
-              className="font-display text-display-xl text-bone leading-[1.02]"
-              text={'A new\nlandmark in\nWynwood.'}
-              stagger={0.09}
-              duration={1.2}
-              delay={0.6}
-              aria-label="A new landmark in Wynwood."
-            />
-            <div className="flex items-end justify-between border-t border-bone/20 pt-4">
-              <span className="text-micro text-bone/80">335 NW 28th Street, Miami, FL</span>
+            <div className="flex items-end justify-end">
               <button
                 type="button"
                 className="flex items-center gap-3 text-micro text-bone hover:text-canvas transition-colors duration-300"
@@ -151,11 +141,11 @@ export default function Home() {
       {/* 2. THESIS */}
       <section className="site-max site-grid section-pad" aria-label="Thesis">
         <div className="col-span-12 md:col-span-8">
-          <SectionLabel>DUOS Wynwood</SectionLabel>
+          <SectionLabel>Expaan</SectionLabel>
           <RevealText
             as="p"
             className="mt-10 font-display text-display text-ink leading-[1.05]"
-            text={'Forty-nine furnished\nresidences in the\nheart of Wynwood.'}
+            text={'Forty-nine furnished\nresidences in the\nheart of Expaan.'}
             stagger={0.09}
           />
         </div>
@@ -164,7 +154,7 @@ export default function Home() {
             An 8-story boutique condominium designed by MKDA with interiors and
             curated amenities by AvroKO — the team behind 1 Hotel Central Park.
             Studio, one-bedroom, and two-bedroom residences, 400 to 844 square
-            feet, offered as a hotel-condominium program for short-term rental.
+            feet, offered as a boutique condominium program for residential.
           </p>
         </div>
       </section>
@@ -177,7 +167,7 @@ export default function Home() {
           <hr className="hairline mb-10" />
           <blockquote className="font-display text-quote text-ink leading-tight">
             <RevealText
-              text={'“A boutique condo built around short-term stays —\nDUOS Wynwood brings hotel-grade design\nand a private wellness club to one of\nMiami’s most walkable neighbourhoods.”'}
+              text={'“A boutique condo built around residential living —\nExpaan brings residential-grade design\nand a private wellness club to one of\nMiami’s most walkable neighbourhoods.”'}
             />
           </blockquote>
           <div className="mt-10 text-label text-bronze uppercase tracking-[0.12em]">
@@ -211,10 +201,10 @@ export default function Home() {
           <p className="mt-6 text-body text-bronze">
             Three configurations — studio, one-bedroom, and two-bedroom — each
             with 9-foot ceilings, fully furnished, and operated as a
-            hotel-condominium for short-term rental.
+            boutique condominium for residential.
           </p>
           <div className="mt-8">
-            <Button variant="ghost" to="/projects/duos-wynwood">See the residences</Button>
+            <Button variant="ghost" to="/projects/expaan">See the residences</Button>
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-10 mt-12 md:mt-0 md:translate-y-24">
@@ -237,7 +227,7 @@ export default function Home() {
       >
         <img
           src={landscape('duos-wide', 1920, 1080)}
-          alt="DUOS Wynwood design — full-bleed interlude"
+          alt="Expaan design — full-bleed interlude"
           loading="lazy"
           data-design-image
           className="absolute inset-0 h-full w-full object-cover img-treat will-change-transform"
@@ -271,13 +261,13 @@ export default function Home() {
             One property. Forty-nine residences.
           </h2>
           <p className="text-body-l text-bronze">
-            DUOS Wynwood opens in Q1 2027 with studio, one-bedroom, and
+            Expaan opens in Q1 2027 with studio, one-bedroom, and
             two-bedroom residences from $495,000. Pre-construction sales by
-            appointment through the sales gallery in Wynwood.
+            appointment through the sales gallery in Expaan.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button variant="gold" to="/projects/duos-wynwood">Discover the residences</Button>
-            <Button variant="ghost" to="/projects/duos-wynwood">View availability</Button>
+            <Button variant="gold" to="/projects/expaan">Discover the residences</Button>
+            <Button variant="ghost" to="/projects/expaan">View availability</Button>
           </div>
         </div>
       </section>
@@ -356,11 +346,11 @@ export default function Home() {
           <RevealText
             as="h2"
             className="font-display text-display text-ink leading-tight"
-            text={'In the heart\nof Wynwood.'}
+            text={'In the heart\nof Expaan.'}
           />
         </div>
         <div className="col-span-12 mt-16">
-          <Marquee items={['Wynwood Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Wynwood 2nd Ave', 'Miami International']} />
+          <Marquee items={['Expaan Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Expaan 2nd Ave', 'Miami International']} />
         </div>
       </section>
 
@@ -368,7 +358,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '70vh' }}>
         <img
           src={landscape('duos-wide', 1920, 1080)}
-          alt="DUOS Wynwood at dusk"
+          alt="Expaan at dusk"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
@@ -393,7 +383,7 @@ const AMENITY_CHAPTERS = [
   {
     label: 'Arrival',
     headline: 'A landscaped paseo.',
-    body: 'A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Wynwood streetscape and establishes a quiet transition into the gallery lobby.',
+    body: 'A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Expaan streetscape and establishes a quiet transition into the gallery lobby.',
     cta: 'See the residences',
     image: portrait('duos-1', 900, 1200),
     seed: 'duos-1',
@@ -402,7 +392,7 @@ const AMENITY_CHAPTERS = [
   {
     label: 'The Grotto',
     headline: 'A private wellness club.',
-    body: 'A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and hotel guests.',
+    body: 'A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and residents.',
     cta: 'Tour the grotto',
     image: portrait('duos-6', 900, 1200),
     seed: 'duos-6',

@@ -22,7 +22,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Arrival',
     headline: 'A landscaped paseo.',
-    body: `A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Wynwood streetscape and establishes a quiet transition into the gallery lobby — a hospitality-driven lobby with digital access control.`,
+    body: `A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Expaan streetscape and establishes a quiet transition into the gallery lobby — a hospitality-driven lobby with digital access control.`,
     image: portrait('amen-1', 900, 1200),
     seed: 'amen-1',
     alt: 'Landscaped paseo arrival and gallery lobby',
@@ -41,7 +41,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'The Grotto',
     headline: 'A private wellness club.',
-    body: `A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and hotel guests — the design move that sets DUOS Wynwood apart from other Wynwood buildings.`,
+    body: `A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and residents — the design move that sets Expaan apart from other Expaan buildings.`,
     image: portrait('amen-3', 900, 1200),
     seed: 'amen-3',
     alt: 'The Grotto — mineral pool, cold plunge, steam, sauna',
@@ -51,7 +51,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Work',
     headline: 'A gallery for work.',
-    body: `A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities. Designed for short-term-stay professionals and remote work — no need to leave the building for a call or a meeting.`,
+    body: `A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities. Designed for residents who work from home and remote work — no need to leave the building for a call or a meeting.`,
     image: portrait('amen-4', 900, 1200),
     seed: 'amen-4',
     alt: 'Meeting gallery and private Zoom rooms',
@@ -60,7 +60,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Fitness',
     headline: 'A windowed fitness center.',
-    body: `A natural-light fitness center with cardio and strength-training equipment, operated as a residents-only facility with extended hours. Open to natural light and views across the Wynwood streetscape.`,
+    body: `A natural-light fitness center with cardio and strength-training equipment, operated as a residents-only facility with extended hours. Open to natural light and views across the Expaan streetscape.`,
     image: portrait('amen-5', 900, 1200),
     seed: 'amen-5',
     alt: 'Windowed fitness center with cardio and strength equipment',
@@ -70,7 +70,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Rooftop',
     headline: 'A rooftop amenities terrace.',
-    body: `A rooftop terrace with planted surfaces, lounge seating, and views across Wynwood and the Miami skyline. Bookable for resident events and operated as an extension of the gallery lobby and The Grotto.`,
+    body: `A rooftop terrace with planted surfaces, lounge seating, and views across Expaan and the Miami skyline. Bookable for resident events and operated as an extension of the gallery lobby and The Grotto.`,
     image: portrait('amen-6', 900, 1200),
     seed: 'amen-6',
     alt: 'Rooftop amenities terrace with planted surfaces',
@@ -85,9 +85,9 @@ export default function Amenities() {
   return (
     <>
       <Helmet>
-        <title>DUOS Wynwood — Amenities: The Grotto, gallery lobby, fitness, rooftop</title>
+        <title>Expaan — Amenities: The Grotto, gallery lobby, fitness, rooftop</title>
         <meta name="description" content="Landscaped paseo arrival, gallery lobby with coffee bar, meeting gallery and Zoom rooms, windowed fitness center, The Grotto wellness club (mineral pool, cold plunge, steam, sauna), and a rooftop amenities terrace." />
-        <link rel="canonical" href="https://duoswynwood.com/amenities" />
+        <link rel="canonical" href="https://expaan.com/amenities" />
       </Helmet>
 
       <section className="site-max site-grid pt-32 section-pad">

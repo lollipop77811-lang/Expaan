@@ -8,9 +8,9 @@ import { landscape } from '../lib/image'
 
 const NEIGHBORHOODS = [
   {
-    label: 'Wynwood',
-    body: `DUOS Wynwood is in the heart of Wynwood — within walking distance of Wynwood Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
-    image: landscape('district-wynwood', 1920, 1080),
+    label: 'Expaan',
+    body: `Expaan is in the heart of Expaan — within walking distance of Expaan Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
+    image: landscape('district-expaan', 1920, 1080),
   },
   {
     label: 'Design District',
@@ -19,7 +19,7 @@ const NEIGHBORHOODS = [
   },
   {
     label: 'Midtown Miami',
-    body: `Five minutes east. Midtown Miami is a 56-block mixed-use district with retail, restaurants, and the Wynwood-adjacent mid-rise residential community. A short walk or a 4-minute drive.`,
+    body: `Five minutes east. Midtown Miami is a 56-block mixed-use district with retail, restaurants, and the Expaan-adjacent mid-rise residential community. A short walk or a 4-minute drive.`,
     image: landscape('district-midtown', 1920, 1080),
   },
   {
@@ -34,14 +34,14 @@ const NEIGHBORHOODS = [
   },
   {
     label: 'Miami Beach',
-    body: `Twenty minutes east across the MacArthur Causeway. South Beach, Mid-Beach, and the Bass Museum — Miami Beach is the city's primary visitor destination and a short ride from DUOS Wynwood.`,
+    body: `Twenty minutes east across the MacArthur Causeway. South Beach, Mid-Beach, and the Bass Museum — Miami Beach is the city's primary visitor destination and a short ride from Expaan.`,
     image: landscape('district-beach', 1920, 1080),
   },
 ]
 
 const POI = [
-  { name: 'Wynwood Walls', distance: '0.2 mi', category: 'Street art' },
-  { name: 'Wynwood 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
+  { name: 'Expaan Walls', distance: '0.2 mi', category: 'Street art' },
+  { name: 'Expaan 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
   { name: 'Design District', distance: '0.8 mi', category: 'Retail' },
   { name: 'Midtown Miami', distance: '0.5 mi', category: 'Retail' },
   { name: 'Brickell City Centre', distance: '2.4 mi', category: 'Retail' },
@@ -54,22 +54,22 @@ const POI = [
 const CORPORATE = ['Amazon', 'Citadel', 'Spotify', 'PwC', 'Live Nation']
 
 /**
- * Neighborhood — Wynwood and its surrounding districts.
+ * Neighborhood — Expaan and its surrounding districts.
  */
 export default function Neighborhood() {
   return (
     <>
       <Helmet>
-        <title>DUOS Wynwood — Neighbourhood: Wynwood, the Design District, and beyond</title>
-        <meta name="description" content="DUOS Wynwood is in the heart of Wynwood, Miami — within walking distance of Wynwood Walls, the Design District, Midtown Miami, and Brightline MiamiCentral. Walk score 94." />
-        <link rel="canonical" href="https://duoswynwood.com/neighborhood" />
+        <title>Expaan — Neighbourhood: Expaan, the Design District, and beyond</title>
+        <meta name="description" content="Expaan is in the heart of Expaan, Miami — within walking distance of Expaan Walls, the Design District, Midtown Miami, and Brightline MiamiCentral. Walk score 94." />
+        <link rel="canonical" href="https://expaan.com/neighborhood" />
       </Helmet>
 
       {/* OPENING */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: '90vh', aspectRatio: '16 / 9' }}>
         <img
-          src={landscape('wynwood-hero', 1920, 1080)}
-          alt="Aerial of Wynwood, Miami at dusk"
+          src={landscape('expaan-hero', 1920, 1080)}
+          alt="Aerial of Expaan, Miami at dusk"
           // @ts-ignore
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover img-treat"
@@ -81,7 +81,7 @@ export default function Neighborhood() {
             <RevealText
               as="h1"
               className="font-display text-display-xl text-bone leading-[1.02]"
-              text={'In the heart\nof Wynwood.'}
+              text={'In the heart\nof Expaan.'}
             />
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Neighborhood() {
         <div className="col-span-12 md:col-span-3 md:col-start-10 mt-12 md:mt-0 flex flex-col justify-end">
           <p className="text-body text-bronze">
             Distances are measured by foot, not by car. We build where the
-            city works — Wynwood, the Design District, Midtown, Brickell,
+            city works — Expaan, the Design District, Midtown, Brickell,
             Downtown, and the Beach.
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function Neighborhood() {
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0 flex flex-col justify-center gap-6">
               <p className="text-body-l text-bronze font-light">{d.body}</p>
-              <Button variant="ghost" to="/projects/duos-wynwood">View residences</Button>
+              <Button variant="ghost" to="/projects/expaan">View residences</Button>
             </div>
           </section>
         </div>

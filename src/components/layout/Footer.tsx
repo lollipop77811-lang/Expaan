@@ -21,7 +21,7 @@ const COLUMNS: FooterColumn[] = [
     links: [
       { label: 'Neighbourhood', to: '/neighborhood' },
       { label: 'Inquire', to: '/inquire' },
-      { label: 'Availability', to: '/projects/duos-wynwood' },
+      { label: 'Availability', to: '/projects/expaan' },
     ],
   },
   {
@@ -53,11 +53,11 @@ export default function Footer() {
     <footer className="bg-night text-bone">
       <div className="site-max site-grid section-pad">
         <div className="col-span-12 md:col-span-7">
-          <Link to="/" className="font-display text-display text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="DUOS Wynwood — Home">
-            DUOS<span className="text-canvas"> </span>Wynwood
+          <Link to="/" className="font-display text-display text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="Expaan — Home">
+            DUOS<span className="text-canvas"> </span>Expaan
           </Link>
           <p className="mt-8 max-w-md text-body-l text-bone/80 font-light">
-            49 fully furnished short-term-rental residences in the heart of Wynwood, Miami. Designed by MKDA. Interiors and curated amenities by AvroKO.
+            49 fully furnished residential residences in the heart of Expaan, Miami. Designed by MKDA. Interiors and curated amenities by AvroKO.
           </p>
         </div>
 

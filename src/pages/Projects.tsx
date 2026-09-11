@@ -6,7 +6,7 @@ import { projects } from '../data/projects'
 import { portrait } from '../lib/image'
 
 /**
- * Residences — DUOS Wynwood configuration overview.
+ * Residences — Expaan configuration overview.
  *
  * Single-property site: this page shows the 3 unit types (Studio / 1-BR /
  * 2-BR) as cards that link to the detail page with a config query param.
@@ -18,7 +18,7 @@ const CONFIGS = [
     priceFrom: '$495,000',
     image: portrait('duos-studio', 900, 1200),
     seed: 'duos-studio',
-    blurb: 'A fully furnished studio with 9-foot ceilings, kitchenette, and a single live-work zone. Operated as a short-term-rental residence.',
+    blurb: 'A fully furnished studio with 9-foot ceilings, kitchenette, and a single live-work zone. Operated as a residential residence.',
   },
   {
     label: 'One-bedroom',
@@ -26,7 +26,7 @@ const CONFIGS = [
     priceFrom: '$565,000',
     image: portrait('duos-1br', 900, 1200),
     seed: 'duos-1br',
-    blurb: 'A one-bedroom residence with a separate sleeping room, full kitchen, and a 9-foot ceiling throughout. Furnished for short-term rental.',
+    blurb: 'A one-bedroom residence with a separate sleeping room, full kitchen, and a 9-foot ceiling throughout. Furnished for residential.',
   },
   {
     label: 'Two-bedroom',
@@ -34,7 +34,7 @@ const CONFIGS = [
     priceFrom: '$795,000',
     image: portrait('duos-2br', 900, 1200),
     seed: 'duos-2br',
-    blurb: 'A two-bedroom residence with two private sleeping rooms, full kitchen, and a corner exposure over Wynwood. The largest configuration.',
+    blurb: 'A two-bedroom residence with two private sleeping rooms, full kitchen, and a corner exposure over Expaan. The largest configuration.',
   },
 ]
 
@@ -44,9 +44,9 @@ export default function Projects() {
   return (
     <>
       <Helmet>
-        <title>DUOS Wynwood — Residences: Studio, One-bedroom, Two-bedroom</title>
-        <meta name="description" content="Three configurations at DUOS Wynwood — studio (478 sq ft), one-bedroom (612 sq ft), and two-bedroom (844 sq ft). Fully furnished, 9-foot ceilings, from $495,000. Pre-construction." />
-        <link rel="canonical" href="https://duoswynwood.com/projects" />
+        <title>Expaan — Residences: Studio, One-bedroom, Two-bedroom</title>
+        <meta name="description" content="Three configurations at Expaan — studio (478 sq ft), one-bedroom (612 sq ft), and two-bedroom (844 sq ft). Fully furnished, 9-foot ceilings, from $495,000. Pre-construction." />
+        <link rel="canonical" href="https://expaan.com/projects" />
       </Helmet>
 
       <section className="site-max site-grid pt-32 section-pad">
@@ -63,8 +63,8 @@ export default function Projects() {
         <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0 flex flex-col justify-end gap-6">
           <p className="text-body text-bronze">
             Studio, one-bedroom, and two-bedroom — 478 to 844 square feet, fully
-            furnished, 9-foot ceilings. Operated as a hotel-condominium for
-            short-term rental. Pre-construction, from $495,000.
+            furnished, 9-foot ceilings. Operated as a boutique condominium for
+            residential. Pre-construction, from $495,000.
           </p>
           <Button variant="ghost" to={`/projects/${duos.slug}`}>View floor plans & availability</Button>
         </div>

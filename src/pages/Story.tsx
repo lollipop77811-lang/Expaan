@@ -25,18 +25,18 @@ const DESIGN_TEAM = [
 ]
 
 const AWARDS = [
-  { year: '2026', title: 'Pre-construction launch', body: 'DUOS Wynwood — Miami' },
+  { year: '2026', title: 'Pre-construction launch', body: 'Expaan — Miami' },
   { year: '2026', title: 'AvroKO appointed for interiors', body: 'Gallery lobby + The Grotto wellness club' },
   { year: '2026', title: 'MKDA appointed as architect', body: '8-story boutique condominium' },
-  { year: '2025', title: 'Site assembled at 335 NW 28th Street', body: 'Wynwood, Miami' },
+  { year: '2025', title: 'Site assembled at 335 NW 28th Street', body: 'Expaan, Miami' },
   { year: '2025', title: 'Wave Group + Vitrium + Zambala partnership', body: 'Joint development agreement' },
 ]
 
 const TIMELINE = [
-  { year: '2025', body: 'Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments assemble the site at 335 NW 28th Street in the heart of Wynwood.' },
+  { year: '2025', body: 'Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments assemble the site at 335 NW 28th Street in the heart of Expaan.' },
   { year: '2026', body: 'MKDA engaged as architect. AvroKO — the team behind 1 Hotel Central Park — appointed to lead interiors and curated amenities.' },
   { year: '2026', body: 'Pre-construction sales open. Studio, one-bedroom, and two-bedroom residences from $495,000.' },
-  { year: '2027', body: 'DUOS Wynwood opens — 49 fully furnished short-term-rental residences, The Grotto wellness club, and a rooftop amenities terrace.' },
+  { year: '2027', body: 'Expaan opens — 49 fully furnished residential residences, The Grotto wellness club, and a rooftop amenities terrace.' },
 ]
 
 /**
@@ -46,9 +46,9 @@ export default function Story() {
   return (
     <>
       <Helmet>
-        <title>DUOS Wynwood — About the developers, architect, and interiors team</title>
-        <meta name="description" content="DUOS Wynwood is developed by Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments. Architecture by MKDA. Interiors and curated amenities by AvroKO, the team behind 1 Hotel Central Park." />
-        <link rel="canonical" href="https://duoswynwood.com/story" />
+        <title>Expaan — About the developers, architect, and interiors team</title>
+        <meta name="description" content="Expaan is developed by Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments. Architecture by MKDA. Interiors and curated amenities by AvroKO, the team behind 1 Hotel Central Park." />
+        <link rel="canonical" href="https://expaan.com/story" />
       </Helmet>
 
       {/* HERO */}

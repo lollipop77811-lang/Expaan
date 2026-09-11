@@ -5,13 +5,13 @@ import Button from '../ui/Button'
 
 /**
  * ProjectFinder
- *  Single-property DUOS Wynwood finder. The original multi-property cascade
+ *  Single-property Expaan finder. The original multi-property cascade
  *  (City → Project → Config) collapses to a single Configuration selector with
  *  three buttons (Studio / 1-BR / 2-BR), each linking to the detail page with
  *  a config query param.
  *
  *  Navy panel, seafoam text, seafoam hairlines. Direct Sobha-style conversion
- *  widget restyled for DUOS Wynwood.
+ *  widget restyled for Expaan.
  */
 const DUOS = projects[0]
 

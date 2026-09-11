@@ -36,9 +36,9 @@ export default function NotFound() {
   return (
     <>
       <Helmet>
-        <title>DUOS Wynwood — Page not found</title>
+        <title>Expaan — Page not found</title>
         <meta name="description" content="The page you are looking for could not be found. Return to the home page." />
-        <link rel="canonical" href="https://duoswynwood.com/404" />
+        <link rel="canonical" href="https://expaan.com/404" />
       </Helmet>
 
       <section className="relative h-screen w-full overflow-hidden bg-night text-bone flex items-center justify-center" aria-label="404">

@@ -13,13 +13,13 @@ import NotFound from './NotFound'
 import { landscape } from '../lib/image'
 
 /**
- * ProjectDetail — DUOS Wynwood detail page. 8 blocks per the brief:
+ * ProjectDetail — Expaan detail page. 8 blocks per the brief:
  * 1. Hero — full-bleed render + name + breadcrumb.
  * 2. Overview — text column + spec table + meta grid.
  * 3. HorizontalGallery — pinned, 7 portrait renders (signature moment).
  * 4. Amenities accordion.
  * 5. Floor plans — tabbed by configuration.
- * 6. Location — Wynwood map + POI hairline table with distances.
+ * 6. Location — Expaan map + POI hairline table with distances.
  * 7. Availability table.
  * 8. Sticky inquiry rail (desktop).
  */
@@ -34,9 +34,9 @@ export default function ProjectDetail() {
   return (
     <>
       <Helmet>
-        <title>{`DUOS Wynwood — ${project.config.join(', ')} residences`}</title>
+        <title>{`Expaan — ${project.config.join(', ')} residences`}</title>
         <meta name="description" content={`${project.name} at ${project.district}, ${project.city}. ${project.config.join(', ')}. Possession ${project.possession}. From $495,000.`} />
-        <link rel="canonical" href={`https://duoswynwood.com/projects/${project.slug}`} />
+        <link rel="canonical" href={`https://expaan.com/projects/${project.slug}`} />
         <meta property="og:title" content={`${project.name} — ${project.city}`} />
         <meta property="og:description" content={project.overview} />
         <meta property="og:image" content={project.heroImage} />
@@ -189,7 +189,7 @@ export default function ProjectDetail() {
         <StickyInquire projectSlug={project.slug} />
         <div className="mt-4 flex flex-col gap-1 text-micro text-bronze">
           <a href="tel:+13055550148" className="hover:text-ink transition-colors">+1 305 555 0148</a>
-          <a href="mailto:sales@duoswynwood.com" className="hover:text-ink transition-colors">sales@duoswynwood.com</a>
+          <a href="mailto:sales@expaan.com" className="hover:text-ink transition-colors">sales@expaan.com</a>
         </div>
       </div>
 
@@ -197,7 +197,7 @@ export default function ProjectDetail() {
       <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '60vh' }}>
         <img
           src={next.heroImageLandscape}
-          alt={`DUOS Wynwood, Wynwood, Miami`}
+          alt={`Expaan, Expaan, Miami`}
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover img-treat"
         />
