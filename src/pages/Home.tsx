@@ -11,7 +11,7 @@ import { projects } from '../data/projects'
 import { portrait, landscape } from '../lib/image'
 
 /**
- * Home — Expaan cinematic narrative.
+ * Home — Expaan Reality cinematic narrative.
  * Single-property microsite, structured after the original 11-section arc.
  * Demo mode: all slow expo-out motion stripped; sections render statically.
  */
@@ -23,7 +23,7 @@ export default function Home() {
 {/* 1. HERO */}
       <section
         className="relative h-screen w-full overflow-hidden bg-night"
-        aria-label="Expaan — hero"
+        aria-label="Expaan Reality — hero"
       >
         <video
           autoPlay
@@ -62,11 +62,11 @@ export default function Home() {
       {/* 2. THESIS */}
       <section className="site-max site-grid section-pad" aria-label="Thesis">
         <div className="col-span-12 md:col-span-8">
-          <SectionLabel>Expaan</SectionLabel>
+          <SectionLabel>Expaan Reality</SectionLabel>
           <RevealText
             as="p"
             className="mt-10 font-display text-display text-ink leading-[1.05]"
-            text={'Forty-nine furnished\nresidences in the\nheart of Expaan.'}
+            text={'Forty-nine furnished\nresidences in the\nheart of Expaan Reality.'}
             stagger={0.09}
           />
         </div>
@@ -144,7 +144,7 @@ export default function Home() {
       >
         <img
           src={landscape('expaan-wide', 1920, 1080)}
-          alt="Expaan design — full-bleed interlude"
+          alt="Expaan Reality design — full-bleed interlude"
           loading="lazy"
           data-design-image
           className="absolute inset-0 h-full w-full object-cover will-change-transform"
@@ -262,11 +262,11 @@ export default function Home() {
           <RevealText
             as="h2"
             className="font-display text-display text-ink leading-tight"
-            text={'In the heart\nof Expaan.'}
+            text={'In the heart\nof Expaan Reality.'}
           />
         </div>
         <div className="col-span-12 mt-16">
-          <Marquee items={['Expaan Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Expaan 2nd Ave', 'Miami International']} />
+          <Marquee items={['Expaan Reality Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Expaan Reality 2nd Ave', 'Miami International']} />
         </div>
       </section>
 
@@ -274,7 +274,7 @@ export default function Home() {
       <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '70vh' }}>
         <img
           src={landscape('expaan-wide', 1920, 1080)}
-          alt="Expaan at dusk"
+          alt="Expaan Reality at dusk"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
         />

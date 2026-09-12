@@ -3,8 +3,8 @@ import SectionLabel from '../components/ui/SectionLabel'
 import InquiryForm from '../components/forms/InquiryForm'
 
 /**
- * Inquire — Expaan sales gallery.
- * Left column: pitch + Expaan sales gallery address + Miami phone.
+ * Inquire — Expaan Reality sales gallery.
+ * Left column: pitch + Expaan Reality sales gallery address + Miami phone.
  * Right column: InquiryForm with RHF + Zod + designed success state.
  */
 export default function Inquire() {

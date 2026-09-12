@@ -47,11 +47,11 @@ export default function Footer() {
     <footer className="bg-night text-bone">
       <div className="site-max site-grid section-pad">
         <div className="col-span-12 md:col-span-7">
-          <Link to="/" className="font-display text-display text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="Expaan — Home">
-            Expaan<span className="text-canvas">.</span>
+          <Link to="/" className="font-display text-display-s text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="Expaan Reality — Home">
+            Expaan Reality<span className="text-canvas">.</span>
           </Link>
           <p className="mt-8 max-w-md text-body-l text-bone/80 font-light">
-            49 finished residences in the heart of Expaan, Miami.
+            49 finished residences in the heart of Expaan Reality, Miami.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
 
         <div className="col-span-12 mt-16 flex flex-col gap-6 border-t border-bone/20 pt-6 md:flex-row md:items-center md:justify-between">
           <div className="text-micro text-bone/60">
-            © {new Date().getFullYear()} Expaan. All rights reserved.
+            © {new Date().getFullYear()} Expaan Reality. All rights reserved.
           </div>
           <div className="flex items-center gap-6 text-micro text-bone/80">
             <a href="https://instagram.com" className="border-b border-bone/30 hover:text-canvas hover:border-canvas transition-colors" rel="noreferrer" target="_blank">Instagram</a>

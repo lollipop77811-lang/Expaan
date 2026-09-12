@@ -5,7 +5,7 @@ import { projects } from '../data/projects'
 import { portrait } from '../lib/image'
 
 /**
- * Residences — Expaan configuration overview.
+ * Residences — Expaan Reality configuration overview.
  *
  * Single-property site: this page shows the 3 unit types (Studio / 1-BR /
  * 2-BR) as cards that link to the detail page with a config query param.
@@ -33,7 +33,7 @@ const CONFIGS = [
     priceFrom: '$795,000',
     image: portrait('expaan-2br', 900, 1200),
     seed: 'expaan-2br',
-    blurb: 'A two-bedroom residence with two private sleeping rooms, full kitchen, and a corner exposure over Expaan. The largest configuration.',
+    blurb: 'A two-bedroom residence with two private sleeping rooms, full kitchen, and a corner exposure over Expaan Reality. The largest configuration.',
   },
 ]
 

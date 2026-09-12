@@ -7,8 +7,8 @@ import { landscape } from '../lib/image'
 
 const NEIGHBORHOODS = [
   {
-    label: 'Expaan',
-    body: `Expaan is in the heart of Expaan — within walking distance of Expaan Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
+    label: 'Expaan Reality',
+    body: `Expaan Reality is in the heart of Expaan Reality — within walking distance of Expaan Reality Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
     image: landscape('district-expaan', 1920, 1080),
   },
   {
@@ -39,8 +39,8 @@ const NEIGHBORHOODS = [
 ]
 
 const POI = [
-  { name: 'Expaan Walls', distance: '0.2 mi', category: 'Street art' },
-  { name: 'Expaan 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
+  { name: 'Expaan Reality Walls', distance: '0.2 mi', category: 'Street art' },
+  { name: 'Expaan Reality 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
   { name: 'Design District', distance: '0.8 mi', category: 'Retail' },
   { name: 'Midtown Miami', distance: '0.5 mi', category: 'Retail' },
   { name: 'Brickell City Centre', distance: '2.4 mi', category: 'Retail' },
@@ -53,7 +53,7 @@ const POI = [
 const CORPORATE = ['Amazon', 'Citadel', 'Spotify', 'PwC', 'Live Nation']
 
 /**
- * Neighborhood — Expaan and its surrounding districts.
+ * Neighborhood — Expaan Reality and its surrounding districts.
  */
 export default function Neighborhood() {
   return (
@@ -62,7 +62,7 @@ export default function Neighborhood() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: '90vh', aspectRatio: '16 / 9' }}>
         <img
           src={landscape('expaan-hero', 1920, 1080)}
-          alt="Aerial of Expaan, Miami at dusk"
+          alt="Aerial of Expaan Reality, Miami at dusk"
           // @ts-ignore
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover"
@@ -74,7 +74,7 @@ export default function Neighborhood() {
             <RevealText
               as="h1"
               className="font-display text-display-xl text-bone leading-[1.02]"
-              text={'In the heart\nof Expaan.'}
+              text={'In the heart\nof Expaan Reality.'}
             />
           </div>
         </div>

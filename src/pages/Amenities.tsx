@@ -59,7 +59,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Fitness',
     headline: 'A windowed fitness center.',
-    body: `Cardio and strength equipment. Natural light and Expaan views.`,
+    body: `Cardio and strength equipment. Natural light and Expaan Reality views.`,
     image: portrait('amen-5', 900, 1200),
     seed: 'amen-5',
     alt: 'Windowed fitness center with cardio and strength equipment',
