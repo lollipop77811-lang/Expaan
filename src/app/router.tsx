@@ -4,6 +4,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import FullscreenMenu from '../components/layout/FullscreenMenu'
 import InquiryModal from '../components/layout/InquiryModal'
+import FloatingContacts from '../components/layout/FloatingContacts'
 
 const Home = lazy(() => import('../pages/Home'))
 const Story = lazy(() => import('../pages/Story'))
@@ -30,6 +31,7 @@ export default function Router() {
       <Header />
       <FullscreenMenu />
       <InquiryModal />
+      <FloatingContacts />
       <main id="main">
         <Suspense fallback={<PageFallback />}>
           <Routes>
