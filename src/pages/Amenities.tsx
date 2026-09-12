@@ -21,7 +21,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Arrival',
     headline: 'A landscaped paseo.',
-    body: `A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Expaan streetscape and establishes a quiet transition into the gallery lobby — a hospitality-driven lobby with digital access control.`,
+    body: `A planted arrival sequence into a hospitality-driven lobby with digital access control.`,
     image: portrait('amen-1', 900, 1200),
     seed: 'amen-1',
     alt: 'Landscaped paseo arrival and gallery lobby',
@@ -30,7 +30,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Lobby',
     headline: 'A gallery lounge with a coffee bar.',
-    body: `A gallery lobby lounge with a dedicated coffee bar, curated by AvroKO as the social heart of the building. Residents and guests check in, settle in, and work from the lounge. Building-wide high-speed Wi-Fi and dedicated printing facilities available.`,
+    body: `A coffee bar and lounge, curated by AvroKO. The social heart of the building.`,
     image: portrait('amen-2', 900, 1200),
     seed: 'amen-2',
     alt: 'Gallery lobby lounge and coffee bar',
@@ -40,7 +40,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'The Grotto',
     headline: 'A private wellness club.',
-    body: `A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and residents — the design move that sets Expaan apart from other Expaan buildings.`,
+    body: `Mineral pool, cold plunge, steam, and sauna. The signature amenity.`,
     image: portrait('amen-3', 900, 1200),
     seed: 'amen-3',
     alt: 'The Grotto — mineral pool, cold plunge, steam, sauna',
@@ -50,7 +50,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Work',
     headline: 'A gallery for work.',
-    body: `A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities. Designed for residents who work from home and remote work — no need to leave the building for a call or a meeting.`,
+    body: `Private Zoom rooms and a conference room. Work without leaving the building.`,
     image: portrait('amen-4', 900, 1200),
     seed: 'amen-4',
     alt: 'Meeting gallery and private Zoom rooms',
@@ -59,7 +59,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Fitness',
     headline: 'A windowed fitness center.',
-    body: `A natural-light fitness center with cardio and strength-training equipment, operated as a residents-only facility with extended hours. Open to natural light and views across the Expaan streetscape.`,
+    body: `Cardio and strength equipment. Natural light and Expaan views.`,
     image: portrait('amen-5', 900, 1200),
     seed: 'amen-5',
     alt: 'Windowed fitness center with cardio and strength equipment',
@@ -69,7 +69,7 @@ const CHAPTERS: Chapter[] = [
   {
     label: 'Rooftop',
     headline: 'A rooftop amenities terrace.',
-    body: `A rooftop terrace with planted surfaces, lounge seating, and views across Expaan and the Miami skyline. Bookable for resident events and operated as an extension of the gallery lobby and The Grotto.`,
+    body: `Planted surfaces, lounge seating, Miami skyline views. Bookable for events.`,
     image: portrait('amen-6', 900, 1200),
     seed: 'amen-6',
     alt: 'Rooftop amenities terrace with planted surfaces',

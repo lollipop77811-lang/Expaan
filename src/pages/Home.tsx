@@ -72,10 +72,8 @@ export default function Home() {
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-16">
           <p className="text-body-l text-bronze font-light">
-            An 8-story boutique condominium designed by MKDA with interiors and
-            curated amenities by AvroKO — the team behind 1 Hotel Central Park.
-            Studio, one-bedroom, and two-bedroom residences, 400 to 844 square
-            feet, offered as a boutique condominium program for residential.
+            Designed by MKDA. Interiors by AvroKO.
+            Studio, one-, and two-bedroom residences from 400 sq ft.
           </p>
         </div>
       </section>
@@ -120,9 +118,8 @@ export default function Home() {
             text={'Furnished\nresidences.'}
           />
           <p className="mt-6 text-body text-bronze">
-            Three configurations — studio, one-bedroom, and two-bedroom — each
-            with 9-foot ceilings, fully furnished, and operated as a
-            boutique condominium for residential.
+            Studio, one-, and two-bedroom.
+            9-foot ceilings throughout.
           </p>
           <div className="mt-8">
             <Button variant="ghost" to="/projects/expaan">See the residences</Button>
@@ -181,9 +178,8 @@ export default function Home() {
             One property. Forty-nine residences.
           </h2>
           <p className="text-body-l text-bronze">
-            Expaan opens in Q1 2027 with studio, one-bedroom, and
-            two-bedroom residences from $495,000. Pre-construction sales by
-            appointment through the sales gallery in Expaan.
+            Pre-construction. From $495,000.
+            Possession Q1 2027.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button variant="gold" to="/projects/expaan">Discover the residences</Button>
@@ -303,7 +299,7 @@ const AMENITY_CHAPTERS = [
   {
     label: 'Arrival',
     headline: 'A landscaped paseo.',
-    body: 'A planted, walk-through arrival sequence from NW 28th Street sets the building apart from the Expaan streetscape and establishes a quiet transition into the gallery lobby.',
+    body: 'A planted arrival sequence from NW 28th Street.',
     cta: 'See the residences',
     image: portrait('expaan-1', 900, 1200),
     seed: 'expaan-1',
@@ -312,7 +308,7 @@ const AMENITY_CHAPTERS = [
   {
     label: 'The Grotto',
     headline: 'A private wellness club.',
-    body: 'A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents and residents.',
+    body: 'Mineral pool, cold plunge, steam, and sauna.',
     cta: 'Tour the grotto',
     image: portrait('expaan-6', 900, 1200),
     seed: 'expaan-6',
@@ -321,7 +317,7 @@ const AMENITY_CHAPTERS = [
   {
     label: 'Work',
     headline: 'A gallery for work.',
-    body: 'A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities, plus building-wide high-speed Wi-Fi and dedicated printing facilities.',
+    body: 'Private Zoom rooms, conference room, building-wide Wi-Fi.',
     cta: 'See the amenities',
     image: portrait('expaan-2', 900, 1200),
     seed: 'expaan-2',

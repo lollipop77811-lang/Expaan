@@ -48,10 +48,10 @@ export default function Footer() {
       <div className="site-max site-grid section-pad">
         <div className="col-span-12 md:col-span-7">
           <Link to="/" className="font-display text-display text-bone leading-[0.9] hover:text-canvas transition-colors duration-300" aria-label="Expaan — Home">
-            expaan<span className="text-canvas"> </span>Expaan
+            Expaan<span className="text-canvas">.</span>
           </Link>
           <p className="mt-8 max-w-md text-body-l text-bone/80 font-light">
-            49 fully furnished residential residences in the heart of Expaan, Miami. Designed by MKDA. Interiors and curated amenities by AvroKO.
+            49 finished residences in the heart of Expaan, Miami.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
 
         <div className="col-span-12 mt-16 flex flex-col gap-6 border-t border-bone/20 pt-6 md:flex-row md:items-center md:justify-between">
           <div className="text-micro text-bone/60">
-            © {new Date().getFullYear()} The Meridian. All rights reserved.
+            © {new Date().getFullYear()} Expaan. All rights reserved.
           </div>
           <div className="flex items-center gap-6 text-micro text-bone/80">
             <a href="https://instagram.com" className="border-b border-bone/30 hover:text-canvas hover:border-canvas transition-colors" rel="noreferrer" target="_blank">Instagram</a>
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="col-span-12 text-micro text-bone/50 mt-4">
-          Equal Housing Opportunity. License No. FL-1043076. Pricing and availability subject to change. This is not an offer to sell but a solicitation to buy. Pre-construction. Funds held in escrow.
+          Equal Housing Opportunity. Pre-construction. Funds held in escrow.
         </div>
       </div>
     </footer>

@@ -24,8 +24,7 @@ export default function Inquire() {
             text={'Begin the\nconversation.'}
           />
           <p className="text-body-l text-bronze font-light max-w-md">
-            A member of the sales gallery will respond within one working day.
-            By appointment, seven days a week, in Expaan.
+            By appointment, seven days a week.
           </p>
 
           <div className="flex flex-col gap-6 border-t border-line pt-8">

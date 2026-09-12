@@ -19,8 +19,8 @@ const LEADERSHIP: Leader[] = [
 ]
 
 const DESIGN_TEAM = [
-  { firm: 'MKDA', role: 'Architecture', note: 'Internationally recognized architecture firm leading the building design and floor plans.' },
-  { firm: 'AvroKO', role: 'Interiors & curated amenities', note: 'The interior design team behind 1 Hotel Central Park in New York — responsible for the gallery lobby, The Grotto, and resident lounges.' },
+  { firm: 'MKDA', role: 'Architecture', note: 'Building design and floor plans.' },
+  { firm: 'AvroKO', role: 'Interiors & curated amenities', note: 'Gallery lobby, The Grotto, resident lounges.' },
 ]
 
 const AWARDS = [
@@ -32,10 +32,10 @@ const AWARDS = [
 ]
 
 const TIMELINE = [
-  { year: '2025', body: 'Wave Group Development, Vitrium Capital, and Zambala Luxury Apartments assemble the site at 335 NW 28th Street in the heart of Expaan.' },
-  { year: '2026', body: 'MKDA engaged as architect. AvroKO — the team behind 1 Hotel Central Park — appointed to lead interiors and curated amenities.' },
-  { year: '2026', body: 'Pre-construction sales open. Studio, one-bedroom, and two-bedroom residences from $495,000.' },
-  { year: '2027', body: 'Expaan opens — 49 fully furnished residential residences, The Grotto wellness club, and a rooftop amenities terrace.' },
+  { year: '2025', body: 'Site assembled at 335 NW 28th Street, Expaan.' },
+  { year: '2026', body: 'MKDA appointed as architect. AvroKO leads interiors.' },
+  { year: '2026', body: 'Pre-construction sales open. From $495,000.' },
+  { year: '2027', body: 'Expaan opens — 49 residences, The Grotto, rooftop terrace.' },
 ]
 
 /**
@@ -85,14 +85,23 @@ export default function Story() {
 
       <ChapterDivider index="II" label="Philosophy" className="bg-canvas-soft" />
 
-      {/* PHILOSOPHY */}
+      {/* PHILOSOPHY — text + portrait image */}
       <section className="site-max site-grid section-pad bg-canvas-soft" aria-label="Philosophy">
-        <div className="col-span-12 md:col-span-10 md:col-start-2">
+        <div className="col-span-12 md:col-span-7 md:col-start-1 flex flex-col justify-center">
           <RevealText
             as="p"
             className="font-display text-display text-ink leading-[1.1]"
-            text={'We believe in 400 to 844 square feet,\ndrawn once and built once.\nWe believe in 9-foot ceilings,\nfurnished residences, and a building\nthat operates as a hotel.\nWe believe in materials drawn from\nthe city they sit in. We believe in\nfinishes that age well, not finishes\nthat photograph well.'}
+            text={'We believe in 400 to 844 square feet,\ndrawn once and built once.\nWe believe in 9-foot ceilings,\nand finishes that age well.'}
             stagger={0.09}
+          />
+        </div>
+        <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0">
+          <ParallaxImage
+            src={portrait('expaan-philosophy', 900, 1200)}
+            alt="Expaan interior finish detail"
+            seed="expaan-philosophy"
+            speed={1}
+            ratio="3 / 4"
           />
         </div>
       </section>

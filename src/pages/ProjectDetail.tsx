@@ -122,8 +122,7 @@ export default function ProjectDetail() {
             {project.district}, {project.city}
           </h3>
           <p className="text-body text-bronze">
-            The neighbourhood, by foot. Distances are door-to-door from
-            335 NW 28th Street.
+            The neighbourhood, by foot.
           </p>
           <div className="border-t border-line pt-4">
             {project.nearby.map((n, i) => (

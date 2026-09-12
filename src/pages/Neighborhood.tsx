@@ -13,27 +13,27 @@ const NEIGHBORHOODS = [
   },
   {
     label: 'Design District',
-    body: `An eight-minute walk north. The Miami Design District is a neighbourhood of luxury retail, design showrooms, and galleries — the city's most concentrated district for furniture, fashion, and contemporary art.`,
+    body: `Eight minutes north. Luxury retail, design showrooms, contemporary art.`,
     image: landscape('district-design', 1920, 1080),
   },
   {
     label: 'Midtown Miami',
-    body: `Five minutes east. Midtown Miami is a 56-block mixed-use district with retail, restaurants, and the Expaan-adjacent mid-rise residential community. A short walk or a 4-minute drive.`,
+    body: `Five minutes east. A 56-block mixed-use district of retail and residences.`,
     image: landscape('district-midtown', 1920, 1080),
   },
   {
     label: 'Brickell',
-    body: `Brickell is 10 minutes south by car. Miami's financial district and densest residential neighbourhood — home to Brickell City Centre, the corporate offices of Amazon, Citadel, Spotify, PwC, and Live Nation, and the future site of Miami's tallest towers.`,
+    body: `Ten minutes south. Miami's financial district. Home to Amazon, Citadel, Spotify, PwC, Live Nation.`,
     image: landscape('district-brickell', 1920, 1080),
   },
   {
     label: 'Downtown Miami',
-    body: `Ten minutes south. Downtown Miami is the civic and commercial core — FTX Arena, Bayfront Park, the Perez Art Museum, and the Brightline MiamiCentral station with hourly service to West Palm Beach, Fort Lauderdale, Aventura, and Orlando.`,
+    body: `Ten minutes south. Civic core, Bayfront Park, Perez Art Museum, Brightline MiamiCentral.`,
     image: landscape('district-downtown', 1920, 1080),
   },
   {
     label: 'Miami Beach',
-    body: `Twenty minutes east across the MacArthur Causeway. South Beach, Mid-Beach, and the Bass Museum — Miami Beach is the city's primary visitor destination and a short ride from Expaan.`,
+    body: `Twenty minutes east. South Beach, Mid-Beach, Bass Museum.`,
     image: landscape('district-beach', 1920, 1080),
   },
 ]
@@ -91,9 +91,7 @@ export default function Neighborhood() {
         </div>
         <div className="col-span-12 md:col-span-3 md:col-start-10 mt-12 md:mt-0 flex flex-col justify-end">
           <p className="text-body text-bronze">
-            Distances are measured by foot, not by car. We build where the
-            city works — Expaan, the Design District, Midtown, Brickell,
-            Downtown, and the Beach.
+            Distances by foot, not by car.
           </p>
         </div>
       </section>

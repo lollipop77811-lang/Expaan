@@ -103,7 +103,7 @@ export const projects: Project[] = [
     ],
     coordinates: { lat: 25.8017, lng: -80.1993 },
     highlights: ['Expaan location', 'The Grotto wellness club', 'MKDA + AvroKO design', 'Boutique condominium'],
-    overview: 'Expaan is an 8-story boutique condominium at 335 NW 28th Street in the heart of Expaan, Miami. The property comprises 49 fully finished residences — studio, one-bedroom, and two-bedroom — designed by MKDA with interiors and curated amenities by AvroKO, the team behind 1 Hotel Central Park in New York. Residents have access to The Grotto, a private wellness club with a mineral pool, cold plunge, steam room, and sauna.',
+    overview: 'Expaan is an 8-story boutique condominium at 335 NW 28th Street, Expaan, Miami. 49 residences by MKDA and AvroKO, with The Grotto wellness club.',
     architect: 'MKDA',
     interiors: 'AvroKO',
     nearby: [
