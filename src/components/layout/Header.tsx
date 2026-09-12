@@ -77,8 +77,8 @@ export default function Header() {
         className="site-max flex items-center justify-between"
         style={{ paddingTop: 'clamp(18px, 2.5vw, 28px)', paddingBottom: 'clamp(18px, 2.5vw, 28px)' }}
       >
-        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="Expaan Reality — Home">
-          Expaan Reality<span className="text-canvas">.</span>
+        <Link to="/" className="font-display text-label text-bone leading-none hover:text-canvas transition-colors duration-300" aria-label="Expann Reality — Home">
+          Expann Reality<span className="text-canvas">.</span>
         </Link>
 
         <button

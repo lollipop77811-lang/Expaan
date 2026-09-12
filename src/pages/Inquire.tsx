@@ -3,8 +3,8 @@ import SectionLabel from '../components/ui/SectionLabel'
 import InquiryForm from '../components/forms/InquiryForm'
 
 /**
- * Inquire — Expaan Reality sales gallery.
- * Left column: pitch + Expaan Reality sales gallery address + Miami phone.
+ * Inquire — Expann Reality sales gallery.
+ * Left column: pitch + Expann Reality sales gallery address + Miami phone.
  * Right column: InquiryForm with RHF + Zod + designed success state.
  */
 export default function Inquire() {
@@ -30,8 +30,8 @@ export default function Inquire() {
           <div className="flex flex-col gap-6 border-t border-line pt-8">
             <Contact label="Sales Gallery" lines={['335 NW 28th Street, Miami, FL 33127', 'By appointment, Mon — Sun']} />
             <Contact label="Telephone" lines={['+1 305 555 0148']} href="tel:+13055550148" />
-            <Contact label="Email" lines={['sales@expaan.com']} href="mailto:sales@expaan.com" />
-            <Contact label="Press" lines={['press@expaan.com']} href="mailto:press@expaan.com" />
+            <Contact label="Email" lines={['sales@expann.com']} href="mailto:sales@expann.com" />
+            <Contact label="Press" lines={['press@expann.com']} href="mailto:press@expann.com" />
           </div>
         </div>
 

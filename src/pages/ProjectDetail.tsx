@@ -12,13 +12,13 @@ import NotFound from './NotFound'
 import { landscape } from '../lib/image'
 
 /**
- * ProjectDetail — Expaan Reality detail page. 8 blocks per the brief:
+ * ProjectDetail — Expann Reality detail page. 8 blocks per the brief:
  * 1. Hero — full-bleed render + name + breadcrumb.
  * 2. Overview — text column + spec table + meta grid.
  * 3. HorizontalGallery — pinned, 7 portrait renders (signature moment).
  * 4. Amenities accordion.
  * 5. Floor plans — tabbed by configuration.
- * 6. Location — Expaan Reality map + POI hairline table with distances.
+ * 6. Location — Expann Reality map + POI hairline table with distances.
  * 7. Availability table.
  * 8. Sticky inquiry rail (desktop).
  */
@@ -157,7 +157,7 @@ export default function ProjectDetail() {
         <StickyInquire projectSlug={project.slug} />
         <div className="mt-4 flex flex-col gap-1 text-micro text-bronze">
           <a href="tel:+13055550148" className="hover:text-ink transition-colors">+1 305 555 0148</a>
-          <a href="mailto:sales@expaan.com" className="hover:text-ink transition-colors">sales@expaan.com</a>
+          <a href="mailto:sales@expann.com" className="hover:text-ink transition-colors">sales@expann.com</a>
         </div>
       </div>
 
@@ -165,7 +165,7 @@ export default function ProjectDetail() {
       <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '60vh' }}>
         <img
           src={next.heroImageLandscape}
-          alt={`Expaan Reality, Expaan Reality, Miami`}
+          alt={`Expann Reality, Expann Reality, Miami`}
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
         />

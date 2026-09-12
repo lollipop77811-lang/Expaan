@@ -11,19 +11,19 @@ import { projects } from '../data/projects'
 import { portrait, landscape } from '../lib/image'
 
 /**
- * Home — Expaan Reality cinematic narrative.
+ * Home — Expann Reality cinematic narrative.
  * Single-property microsite, structured after the original 11-section arc.
  * Demo mode: all slow expo-out motion stripped; sections render statically.
  */
 export default function Home() {
-  const expaan = projects[0]
+  const expann = projects[0]
 
   return (
     <>
 {/* 1. HERO */}
       <section
         className="relative h-screen w-full overflow-hidden bg-night"
-        aria-label="Expaan Reality — hero"
+        aria-label="Expann Reality — hero"
       >
         <video
           autoPlay
@@ -31,7 +31,7 @@ export default function Home() {
           loop
           playsInline
           preload="auto"
-          poster={expaan.heroImage}
+          poster={expann.heroImage}
           aria-hidden
           data-hero-image
           className="absolute inset-0 h-full w-full object-cover will-change-transform"
@@ -62,11 +62,11 @@ export default function Home() {
       {/* 2. THESIS */}
       <section className="site-max site-grid section-pad" aria-label="Thesis">
         <div className="col-span-12 md:col-span-8">
-          <SectionLabel>Expaan Reality</SectionLabel>
+          <SectionLabel>Expann Reality</SectionLabel>
           <RevealText
             as="p"
             className="mt-10 font-display text-display text-ink leading-[1.05]"
-            text={'Forty-nine furnished\nresidences in the\nheart of Expaan Reality.'}
+            text={'Forty-nine furnished\nresidences in the\nheart of Expann Reality.'}
             stagger={0.09}
           />
         </div>
@@ -86,7 +86,7 @@ export default function Home() {
           <hr className="hairline mb-10" />
           <blockquote className="font-display text-quote text-ink leading-tight">
             <RevealText
-              text={'“A boutique condo built around residential living —\nExpaan brings residential-grade design\nand a private wellness club to one of\nMiami’s most walkable neighbourhoods.”'}
+              text={'“A boutique condo built around residential living —\nExpann brings residential-grade design\nand a private wellness club to one of\nMiami’s most walkable neighbourhoods.”'}
             />
           </blockquote>
           <div className="mt-10 text-label text-bronze uppercase tracking-[0.12em]">
@@ -104,9 +104,9 @@ export default function Home() {
         </div>
         <div className="col-span-12 md:col-span-5">
           <ParallaxImage
-            src={portrait('expaan-studio', 900, 1200)}
+            src={portrait('expann-studio', 900, 1200)}
             alt="Studio residence, 478 sq ft"
-            seed="expaan-3"
+            seed="expann-3"
             speed={0.9}
             ratio="3 / 4"
           />
@@ -122,14 +122,14 @@ export default function Home() {
             9-foot ceilings throughout.
           </p>
           <div className="mt-8">
-            <Button variant="ghost" to="/projects/expaan">See the residences</Button>
+            <Button variant="ghost" to="/projects/expann">See the residences</Button>
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-10 mt-12 md:mt-0 md:translate-y-24">
           <ParallaxImage
-            src={portrait('expaan-2br', 900, 1200)}
+            src={portrait('expann-2br', 900, 1200)}
             alt="Two-bedroom residence, 844 sq ft"
-            seed="expaan-5"
+            seed="expann-5"
             speed={1.1}
             ratio="3 / 4"
           />
@@ -143,8 +143,8 @@ export default function Home() {
         style={{ aspectRatio: '16 / 9', minHeight: '70vh' }}
       >
         <img
-          src={landscape('expaan-wide', 1920, 1080)}
-          alt="Expaan Reality design — full-bleed interlude"
+          src={landscape('expann-wide', 1920, 1080)}
+          alt="Expann Reality design — full-bleed interlude"
           loading="lazy"
           data-design-image
           className="absolute inset-0 h-full w-full object-cover will-change-transform"
@@ -171,7 +171,7 @@ export default function Home() {
           <SectionLabel>Featured</SectionLabel>
         </div>
         <div className="col-span-12 md:col-span-7">
-          <ProjectCard project={expaan} index={0} />
+          <ProjectCard project={expann} index={0} />
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-32 flex flex-col gap-8">
           <h2 className="font-display text-display text-ink leading-tight">
@@ -182,8 +182,8 @@ export default function Home() {
             Possession Q1 2027.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button variant="gold" to="/projects/expaan">Discover the residences</Button>
-            <Button variant="ghost" to="/projects/expaan">View availability</Button>
+            <Button variant="gold" to="/projects/expann">Discover the residences</Button>
+            <Button variant="ghost" to="/projects/expann">View availability</Button>
           </div>
         </div>
       </section>
@@ -262,19 +262,19 @@ export default function Home() {
           <RevealText
             as="h2"
             className="font-display text-display text-ink leading-tight"
-            text={'In the heart\nof Expaan Reality.'}
+            text={'In the heart\nof Expann Reality.'}
           />
         </div>
         <div className="col-span-12 mt-16">
-          <Marquee items={['Expaan Reality Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Expaan Reality 2nd Ave', 'Miami International']} />
+          <Marquee items={['Expann Reality Walls', 'Design District', 'Midtown Miami', 'Brickell', 'Miami Beach', 'Brightline MiamiCentral', 'Expann Reality 2nd Ave', 'Miami International']} />
         </div>
       </section>
 
       {/* 11. FINAL CTA */}
       <section className="relative w-full overflow-hidden" aria-label="Begin" style={{ aspectRatio: '16 / 9', minHeight: '70vh' }}>
         <img
-          src={landscape('expaan-wide', 1920, 1080)}
-          alt="Expaan Reality at dusk"
+          src={landscape('expann-wide', 1920, 1080)}
+          alt="Expann Reality at dusk"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -301,8 +301,8 @@ const AMENITY_CHAPTERS = [
     headline: 'A landscaped paseo.',
     body: 'A planted arrival sequence from NW 28th Street.',
     cta: 'See the residences',
-    image: portrait('expaan-1', 900, 1200),
-    seed: 'expaan-1',
+    image: portrait('expann-1', 900, 1200),
+    seed: 'expann-1',
     alt: 'Landscaped paseo arrival',
   },
   {
@@ -310,8 +310,8 @@ const AMENITY_CHAPTERS = [
     headline: 'A private wellness club.',
     body: 'Mineral pool, cold plunge, steam, and sauna.',
     cta: 'Tour the grotto',
-    image: portrait('expaan-6', 900, 1200),
-    seed: 'expaan-6',
+    image: portrait('expann-6', 900, 1200),
+    seed: 'expann-6',
     alt: 'The Grotto wellness club',
   },
   {
@@ -319,8 +319,8 @@ const AMENITY_CHAPTERS = [
     headline: 'A gallery for work.',
     body: 'Private Zoom rooms, conference room, building-wide Wi-Fi.',
     cta: 'See the amenities',
-    image: portrait('expaan-2', 900, 1200),
-    seed: 'expaan-2',
+    image: portrait('expann-2', 900, 1200),
+    seed: 'expann-2',
     alt: 'Gallery lobby and meeting gallery',
   },
 ]

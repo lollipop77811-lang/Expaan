@@ -1,7 +1,7 @@
 /**
- * projects.ts — Expaan Reality. Single-property real-estate microsite.
+ * projects.ts — Expann Reality. Single-property real-estate microsite.
  *
- * 335 NW 28th Street, Miami FL 33127 — Expaan Reality neighbourhood.
+ * 335 NW 28th Street, Miami FL 33127 — Expann Reality neighbourhood.
  * 8 stories, 49 units, boutique condominium.
  * Studio / 1-BR / 2-BR, 400–844 sq ft, 9-ft ceilings, fully finished.
  *
@@ -56,40 +56,40 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: 'expaan',
-    name: 'Expaan Reality',
+    slug: 'expann',
+    name: 'Expann Reality',
     city: 'Miami',
-    district: 'Expaan Reality',
+    district: 'Expann Reality',
     config: ['Studio', '1-Bedroom', '2-Bedroom'],
     sizes: '400 – 844 sq ft',
     status: 'Pre-construction',
     possession: 'Q1 2027',
     priceFrom: 'From $495,000',
-    heroImage: portrait('expaan-hero', 1200, 1600),
-    heroImageLandscape: landscape('expaan-wide', 1920, 1080),
+    heroImage: portrait('expann-hero', 1200, 1600),
+    heroImageLandscape: landscape('expann-wide', 1920, 1080),
     gallery: [
-      { seed: 'expaan-1', src: portrait('expaan-1', 900, 1200), alt: 'Expaan Reality exterior, 28th Street facade', caption: '8-story facade, NW 28th Street' },
-      { seed: 'expaan-2', src: portrait('expaan-2', 900, 1200), alt: 'Gallery lobby lounge', caption: 'Gallery lobby + coffee bar' },
-      { seed: 'expaan-3', src: portrait('expaan-3', 900, 1200), alt: 'Studio residence interior', caption: 'Studio, 478 sq ft' },
-      { seed: 'expaan-4', src: portrait('expaan-4', 900, 1200), alt: 'One-bedroom residence', caption: 'One-bedroom, 612 sq ft' },
-      { seed: 'expaan-5', src: portrait('expaan-5', 900, 1200), alt: 'Two-bedroom residence', caption: 'Two-bedroom, 844 sq ft' },
-      { seed: 'expaan-6', src: portrait('expaan-6', 900, 1200), alt: 'The Grotto wellness club', caption: 'The Grotto — mineral pool' },
-      { seed: 'expaan-7', src: portrait('expaan-7', 900, 1200), alt: 'Rooftop terrace', caption: 'Rooftop amenities terrace' },
+      { seed: 'expann-1', src: portrait('expann-1', 900, 1200), alt: 'Expann Reality exterior, 28th Street facade', caption: '8-story facade, NW 28th Street' },
+      { seed: 'expann-2', src: portrait('expann-2', 900, 1200), alt: 'Gallery lobby lounge', caption: 'Gallery lobby + coffee bar' },
+      { seed: 'expann-3', src: portrait('expann-3', 900, 1200), alt: 'Studio residence interior', caption: 'Studio, 478 sq ft' },
+      { seed: 'expann-4', src: portrait('expann-4', 900, 1200), alt: 'One-bedroom residence', caption: 'One-bedroom, 612 sq ft' },
+      { seed: 'expann-5', src: portrait('expann-5', 900, 1200), alt: 'Two-bedroom residence', caption: 'Two-bedroom, 844 sq ft' },
+      { seed: 'expann-6', src: portrait('expann-6', 900, 1200), alt: 'The Grotto wellness club', caption: 'The Grotto — mineral pool' },
+      { seed: 'expann-7', src: portrait('expann-7', 900, 1200), alt: 'Rooftop terrace', caption: 'Rooftop amenities terrace' },
     ],
     amenities: [
-      { title: 'Landscaped paseo arrival', body: 'A planted, walk-through arrival sequence from NW 28th Street, designed to set the building apart from the Expaan Reality streetscape and establish a quiet transition into the lobby.' },
+      { title: 'Landscaped paseo arrival', body: 'A planted, walk-through arrival sequence from NW 28th Street, designed to set the building apart from the Expann Reality streetscape and establish a quiet transition into the lobby.' },
       { title: 'Gallery lobby + coffee bar', body: 'A hospitality-driven lobby with digital access control, gallery lounge seating, and a dedicated coffee bar. Curated by AvroKO as the social heart of the building.' },
       { title: 'Meeting gallery + private Zoom rooms', body: 'A residents-only meeting gallery, private Zoom rooms, and a conference room with teleconferencing capabilities for residents who work from home.' },
       { title: 'Windowed fitness center', body: 'A natural-light fitness center with cardio and strength-training equipment, operated as a residents-only facility with extended hours.' },
       { title: 'The Grotto — private wellness club', body: 'A members-only wellness club featuring a mineral pool, cold plunge, steam room, and sauna. The signature amenity of the property, available to residents.' },
-      { title: 'Rooftop amenities terrace', body: 'A rooftop terrace with planted surfaces, lounge seating, and views across Expaan Reality and the Miami skyline. Bookable for resident events.' },
+      { title: 'Rooftop amenities terrace', body: 'A rooftop terrace with planted surfaces, lounge seating, and views across Expann Reality and the Miami skyline. Bookable for resident events.' },
       { title: 'High-speed Wi-Fi throughout', body: 'Building-wide high-speed Wi-Fi and dedicated printing facilities — work from the lobby, the gallery, or the rooftop without leaving the network.' },
       { title: '24-hour security + controlled access', body: 'A 24-hour security system with controlled elevator access, on-site laundry, and resident storage. Building operations designed for residential workflows.' },
     ],
     floorPlans: [
-      { config: 'Studio', label: 'Studio residence', area: '478 sq ft', image: portrait('fp-expaan-studio', 1200, 900) },
-      { config: '1-Bedroom', label: 'One-bedroom residence', area: '612 sq ft', image: portrait('fp-expaan-1br', 1200, 900) },
-      { config: '2-Bedroom', label: 'Two-bedroom residence', area: '844 sq ft', image: portrait('fp-expaan-2br', 1200, 900) },
+      { config: 'Studio', label: 'Studio residence', area: '478 sq ft', image: portrait('fp-expann-studio', 1200, 900) },
+      { config: '1-Bedroom', label: 'One-bedroom residence', area: '612 sq ft', image: portrait('fp-expann-1br', 1200, 900) },
+      { config: '2-Bedroom', label: 'Two-bedroom residence', area: '844 sq ft', image: portrait('fp-expann-2br', 1200, 900) },
     ],
     availability: [
       { unit: 'PH-08', floor: '8', area: '844 sq ft', price: '$895,000', status: 'Available' },
@@ -102,13 +102,13 @@ export const projects: Project[] = [
       { unit: '208', floor: '2', area: '844 sq ft', price: '$795,000', status: 'Available' },
     ],
     coordinates: { lat: 25.8017, lng: -80.1993 },
-    highlights: ['Expaan Reality location', 'The Grotto wellness club', 'MKDA + AvroKO design', 'Boutique condominium'],
-    overview: 'Expaan Reality is an 8-story boutique condominium at 335 NW 28th Street, Expaan Reality, Miami. 49 residences by MKDA and AvroKO, with The Grotto wellness club.',
+    highlights: ['Expann Reality location', 'The Grotto wellness club', 'MKDA + AvroKO design', 'Boutique condominium'],
+    overview: 'Expann Reality is an 8-story boutique condominium at 335 NW 28th Street, Expann Reality, Miami. 49 residences by MKDA and AvroKO, with The Grotto wellness club.',
     architect: 'MKDA',
     interiors: 'AvroKO',
     nearby: [
-      { name: 'Expaan Reality Walls', distance: '0.2 mi', category: 'Street art' },
-      { name: 'Expaan Reality 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
+      { name: 'Expann Reality Walls', distance: '0.2 mi', category: 'Street art' },
+      { name: 'Expann Reality 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
       { name: 'Design District', distance: '0.8 mi', category: 'Retail' },
       { name: 'Midtown Miami', distance: '0.5 mi', category: 'Retail' },
       { name: 'Brickell City Centre', distance: '2.4 mi', category: 'Retail' },

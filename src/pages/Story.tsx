@@ -24,18 +24,18 @@ const DESIGN_TEAM = [
 ]
 
 const AWARDS = [
-  { year: '2026', title: 'Pre-construction launch', body: 'Expaan Reality — Miami' },
+  { year: '2026', title: 'Pre-construction launch', body: 'Expann Reality — Miami' },
   { year: '2026', title: 'AvroKO appointed for interiors', body: 'Gallery lobby + The Grotto wellness club' },
   { year: '2026', title: 'MKDA appointed as architect', body: '8-story boutique condominium' },
-  { year: '2025', title: 'Site assembled at 335 NW 28th Street', body: 'Expaan Reality, Miami' },
+  { year: '2025', title: 'Site assembled at 335 NW 28th Street', body: 'Expann Reality, Miami' },
   { year: '2025', title: 'Wave Group + Vitrium + Zambala partnership', body: 'Joint development agreement' },
 ]
 
 const TIMELINE = [
-  { year: '2025', body: 'Site assembled at 335 NW 28th Street, Expaan Reality.' },
+  { year: '2025', body: 'Site assembled at 335 NW 28th Street, Expann Reality.' },
   { year: '2026', body: 'MKDA appointed as architect. AvroKO leads interiors.' },
   { year: '2026', body: 'Pre-construction sales open. From $495,000.' },
-  { year: '2027', body: 'Expaan Reality opens — 49 residences, The Grotto, rooftop terrace.' },
+  { year: '2027', body: 'Expann Reality opens — 49 residences, The Grotto, rooftop terrace.' },
 ]
 
 /**
@@ -97,9 +97,9 @@ export default function Story() {
         </div>
         <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0">
           <ParallaxImage
-            src={portrait('expaan-philosophy', 900, 1200)}
-            alt="Expaan Reality interior finish detail"
-            seed="expaan-philosophy"
+            src={portrait('expann-philosophy', 900, 1200)}
+            alt="Expann Reality interior finish detail"
+            seed="expann-philosophy"
             speed={1}
             ratio="3 / 4"
           />

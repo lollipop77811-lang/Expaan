@@ -5,19 +5,19 @@ import Button from '../ui/Button'
 
 /**
  * ProjectFinder
- *  Single-property Expaan Reality finder. The original multi-property cascade
+ *  Single-property Expann Reality finder. The original multi-property cascade
  *  (City → Project → Config) collapses to a single Configuration selector with
  *  three buttons (Studio / 1-BR / 2-BR), each linking to the detail page with
  *  a config query param.
  *
  *  Navy panel, seafoam text, seafoam hairlines. Direct Sobha-style conversion
- *  widget restyled for Expaan Reality.
+ *  widget restyled for Expann Reality.
  */
-const expaan = projects[0]
+const expann = projects[0]
 
-const CONFIGS = expaan.config.map((label, i) => ({
+const CONFIGS = expann.config.map((label, i) => ({
   label,
-  area: expaan.floorPlans[i]?.area ?? '',
+  area: expann.floorPlans[i]?.area ?? '',
   priceFrom: i === 0 ? 'From $495,000' : i === 1 ? 'From $565,000' : 'From $795,000',
 }))
 
@@ -62,7 +62,7 @@ export default function ProjectFinder() {
           49 residences. Studio, one-bedroom, and two-bedroom. Pre-construction.
         </p>
         <Link
-          to={`/projects/${expaan.slug}${selected ? `?config=${encodeURIComponent(selected)}` : ''}`}
+          to={`/projects/${expann.slug}${selected ? `?config=${encodeURIComponent(selected)}` : ''}`}
           className="inline-flex"
         >
           <Button type="button" variant="gold">

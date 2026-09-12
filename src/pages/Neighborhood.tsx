@@ -7,9 +7,9 @@ import { landscape } from '../lib/image'
 
 const NEIGHBORHOODS = [
   {
-    label: 'Expaan Reality',
-    body: `Expaan Reality is in the heart of Expaan Reality — within walking distance of Expaan Reality Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
-    image: landscape('district-expaan', 1920, 1080),
+    label: 'Expann Reality',
+    body: `Expann Reality is in the heart of Expann Reality — within walking distance of Expann Reality Walls, the neighbourhood's iconic street art, galleries, restaurants, breweries, and nightlife venues along 2nd Avenue.`,
+    image: landscape('district-expann', 1920, 1080),
   },
   {
     label: 'Design District',
@@ -39,8 +39,8 @@ const NEIGHBORHOODS = [
 ]
 
 const POI = [
-  { name: 'Expaan Reality Walls', distance: '0.2 mi', category: 'Street art' },
-  { name: 'Expaan Reality 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
+  { name: 'Expann Reality Walls', distance: '0.2 mi', category: 'Street art' },
+  { name: 'Expann Reality 2nd Avenue galleries', distance: '0.1 mi', category: 'Galleries' },
   { name: 'Design District', distance: '0.8 mi', category: 'Retail' },
   { name: 'Midtown Miami', distance: '0.5 mi', category: 'Retail' },
   { name: 'Brickell City Centre', distance: '2.4 mi', category: 'Retail' },
@@ -53,7 +53,7 @@ const POI = [
 const CORPORATE = ['Amazon', 'Citadel', 'Spotify', 'PwC', 'Live Nation']
 
 /**
- * Neighborhood — Expaan Reality and its surrounding districts.
+ * Neighborhood — Expann Reality and its surrounding districts.
  */
 export default function Neighborhood() {
   return (
@@ -61,8 +61,8 @@ export default function Neighborhood() {
 {/* OPENING */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: '90vh', aspectRatio: '16 / 9' }}>
         <img
-          src={landscape('expaan-hero', 1920, 1080)}
-          alt="Aerial of Expaan Reality, Miami at dusk"
+          src={landscape('expann-hero', 1920, 1080)}
+          alt="Aerial of Expann Reality, Miami at dusk"
           // @ts-ignore
           fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover"
@@ -74,7 +74,7 @@ export default function Neighborhood() {
             <RevealText
               as="h1"
               className="font-display text-display-xl text-bone leading-[1.02]"
-              text={'In the heart\nof Expaan Reality.'}
+              text={'In the heart\nof Expann Reality.'}
             />
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function Neighborhood() {
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9 mt-12 md:mt-0 flex flex-col justify-center gap-6">
               <p className="text-body-l text-bronze font-light">{d.body}</p>
-              <Button variant="ghost" to="/projects/expaan">View residences</Button>
+              <Button variant="ghost" to="/projects/expann">View residences</Button>
             </div>
           </section>
         </div>

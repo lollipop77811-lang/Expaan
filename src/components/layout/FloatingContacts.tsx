@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
  *
  * Two circular navy buttons stacked vertically:
  *   1. WhatsApp (top)  — https://wa.me/13055550148
- *   2. Email (bottom)  — mailto:sales@expaan.com
+ *   2. Email (bottom)  — mailto:sales@expann.com
  *
  * Each button: solid navy bg (#293A4A) with seafoam icon (#BCD1D4).
  * On hover: INVERTS to seafoam bg + navy icon (matching the Button
@@ -93,8 +93,8 @@ export default function FloatingContacts() {
 
       {/* Email */}
       <a
-        href="mailto:sales@expaan.com"
-        aria-label="Email sales@expaan.com"
+        href="mailto:sales@expann.com"
+        aria-label="Email sales@expann.com"
         className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-ink text-bone shadow-md transition-colors duration-300 hover:bg-canvas-soft hover:text-ink"
       >
         <svg

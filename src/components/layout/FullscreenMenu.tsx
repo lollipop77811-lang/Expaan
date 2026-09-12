@@ -111,7 +111,7 @@ export default function FullscreenMenu() {
           <div className="col-span-1 md:col-span-3">
             <div className="block mb-2">Enquiries</div>
             <a href="tel:+13055550148" className="block hover:text-gold transition-colors">+1 305 555 0148</a>
-            <a href="mailto:sales@expaan.com" className="block hover:text-gold transition-colors">sales@expaan.com</a>
+            <a href="mailto:sales@expann.com" className="block hover:text-gold transition-colors">sales@expann.com</a>
           </div>
           <div className="col-span-1 md:col-span-3 md:text-right">
             <a href="https://instagram.com" className="hover:text-gold transition-colors" rel="noreferrer" target="_blank">Instagram</a>
